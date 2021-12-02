@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LvD">
         <activity
-            android:name=".MainActivity"
+            android:name=".ViewEventActivity"
+            android:parentActivityName=".CreateEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateEventActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
