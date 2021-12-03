@@ -9,14 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Love_Dogs">
+        <activity android:name=".CreateEventActivity"
+            android:exported="false"/>
+        <activity android:name=".ViewEventActivity"
+            android:exported="true"/>
         <activity
-            android:name=".Main_logged_in"
+            android:name=".login.Main_logged_in"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".login.LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

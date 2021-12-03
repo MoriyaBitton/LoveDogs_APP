@@ -1,9 +1,9 @@
-package com.example.love_dogs;
+package com.example.love_dogs.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.nfc.Tag;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.love_dogs.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -75,7 +76,8 @@ public class RegisterActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d("RegisterActivity", "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-
+                                        Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
+                                        startActivity(home_page);
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("RegisterActivity", "createUserWithEmail:failure", task.getException());
