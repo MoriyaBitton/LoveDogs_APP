@@ -3,9 +3,11 @@ package com.example.love_dogs.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.view.View;
 
 import com.example.love_dogs.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,5 +37,10 @@ public class Main_logged_in extends AppCompatActivity {
         text.setText("Hello, " + user.user_name + "!");
 
         //User.AddUser(user, "mika", "0543210123");
+    }
+
+    public void UpdateProfile(View view){
+        Intent intent = new Intent(Main_logged_in.this, UpdateUserActivity.class);
+        startActivity(intent);
     }
 }
