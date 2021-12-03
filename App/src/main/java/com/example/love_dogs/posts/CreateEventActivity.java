@@ -1,4 +1,4 @@
-package com.example.love_dogs;
+package com.example.love_dogs.posts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.example.love_dogs.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,16 +39,16 @@ public class CreateEventActivity extends AppCompatActivity {
             }
         });
 
-        location = findViewById(R.id.paddress);
-        location.setInputType(InputType.TYPE_NULL);
-        location.setFocusable(false);
-
-        location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDateTimeDialog(location);
-            }
-        });
+//        location = findViewById(R.id.paddress);
+//        location.setInputType(InputType.TYPE_NULL);
+//        location.setFocusable(false);
+//
+//        location.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showDateTimeDialog(location);
+//            }
+//        });
     }
 
     private void showSetLocationDialog(EditText location){

@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Love_Dogs">
         <activity
+            android:name=".posts.ViewPostsActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.UpdateUserActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateEventActivity"
+            android:name=".posts.CreateEventActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewEventActivity"
+            android:name=".posts.ViewEventActivity"
             android:exported="true" />
         <activity
             android:name=".login.Main_logged_in"

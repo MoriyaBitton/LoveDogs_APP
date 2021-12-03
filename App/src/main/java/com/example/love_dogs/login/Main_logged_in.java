@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.view.View;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.posts.ViewPostsActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
@@ -37,6 +38,11 @@ public class Main_logged_in extends AppCompatActivity {
         text.setText("Hello, " + user.user_name + "!");
 
         //User.AddUser(user, "mika", "0543210123");
+    }
+
+    public void ViewPosts(View view){
+        Intent intent = new Intent(Main_logged_in.this, ViewPostsActivity.class);
+        startActivity(intent);
     }
 
     public void UpdateProfile(View view){
