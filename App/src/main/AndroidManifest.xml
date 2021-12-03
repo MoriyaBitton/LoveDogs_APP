@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Love_Dogs">
-        <activity android:name=".CreateEventActivity"
-            android:exported="false"/>
-        <activity android:name=".ViewEventActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".login.UpdateUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewEventActivity"
+            android:exported="true" />
         <activity
             android:name=".login.Main_logged_in"
             android:exported="false" />

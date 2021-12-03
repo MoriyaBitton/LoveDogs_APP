@@ -1,16 +1,24 @@
 package com.example.love_dogs.login;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main_logged_in extends AppCompatActivity {
 
@@ -18,8 +26,14 @@ public class Main_logged_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_logged_in);
-        FirebaseUser user = User.IsLoggedIn(this);
+        if(User.IsLoggedIn(this) == null){
+            return;
+        }
+        User user = User.current;
+
         TextView text = findViewById(R.id.uhello);
-        text.setText("hello - " + user.getEmail());
+        text.setText("Hello, " + user.user_name + "!");
+
+        //User.AddUser(user, "mika", "0543210123");
     }
 }

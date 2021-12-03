@@ -49,8 +49,9 @@ public class LogInActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(LogInActivity.this,"Logged In",Toast.LENGTH_LONG).show();
                                 Toast.makeText(LogInActivity.this,user.getUid()+" , "+user.getEmail() ,Toast.LENGTH_LONG).show();
-                                Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
-                                startActivity(home_page);
+                                //Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
+                                //startActivity(home_page);
+                                User.LoadCurrentUser(LogInActivity.this, Main_logged_in.class);
                             }
                             else{
                                 Toast.makeText(LogInActivity.this, "Authentication failed.",
