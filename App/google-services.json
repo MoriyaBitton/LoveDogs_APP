@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262961059045",
+    "project_id": "welovedogs-391ff",
+    "storage_bucket": "welovedogs-391ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262961059045:android:583bf1beb87e99a4bab00c",
+        "android_client_info": {
+          "package_name": "com.example.love_dogs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262961059045-h37h3r7k1uumcco4pg6tma4p9q6a9ups.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ2VbR0CpoCH7BqN-1J_JJa4Y_7pqGG-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262961059045-h37h3r7k1uumcco4pg6tma4p9q6a9ups.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
