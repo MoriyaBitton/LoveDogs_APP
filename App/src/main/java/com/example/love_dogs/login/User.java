@@ -20,11 +20,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class User {
-    public static User current;
-    public String uid;
+    public static User current = null;
+    public String uid = null;
     public String email;
     public String user_name;
     public String phone_number;
+
+    public User(){
+
+    }
 
     public User(String uid, String email, String user_name, String phone_number)
     {
@@ -32,6 +36,19 @@ public class User {
         this.email = email;
         this.user_name=user_name;
         this.phone_number=phone_number;
+    }
+
+    public void UpdateInDatabase(){
+        if(uid == null){
+            return;
+        }
+
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("/users/" + uid + "/user_name", user_name);
+        result.put("/users/" + uid + "/phone_number", phone_number);
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.updateChildren(result);
     }
 
     public static boolean LoadCurrentUser(AppCompatActivity context, Class<?> next_context){
@@ -50,6 +67,12 @@ public class User {
                 }
                 else {
                     Map<String,String> td=(HashMap<String, String>)task.getResult().getValue();
+                    if(td == null){
+                        Log.e("firebase", "User doesn't exist!", task.getException());
+                        Intent intent = new Intent(context, UpdateUserActivity.class);
+                        context.startActivity(intent);
+                        return;
+                    }
                     User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"), td.get("phone_number"));
                     current = c_user;
                     Intent intent = new Intent(context, next_context);
@@ -61,22 +84,13 @@ public class User {
         return true;
     }
 
-    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number){
+    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number, OnSuccessListener<Void> listener){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), user_name, phone_number);
         mDatabase.child("users").child(firebaseUser.getUid()).setValue(user);
 
         mDatabase.child("users").child(firebaseUser.getUid()).setValue(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-//                        Toast.makeText( .this, "Authentication failed.",
-//                                Toast.LENGTH_SHORT).show();
-                        Log.d("firebase", "created user successfully");
-                        // Write was successful!
-                        // ...
-                    }
-                });
+                .addOnSuccessListener(listener);
         return user;
     }
 
