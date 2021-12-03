@@ -15,8 +15,9 @@ public class User {
     public String email;
     public String user_name;
     public String phone_number;
-    public User(){
 
+    public User(FirebaseUser firebaseUser){
+        
     }
 
     public User(String uid, String email, String user_name, String phone_number)
@@ -28,9 +29,11 @@ public class User {
 
     }
 
-    public static User AddUser(FirebaseUser firebaseUser){
-
-        return null;
+    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number){
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), user_name, phone_number);
+        mDatabase.child("users").child(firebaseUser.getUid()).setValue(user);
+        return user;
     }
 
     public static FirebaseUser IsLoggedIn(AppCompatActivity context){

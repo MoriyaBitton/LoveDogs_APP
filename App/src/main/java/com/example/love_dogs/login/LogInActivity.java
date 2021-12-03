@@ -47,12 +47,16 @@ public class LogInActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(LogInActivity.this,"Logged In",Toast.LENGTH_LONG);
-                                Toast.makeText(LogInActivity.this,user.getUid()+" , "+user.getEmail() ,Toast.LENGTH_LONG);
+                                Toast.makeText(LogInActivity.this,"Logged In",Toast.LENGTH_LONG).show();
+                                Toast.makeText(LogInActivity.this,user.getUid()+" , "+user.getEmail() ,Toast.LENGTH_LONG).show();
                                 Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
                                 startActivity(home_page);
                             }
-                            else Toast.makeText(LogInActivity.this,task.getException().toString(),Toast.LENGTH_LONG);
+                            else{
+                                Toast.makeText(LogInActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(LogInActivity.this,task.getException().toString(),Toast.LENGTH_LONG);
+                            }
                         }
                     });
                 }

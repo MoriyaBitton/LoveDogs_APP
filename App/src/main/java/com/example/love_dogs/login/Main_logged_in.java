@@ -7,6 +7,10 @@ import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class Main_logged_in extends AppCompatActivity {
 
