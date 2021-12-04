@@ -15,19 +15,28 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.login.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CreateEventActivity extends AppCompatActivity {
+public class CreatePostActivity extends AppCompatActivity {
 
     EditText date_time_in;
     EditText location;
+
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_event);
         setTitle("Create Event");
+
+        if(User.IsLoggedIn(this) == null){
+            return;
+        }
+        user = User.current;
+
         date_time_in = findViewById(R.id.pdate);
         date_time_in.setInputType(InputType.TYPE_NULL);
         date_time_in.setFocusable(false);
@@ -69,38 +78,44 @@ public class CreateEventActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
-                        date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+                        date_time_in.setText(LDPost.simpleDateFormat.format(calendar.getTime()));
                     }
                 };
 
-                new TimePickerDialog(CreateEventActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
+                new TimePickerDialog(CreatePostActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
                         calendar.get(Calendar.MINUTE), false).show();
             }
         };
 
-        new DatePickerDialog(CreateEventActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+        new DatePickerDialog(CreatePostActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)).show();
         Log.d("mylog", "done");
     }
 
 
     public void onPostButton(View button){
-        Intent intent = new Intent(this, ViewEventActivity.class);
-        Bundle bundle = new Bundle();
+        Intent intent = new Intent(this, ViewPostActivity.class);
+        //Bundle bundle = new Bundle();
 
         TextView title = findViewById(R.id.ptitle);
         TextView date = findViewById(R.id.pdate);
-        TextView location = findViewById(R.id.paddress);
-        TextView context = findViewById(R.id.vcontext);
+        TextView location = findViewById(R.id.plocation);
+        TextView body = findViewById(R.id.pbody);
+    
+        
+        LDPost post = new LDPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
+                location.getText().toString(), body.getText().toString());
 
-        bundle.putString("title", title.getText().toString());
-        bundle.putString("date", date.getText().toString());
-        bundle.putString("location", location.getText().toString());
-        bundle.putString("context", context.getText().toString());
+//        bundle.putString("title", title.getText().toString());
+//        bundle.putString("date", date.getText().toString());
+//        bundle.putString("location", location.getText().toString());
+//        bundle.putString("context", body.getText().toString());
 
         //intent.putExtra("name", name.getText().toString());
-        intent.putExtras(bundle);
+//        intent.putExtras(bundle);
+        post.push();
+
+        LDPost.current = post;
         startActivity(intent);
     }
 }

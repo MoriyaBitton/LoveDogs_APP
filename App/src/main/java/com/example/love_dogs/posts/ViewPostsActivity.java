@@ -22,7 +22,7 @@ public class ViewPostsActivity extends AppCompatActivity {
     }
 
     public void OnCreatePost(View view){
-        Intent intent = new Intent(ViewPostsActivity.this, CreateEventActivity.class);
+        Intent intent = new Intent(ViewPostsActivity.this, CreatePostActivity.class);
         startActivity(intent);
     }
 }

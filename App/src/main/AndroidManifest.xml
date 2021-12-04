@@ -16,10 +16,10 @@
             android:name=".login.UpdateUserActivity"
             android:exported="false" />
         <activity
-            android:name=".posts.CreateEventActivity"
+            android:name=".posts.CreatePostActivity"
             android:exported="false" />
         <activity
-            android:name=".posts.ViewEventActivity"
+            android:name=".posts.ViewPostActivity"
             android:exported="true" />
         <activity
             android:name=".login.Main_logged_in"
