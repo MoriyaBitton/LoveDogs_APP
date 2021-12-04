@@ -29,7 +29,7 @@ public class ViewPostActivity extends AppCompatActivity {
         TextView location = findViewById(R.id.plocation);
         location.setText(post.location);
         TextView date = findViewById(R.id.pdate);
-        date.setText(LDPost.simpleDateFormat.format(post.date));
+        date.setText(post.date);
         TextView body = findViewById(R.id.pbody);
         body.setText(post.body);
         TextView author = findViewById(R.id.pauthor);
@@ -37,7 +37,7 @@ public class ViewPostActivity extends AppCompatActivity {
     }
 
     public void backButton(View view){
-        Intent intent = new Intent(this, CreatePostActivity.class);
+        Intent intent = new Intent(this, ViewPostsActivity.class);
         startActivity(intent);
     }
 }

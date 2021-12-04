@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="I love keke"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/view_date"
+        app:layout_constraintStart_toEndOf="@+id/view_location"
+        app:layout_constraintTop_toBottomOf="@+id/view_postID" />
+
+    <TextView
+        android:id="@+id/view_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_title" />
+
+    <TextView
+        android:id="@+id/view_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_title" />
+
+    <TextView
+        android:id="@+id/view_postID"
+        android:layout_width="379dp"
+        android:layout_height="11dp"
+        android:background="#BABABA"
+        android:text="postID"
+        android:textColor="#00FFFFFF"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="27dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

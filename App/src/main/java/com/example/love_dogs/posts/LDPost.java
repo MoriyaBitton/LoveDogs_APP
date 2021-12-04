@@ -2,19 +2,13 @@ package com.example.love_dogs.posts;
 
 import android.util.Log;
 
-import com.example.love_dogs.login.User;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class LDPost {
@@ -25,10 +19,11 @@ public class LDPost {
     public String title;
     public String author;
     public String authorID;
-    public Date date;
+    public String date;
     public String location;
     public String body;
-    public String pID = null;
+    public String pid;
+    public long timestamp;
 
     public LDPost(){
 
@@ -38,8 +33,10 @@ public class LDPost {
         this.title = title;
         this.author = author;
         this.authorID = authorID;
+        this.date = date;
         try {
-            this.date = simpleDateFormat.parse(date);
+             Date r_date = simpleDateFormat.parse(date);
+             timestamp = r_date.getTime();
         }catch (Exception ex){
             Log.e("firebase", "LDEvent: Failed to parse date");
         }
@@ -48,14 +45,14 @@ public class LDPost {
     }
 
     public void push(){
-        if(pID != null){
+        if(pid != null){
             return;
         }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         String key = mDatabase.child("posts").push().getKey();
-        this.pID = key;
+        this.pid = key;
 
-        all_posts.put(pID, this);
+        all_posts.put(pid, this);
         this.updatePost();
     }
 
@@ -64,8 +61,8 @@ public class LDPost {
         Map<String, Object> postValues = this.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/posts/" + this.pID, postValues);
-        childUpdates.put("/user-posts/" + this.authorID + "/" + this.pID, postValues);
+        childUpdates.put("/posts/" + this.pid, postValues);
+        childUpdates.put("/user-posts/" + this.authorID + "/" + this.pid, postValues);
 
         mDatabase.updateChildren(childUpdates);
     }
@@ -76,9 +73,11 @@ public class LDPost {
         result.put("authorId", authorID);
         result.put("author", author);
         result.put("title", title);
+        result.put("location", location);
         result.put("body", body);
-        result.put("date", simpleDateFormat.format(date));
-        result.put("pid", pID);
+        result.put("date", date);
+        result.put("pid", pid);
+        result.put("timestamp", timestamp);
 
         return result;
     }

@@ -34,7 +34,10 @@ public class Main_logged_in extends AppCompatActivity {
         }
         User user = User.current;
 
+        Log.w("firebase", "number of posts : ");
+
         TextView text = findViewById(R.id.uhello);
+        //Log.d("firebase", "user missing ? " + (user == null));
         text.setText("Hello, " + user.user_name + "!");
 
         //User.AddUser(user, "mika", "0543210123");
