@@ -10,10 +10,10 @@
 
     <EditText
         android:id="@+id/auu_sname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="53dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/auu_name"
@@ -21,10 +21,10 @@
 
     <EditText
         android:id="@+id/auu_sphone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintStart_toEndOf="@+id/auu_phone"
@@ -32,44 +32,46 @@
 
     <TextView
         android:id="@+id/auu_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="63dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
         android:text="new_name :"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/auu_description" />
 
     <TextView
         android:id="@+id/auu_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:text="new_phone :"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/auu_name" />
 
     <TextView
         android:id="@+id/auu_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="387dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="60dp"
         android:text="update user"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/auu_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="92dp"
         android:onClick="OnBack"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,10 +79,10 @@
 
     <Button
         android:id="@+id/auu_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="92dp"
         android:onClick="OnConfirm"
         android:text="confirm"
         app:layout_constraintBottom_toBottomOf="parent"

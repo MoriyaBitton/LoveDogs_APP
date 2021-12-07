@@ -8,10 +8,10 @@
 
     <EditText
         android:id="@+id/Password2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -21,10 +21,10 @@
 
     <EditText
         android:id="@+id/Email_Reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="108dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -34,9 +34,9 @@
 
     <EditText
         android:id="@+id/Phone_Reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Phone"
@@ -47,10 +47,10 @@
 
     <EditText
         android:id="@+id/Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -60,9 +60,9 @@
 
     <Button
         android:id="@+id/Reg_Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="56dp"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

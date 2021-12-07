@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/avp_create_post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:onClick="OnCreatePost"
         android:text="Create post"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,16 +28,16 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineDown"
         app:layout_constraintDimensionRatio=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidlineUp"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/vscroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
     </ScrollView>
 
     <androidx.constraintlayout.widget.Guideline

@@ -8,12 +8,14 @@
 
     <TextView
         android:id="@+id/view_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_width="414dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="28dp"
         android:text="I love keke"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/view_date"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toEndOf="@+id/view_location"
         app:layout_constraintTop_toBottomOf="@+id/view_postID" />
 
@@ -21,8 +23,8 @@
         android:id="@+id/view_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_title" />
@@ -31,8 +33,8 @@
         android:id="@+id/view_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_title" />
@@ -41,10 +43,25 @@
         android:id="@+id/view_postID"
         android:layout_width="379dp"
         android:layout_height="11dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="#BABABA"
         android:text="postID"
         android:textColor="#00FFFFFF"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <Button
+        android:id="@+id/Volunteer_as_driver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Volunteer as DRIVER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
