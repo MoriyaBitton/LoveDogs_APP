@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if(!Log_Utils.valid_pass(pass_str)){
-                    pass.setError("Password must contain 1 lowercase letter 1 uppercase letter and 1 number");
+                    pass.setError("Password must contain attlist 1 lowercase letter, 1 uppercase letter and 1 number");
                     checked=false;
                 }
 

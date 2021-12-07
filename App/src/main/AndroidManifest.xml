@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Love_Dogs">
         <activity
+            android:name=".login.MainActivity_test"
+            android:exported="false" />
+        <activity
             android:name=".posts.ViewPostsActivity"
             android:exported="false" />
         <activity
