@@ -10,40 +10,36 @@
     <TextView
         android:id="@+id/view_title"
         android:layout_width="379dp"
-        android:layout_height="66dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
         android:text="I love keke"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintTop_toBottomOf="@+id/view_postID" />
 
     <TextView
         android:id="@+id/view_date"
         android:layout_width="147dp"
         android:layout_height="45dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/view_location"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_title" />
 
     <TextView
         android:id="@+id/view_location"
         android:layout_width="147dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/view_date"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_title"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintTop_toBottomOf="@+id/view_title" />
 
     <TextView
         android:id="@+id/view_postID"
@@ -54,10 +50,9 @@
         android:background="#BABABA"
         android:text="postID"
         android:textColor="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
