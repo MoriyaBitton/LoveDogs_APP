@@ -9,50 +9,47 @@
 
     <TextView
         android:id="@+id/uhello"
-        android:layout_width="311dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="340dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="68dp"
         android:text="@string/Main_title"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="52dp"
+        style="@style/reg"
         android:onClick="UpdateProfile"
-        android:text="update user"
+        android:text="Update user"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uhello" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avp_create_post"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/auu_view_posts"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="68dp"
+        style="@style/reg"
+        android:layout_marginTop="44dp"
         android:onClick="ViewPosts"
-        android:text="load posts"
+        android:text="View posts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uhello" />
 
     <Button
         android:id="@+id/avp_create_post"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="456dp"
-        android:background="@color/purple_200"
+        style="@style/reg"
         android:onClick="OnCreatePost"
         android:text="Create post"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auu_view_posts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

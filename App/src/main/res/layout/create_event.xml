@@ -4,36 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images__5_"
+    android:background="@drawable/_122446"
     tools:context=".posts.CreatePostActivity">
 
     <Button
         android:id="@+id/connectb"
-        android:layout_width="157dp"
-        android:layout_height="83dp"
-        android:layout_marginBottom="64dp"
+        style="@style/reg"
+        android:layout_marginBottom="16dp"
         android:onClick="onPostButton"
         android:text="Post"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/pbody"
-        android:layout_width="362dp"
-        android:layout_height="164dp"
+        android:layout_width="350dp"
+        android:layout_height="93dp"
         android:layout_marginBottom="36dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:textAlignment="center"
+        android:textColorHighlight="@color/black"
+        android:textColorLink="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/connectb"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/testKek"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.163" />
 
     <TextView
         android:id="@+id/textView7"
@@ -124,7 +126,7 @@
         android:id="@+id/testKek"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:foregroundTint="#3F51B5"
         android:text="Description :"
         android:textColor="@color/black"

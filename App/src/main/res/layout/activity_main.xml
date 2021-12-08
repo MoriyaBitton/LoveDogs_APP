@@ -11,66 +11,62 @@
 
     <Button
         android:id="@+id/Reg"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="252dp"
+        style="@style/reg"
+        android:layout_marginBottom="332dp"
         android:text="Register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/Login"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:background="@color/black"
-        android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Login"
+        style="@style/reg"
+        android:text="Login"
+        app:layout_constraintBottom_toTopOf="@+id/Reg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Reg"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintTop_toBottomOf="@+id/Pass"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/Pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="572dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mail"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintTop_toBottomOf="@+id/mail" />
 
     <EditText
         android:id="@+id/mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_title"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintTop_toBottomOf="@+id/login_title" />
 
     <TextView
         android:id="@+id/login_title"
-        android:layout_width="156dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="351dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="32dp"
         android:text="We Love Dogs"
         android:textAlignment="center"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

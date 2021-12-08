@@ -10,8 +10,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="387dp"
+        android:layout_height="708dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:scaleType="fitXY"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintGuide_percent="0.33"
         app:layout_constraintHeight_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92"
+        app:layout_constraintGuide_begin="263dp"
         app:layout_constraintHeight_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

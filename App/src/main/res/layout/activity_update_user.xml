@@ -62,31 +62,34 @@
         android:layout_marginTop="60dp"
         android:text="update user"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/auu_back"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="92dp"
+        style="@style/reg"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="144dp"
         android:onClick="OnBack"
         android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auu_phone"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/auu_confirm"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="92dp"
+        style="@style/reg"
+        android:layout_marginBottom="144dp"
         android:onClick="OnConfirm"
         android:text="confirm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toEndOf="@+id/auu_back"
+        app:layout_constraintTop_toBottomOf="@+id/auu_sphone"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
