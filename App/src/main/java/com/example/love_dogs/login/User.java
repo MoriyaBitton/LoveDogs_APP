@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class User {
-    public static User current = null;
+    private static User current = null;
     public String uid = null;
     public String email;
     public String user_name;
@@ -51,11 +51,12 @@ public class User {
         mDatabase.updateChildren(result);
     }
 
-    public static boolean LoadCurrentUser(AppCompatActivity context, Class<?> next_context){
-        FirebaseUser user = IsLoggedIn(context);
-        if(user == null){
+    public static boolean LoadCurrentUser(AppCompatActivity context){
+        FirebaseUser user = getFirebaseUser(context);
+        if(user == null) {
             return false;
         }
+
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -75,8 +76,10 @@ public class User {
                     }
                     User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"), td.get("phone_number"));
                     current = c_user;
-                    Intent intent = new Intent(context, next_context);
+                    Intent intent = new Intent(context, Main_logged_in.class);
                     context.startActivity(intent);
+                    //listener.onComplete(null);
+
                 }
             }
         });
@@ -91,19 +94,46 @@ public class User {
 
         mDatabase.child("users").child(firebaseUser.getUid()).setValue(user)
                 .addOnSuccessListener(listener);
+
+        FirebaseUser firebaseUserThis = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUserThis != null && firebaseUserThis.getUid().equals(firebaseUser.getUid())){
+            current = user;
+        }
         return user;
     }
 
-    public static FirebaseUser IsLoggedIn(AppCompatActivity context){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
+    public static User getCurrentUser(AppCompatActivity context){
+        FirebaseUser user = getFirebaseUser(context);
         if(user == null){
+            return null;
+        }
+
+        if(current == null || !current.uid.equals(user.getUid())){
+            LoadCurrentUser(context);
+            return null;
+        }
+        return current;
+    }
+
+    public static User getCurrentRaw(){
+        return current;
+    }
+
+    public static boolean isLoggedIn(AppCompatActivity context){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        return firebaseUser != null;
+    }
+
+    public static FirebaseUser getFirebaseUser(AppCompatActivity context){
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(firebaseUser == null){
             Toast.makeText(context.getApplicationContext(),"Logged out...",Toast.LENGTH_LONG);
             Intent loginPage = new Intent(context.getApplicationContext(), LogInActivity.class);
             context.startActivity(loginPage);
             return null;
         }
-        return user;
+        return firebaseUser;
     }
 
 

@@ -32,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         pass = findViewById(R.id.Password);
         pass2 = findViewById(R.id.Password2);
-        phone = findViewById(R.id.Phone_Reg);
         email = findViewById(R.id.Email_Reg);
         register = findViewById(R.id.Reg_Register);
 
@@ -74,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d("RegisterActivity", "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
+                                        Intent home_page = new Intent(getApplicationContext(), UpdateUserActivity.class);
                                         startActivity(home_page);
                                     } else {
                                         // If sign in fails, display a message to the user.

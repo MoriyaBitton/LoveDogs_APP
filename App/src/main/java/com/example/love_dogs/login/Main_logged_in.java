@@ -1,6 +1,5 @@
 package com.example.love_dogs.login;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,17 +13,6 @@ import com.example.love_dogs.posts.CreatePostActivity;
 import com.example.love_dogs.posts.LDPost;
 import com.example.love_dogs.posts.ViewPostActivity;
 import com.example.love_dogs.posts.ViewPostsActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main_logged_in extends AppCompatActivity {
 
@@ -32,10 +20,10 @@ public class Main_logged_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_logged_in);
-        if(User.IsLoggedIn(this) == null){
+        User user = User.getCurrentUser(this);
+        if(user == null){
             return;
         }
-        User user = User.current;
 
         Log.w("firebase", "number of posts : ");
 

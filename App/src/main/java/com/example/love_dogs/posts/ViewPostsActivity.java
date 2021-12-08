@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,7 +27,7 @@ public class ViewPostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_posts);
 
-        if(User.IsLoggedIn(this) == null){
+        if(!User.isLoggedIn(this)){
             return;
         }
 

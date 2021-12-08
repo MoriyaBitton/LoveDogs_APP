@@ -17,7 +17,6 @@ import android.widget.TimePicker;
 import com.example.love_dogs.R;
 import com.example.love_dogs.login.User;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class CreatePostActivity extends AppCompatActivity {
@@ -32,10 +31,10 @@ public class CreatePostActivity extends AppCompatActivity {
         setContentView(R.layout.create_event);
         setTitle("Create Event");
 
-        if(User.IsLoggedIn(this) == null){
+        User user = User.getCurrentUser(this);
+        if(user == null){
             return;
         }
-        user = User.current;
 
         date_time_in = findViewById(R.id.pdate);
         date_time_in.setInputType(InputType.TYPE_NULL);

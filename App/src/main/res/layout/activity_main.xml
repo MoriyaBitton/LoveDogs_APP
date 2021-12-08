@@ -12,23 +12,21 @@
     <Button
         android:id="@+id/Reg"
         style="@style/reg"
-        android:layout_marginBottom="332dp"
+        android:layout_marginTop="8dp"
         android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login" />
 
     <Button
         android:id="@+id/Login"
         style="@style/reg"
         android:text="Login"
-        app:layout_constraintBottom_toTopOf="@+id/Reg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Pass"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/Pass" />
 
     <EditText
         android:id="@+id/Pass"

@@ -16,10 +16,10 @@ public class ViewPostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(User.IsLoggedIn(this) == null){
+        User user = User.getCurrentUser(this);
+        if(user == null){
             return;
         }
-        user = User.current;
         setContentView(R.layout.view_event);
 
         LDPost post = LDPost.current;

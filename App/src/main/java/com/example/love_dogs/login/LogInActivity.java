@@ -51,7 +51,7 @@ public class LogInActivity extends AppCompatActivity {
                                 Toast.makeText(LogInActivity.this,user.getUid()+" , "+user.getEmail() ,Toast.LENGTH_LONG).show();
                                 //Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
                                 //startActivity(home_page);
-                                User.LoadCurrentUser(LogInActivity.this, Main_logged_in.class);
+                                User.LoadCurrentUser(LogInActivity.this);
                             }
                             else{
                                 Toast.makeText(LogInActivity.this, "Authentication failed.",

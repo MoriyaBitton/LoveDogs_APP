@@ -24,14 +24,14 @@ public class UpdateUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_user);
 
-        firebaseUser = User.IsLoggedIn(this);
+        firebaseUser = User.getFirebaseUser(this);
         if(firebaseUser== null){
             return;
         }
         name = findViewById(R.id.auu_sname);
         phone = findViewById(R.id.auu_sphone);
 
-        user = User.current;
+        user = User.getCurrentRaw();
         if(user == null){
             Button button = findViewById(R.id.auu_back);
             button.setEnabled(false);
@@ -69,7 +69,6 @@ public class UpdateUserActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        User.current = user;
     }
 
     public void OnBack(View button){
