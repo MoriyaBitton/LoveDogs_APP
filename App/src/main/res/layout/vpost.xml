@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images__8_"
+    android:background="#80FAFFC5"
     android:clickable="true">
 
     <TextView
@@ -14,7 +14,8 @@
         android:layout_marginTop="14dp"
         android:text="I love keke"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_postID" />
@@ -27,6 +28,8 @@
         android:layout_marginEnd="16dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_title" />
 
@@ -38,20 +41,19 @@
         android:layout_marginTop="24dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_title" />
 
     <TextView
         android:id="@+id/view_postID"
-        android:layout_width="379dp"
-        android:layout_height="11dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#BABABA"
+        android:layout_width="440dp"
+        android:layout_height="15dp"
+        android:background="#FFFFFF"
         android:text="postID"
         android:textColor="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
