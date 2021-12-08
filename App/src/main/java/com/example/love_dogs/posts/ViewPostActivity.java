@@ -16,7 +16,7 @@ public class ViewPostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        User user = User.getCurrentUser(this);
+        user = User.getCurrentUser(this);
         if(user == null){
             return;
         }
