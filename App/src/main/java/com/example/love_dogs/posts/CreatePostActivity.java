@@ -31,7 +31,7 @@ public class CreatePostActivity extends AppCompatActivity {
         setContentView(R.layout.create_event);
         setTitle("Create Event");
 
-        User user = User.getCurrentUser(this);
+        user = User.getCurrentUser(this);
         if(user == null){
             return;
         }
