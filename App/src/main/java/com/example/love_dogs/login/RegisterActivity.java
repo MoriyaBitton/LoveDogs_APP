@@ -63,7 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if(checked){
-                    Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_LONG);
 
                     mAuth.createUserWithEmailAndPassword(email_str, pass_str)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -72,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d("RegisterActivity", "createUserWithEmail:success");
+                                        Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_LONG);
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         Intent home_page = new Intent(getApplicationContext(), UpdateUserActivity.class);
                                         startActivity(home_page);

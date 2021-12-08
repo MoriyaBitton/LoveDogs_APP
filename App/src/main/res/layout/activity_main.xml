@@ -9,15 +9,19 @@
     tools:layout_editor_absoluteX="-3dp"
     tools:layout_editor_absoluteY="74dp">
 
-    <Button
-        android:id="@+id/Reg"
-        style="@style/reg"
-        android:layout_marginTop="8dp"
-        android:text="Register"
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login" />
+        app:layout_constraintTop_toBottomOf="@+id/login_title" />
 
     <Button
         android:id="@+id/Login"
@@ -32,7 +36,7 @@
         android:id="@+id/Pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -42,19 +46,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mail" />
 
-    <EditText
-        android:id="@+id/mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
+    <Button
+        android:id="@+id/Reg"
+        style="@style/reg"
+        android:layout_marginTop="2dp"
+        android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_title" />
+        app:layout_constraintTop_toBottomOf="@+id/Login" />
 
     <TextView
         android:id="@+id/login_title"
