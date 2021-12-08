@@ -27,7 +27,7 @@
         android:id="@+id/Reg"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:background="@color/browser_actions_bg_grey"
+        android:background="@android:color/holo_red_dark"
         android:text="Register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Reg"
         app:layout_constraintVertical_bias="0.067" />
