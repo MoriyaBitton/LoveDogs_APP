@@ -47,7 +47,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String email_str = email.getText().toString();
                 boolean checked = true;
 
-
                 if(!(pass_str.equals(pass_str2)))
                 {
                     pass2.setError("Passwords Must Match");
@@ -55,10 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if(!Log_Utils.valid_pass(pass_str)){
-                    pass.setError("Password must contain attlist 1 lowercase letter, 1 uppercase letter and 1 number");
+                    pass.setError("Password must contain attlist 1 lowercase letter, 1 uppercase letter and 1 number, and 8 characters total");
                     checked=false;
                 }
-
 
                 if(!(Log_Utils.valid_email(email_str))){
                     email.setError("Invalid Email Address");
@@ -66,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if(checked){
-                    Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_SHORT);
+                    Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_LONG);
 
                     mAuth.createUserWithEmailAndPassword(email_str, pass_str)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -82,14 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
                                         // If sign in fails, display a message to the user.
                                         Log.w("RegisterActivity", "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
+                                                Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
-
-
-
-                    register.setText("Registered Successfully");
                 }
             }
         });
