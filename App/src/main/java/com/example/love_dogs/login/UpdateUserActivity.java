@@ -69,6 +69,7 @@ public class UpdateUserActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//        User.current = user;
     }
 
     public void OnBack(View button){
