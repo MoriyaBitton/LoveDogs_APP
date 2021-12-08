@@ -66,13 +66,6 @@ public class ViewPostsActivity extends AppCompatActivity {
                         location.setText(post.location);
                         TextView date = child_view.findViewById(R.id.view_date);
                         date.setText(post.date);
-                        Button driver_volu = child_view.findViewById(R.id.Volunteer_as_driver);
-                        driver_volu.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                            }
-                        });
 
                         TextView pid = child_view.findViewById(R.id.view_postID);
                         pid.setText(post.pid);
