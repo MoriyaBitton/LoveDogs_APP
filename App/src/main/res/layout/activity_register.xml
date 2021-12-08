@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/kawaii_dog_wallpapers_top_free_kawaii_dog_backgrounds_"
     tools:context=".login.RegisterActivity">
 
     <EditText

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/images__12_"
     tools:context=".login.UpdateUserActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-1dp">

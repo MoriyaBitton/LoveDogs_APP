@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/images__6_"
     tools:context=".posts.ViewPostsActivity">
 
     <Button
         android:id="@+id/avp_create_post"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:background="@color/purple_200"
         android:onClick="OnCreatePost"
         android:text="Create post"
         app:layout_constraintBottom_toBottomOf="parent"
