@@ -7,53 +7,89 @@
     android:background="@drawable/kawaii_dog_wallpapers_top_free_kawaii_dog_backgrounds_"
     tools:context=".login.RegisterActivity">
 
-    <EditText
-        android:id="@+id/Password2"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password" />
-
-    <EditText
-        android:id="@+id/Email_Reg"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="108dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
-
-    <Button
-        android:id="@+id/Reg_Register"
-        style="@style/reg"
-        android:layout_marginBottom="100dp"
-        android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="540dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_type">
+
+        <EditText
+            android:id="@+id/Email_Reg"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="52dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Password2"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="52dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Password" />
+
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="52dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
+
+        <Button
+            android:id="@+id/Reg_Register"
+            style="@style/reg"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="100dp"
+            android:text="Register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_type"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-6dp">
+
+        <Button
+            android:id="@+id/userBtn"
+            android:text="User"
+            style="@style/userOrgBtn">
+        </Button>
+
+        <Button
+            android:id="@+id/organizationBtn"
+            style="@style/userOrgBtn"
+            android:text="organization"
+            ></Button>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
