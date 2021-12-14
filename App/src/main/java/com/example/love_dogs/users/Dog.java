@@ -1,17 +1,17 @@
-package com.example.love_dogs.login;
+package com.example.love_dogs.users;
 
 import android.media.Image;
 
 import java.util.Objects;
 
-public class dog {
+public class Dog {
     private String name;
     private double age;
     private String race;
     private double weight;
     private Image photo;
 
-    public dog(String name, double age, String race, double weight, Image photo) {
+    public Dog(String name, double age, String race, double weight, Image photo) {
         this.name = name;
         this.age = age;
         this.race = race;
@@ -62,8 +62,8 @@ public class dog {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof dog)) return false;
-        dog dog = (dog) o;
+        if (!(o instanceof Dog)) return false;
+        Dog dog = (Dog) o;
         return Double.compare(dog.getAge(), getAge()) == 0 && Double.compare(dog.getWeight(), getWeight()) == 0 && Objects.equals(getName(), dog.getName()) && Objects.equals(getRace(), dog.getRace()) && Objects.equals(getPhoto(), dog.getPhoto());
     }
 
