@@ -54,17 +54,18 @@
             app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
 
 
-
-
         <Button
             android:id="@+id/Reg_Register"
             style="@style/reg"
+            android:layout_width="199dp"
+            android:layout_height="68dp"
             android:layout_marginStart="100dp"
             android:layout_marginTop="100dp"
             android:text="Register"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"></Button>
 
     </LinearLayout>
@@ -81,15 +82,15 @@
 
         <Button
             android:id="@+id/userBtn"
+            style="@style/userOrgBtn"
             android:text="User"
-            style="@style/userOrgBtn">
-        </Button>
+            android:layout_marginRight="10dp"></Button>
 
         <Button
             android:id="@+id/organizationBtn"
             style="@style/userOrgBtn"
             android:text="organization"
-            ></Button>
+            android:layout_marginRight="10dp"></Button>
 
     </LinearLayout>
 

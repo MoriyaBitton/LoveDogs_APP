@@ -28,5 +28,12 @@
         <item name="android:minHeight">48dp</item>
     </style>
 
+    <style name="text">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 
 </resources>

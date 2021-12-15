@@ -64,6 +64,8 @@
         <Button
             android:id="@+id/Reg_Register"
             style="@style/reg"
+            android:layout_width="206dp"
+            android:layout_height="63dp"
             android:layout_marginStart="100dp"
             android:layout_marginTop="150dp"
             android:text="Register"
@@ -87,14 +89,17 @@
         <Button
             android:id="@+id/userBtn"
             android:text="User"
-            style="@style/userOrgBtn">
+            style="@style/userOrgBtn"
+            android:layout_marginRight="10dp">
         </Button>
 
         <Button
             android:id="@+id/organizationBtn"
             style="@style/userOrgBtn"
             android:text="organization"
-            ></Button>
+            android:layout_marginRight="10dp">
+
+        </Button>
 
     </LinearLayout>
 
