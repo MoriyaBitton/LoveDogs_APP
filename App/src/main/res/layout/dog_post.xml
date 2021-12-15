@@ -2,8 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top|center"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/custom_border"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +15,9 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="0dp"
+        >
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,10 +62,11 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textMultiLine"
+                    android:minHeight="48dp"
+                    android:text="Post Description"
                     android:textAlignment="center"
                     android:textColorHighlight="@color/black"
                     android:textColorLink="@color/black"
-                    android:text="Post Description"
                     android:textSize="20sp"
                     tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -67,9 +74,10 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@tools:sample/avatars" />
+                    android:background="@color/black"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
 
-            <LinearLayout
+                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
