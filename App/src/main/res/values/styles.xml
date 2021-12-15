@@ -28,6 +28,7 @@
         <item name="android:minHeight">48dp</item>
     </style>
 
+<<<<<<< Updated upstream
     <style name="text">
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">50dp</item>
@@ -35,5 +36,24 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+=======
+    <style name="nav_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">-6dp</item>
+        <item name="android:layout_marginBottom">-6dp</item>
+        <item name="android:paddingTop">30dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item></style>
+
+>>>>>>> Stashed changes
 
 </resources>

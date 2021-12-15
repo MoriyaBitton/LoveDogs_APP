@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.map_api.Map_Api_Init;
+import com.example.love_dogs.navBarActivity;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -45,7 +46,7 @@ public class LogInActivity extends AppCompatActivity {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent testIntent = new Intent(getApplicationContext(), Map_Api_Init.class);
+                Intent testIntent = new Intent(getApplicationContext(), navBarActivity.class);
                 startActivity(testIntent);
                 finish();
             }

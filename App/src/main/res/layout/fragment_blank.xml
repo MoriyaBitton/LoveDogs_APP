@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    tools:context=".BlankFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+>
+        <Button
+            style="@style/nav_btn"
+            android:text="Profile"
+            android:drawableStart="@drawable/ic_action_home"
+            android:textColor="#FFF"
+            android:layout_weight="0.2"/>
+
+        <Button
+            style="@style/nav_btn"
+            android:text="Events"
+            android:layout_weight="0.2"/>
+
+        <Button
+            style="@style/nav_btn"
+            android:text="Home"
+            android:layout_weight="0.2" />
+
+        <Button
+            style="@style/nav_btn"
+            android:text="Settings"
+            android:layout_weight="0.2"/>
+
+        <Button
+            style="@style/nav_btn"
+            android:text="Logout"
+            android:layout_weight="0.2"/>
+    </LinearLayout>
+
+
+</FrameLayout>
