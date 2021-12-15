@@ -19,5 +19,14 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="Register_EditText">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">52dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:ems">10</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
 
 </resources>

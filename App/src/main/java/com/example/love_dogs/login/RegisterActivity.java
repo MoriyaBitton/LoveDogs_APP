@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.love_dogs.R;
@@ -28,7 +30,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         EditText pass , pass2 , phone , email;
-        Button register;
+        Button register,userReg,orgReg;
+        LinearLayout regLayout = (LinearLayout) findViewById(R.id.user_type);
+
 
         pass = findViewById(R.id.Password);
         pass2 = findViewById(R.id.Password2);
