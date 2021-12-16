@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,11 +28,21 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textProfile;
+        LinearLayout text_layout = binding.profileTextLayout;
+        TextView details_text = text_layout.findViewById(R.id.details_text);
+
+        details_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                details_text.setText("Successfull");
+            }
+        });
+
+
         profileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
             }
         });
         return root;

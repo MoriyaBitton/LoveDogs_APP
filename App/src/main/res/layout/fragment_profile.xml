@@ -10,66 +10,68 @@
     >
 
 
-    <TextView
-        android:id="@+id/text_Profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="140dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:background="@drawable/post_bg"
+            app:srcCompat="@drawable/ic_profile_big" />
+
         <LinearLayout
+            android:id="@+id/profile_text_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
+            android:layout_weight="0.6"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:gravity="left"
+            android:paddingStart="10dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User Name" />
+                android:text="User Name"
+                android:clickable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Age" />
+                android:text="Age"
+                android:clickable="true"/>
 
+
+            <TextView
+                android:id="@+id/details_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More Details"
+                android:clickable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="More Details" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recently online Details" />
+                android:text="Recently online Details"
+                android:clickable="true"/>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:adjustViewBounds="true"
-            app:srcCompat="@drawable/images__7_" />
+
+
+
+
 
 <!--        <ImageView-->
 <!--            android:id="@+id/imageView4"-->
@@ -80,15 +82,104 @@
 <!--            tools:srcCompat="@tools:sample/avatars" />-->
     </LinearLayout>
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="103dp"
-        android:background="?android:attr/listDivider"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="769dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/post_bg_unbordered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="215dp"
+            android:layout_height="193dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/custom_border"
+            android:padding="8dp"
+            app:columnCount="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rowCount="2">
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="A"
+                app:layout_columnWeight="0.5"
+                app:layout_rowWeight="0.5" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:baselineAligned="true"
+                android:gravity="center"
+                app:layout_columnWeight="0.5"
+                app:layout_rowWeight="0.5">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_profile"
+                    app:layout_column="3"
+                    app:layout_gravity="center"
+                    app:layout_row="0" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:baselineAligned="true"
+                android:gravity="center"
+                app:layout_columnWeight="0.5"
+                app:layout_rowWeight="0.5">
+
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_profile"
+                    app:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:baselineAligned="true"
+                android:gravity="center"
+                app:layout_columnWeight="0.5"
+                app:layout_rowWeight="0.5">
+
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_profile"
+                    app:layout_gravity="center" />
+
+            </LinearLayout>
+
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

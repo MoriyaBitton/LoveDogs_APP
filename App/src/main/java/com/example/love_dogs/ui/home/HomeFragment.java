@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.love_dogs.R;
+import com.example.love_dogs.databinding.DogPostBinding;
 import com.example.love_dogs.databinding.FragmentHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,7 +28,9 @@ private FragmentHomeBinding binding;
 
     binding = FragmentHomeBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
+        DogPostBinding a = binding.post1;
 
+        a.pbody.setText("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         TextView postText = binding.PostText;
         postText.setMovementMethod(new ScrollingMovementMethod());
