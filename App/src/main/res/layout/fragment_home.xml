@@ -8,108 +8,114 @@
     tools:context=".ui.home.HomeFragment"
     android:background="@drawable/images__7_">
 
-    <LinearLayout
 
-        android:id="@+id/linearLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_margin="25dp"
-        android:layout_height="140dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/transparent">
-
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
-            android:orientation="vertical"
-            android:background="@drawable/big_round"
-            >
-
-
-            <EditText
-                android:id="@+id/Post_text"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:paddingLeft="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/big_round"
-                android:inputType="textMultiLine"
-                android:maxHeight="100dp"
-                android:hint="Write your description here ..." />
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/post_nav_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_weight="0"
-                android:background="@drawable/big_round"
-                app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
-                app:itemTextAppearanceInactive="@style/BottomNavigationView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:menu="@menu/post_menu" />
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="8dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/big_round"
-            android:elevation="10dp">
-
-            <ImageView
-                android:id="@+id/home_profile_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:adjustViewBounds="true"
-                android:background="@drawable/big_round"
-                android:src="@drawable/images__6_" />
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="680dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
-        tools:layout_editor_absoluteY="141dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/dog_post" />
+            <LinearLayout
+                android:layout_weight="0.2"
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_margin="25dp"
+                android:background="@drawable/big_round"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <include layout="@layout/dog_post" />
 
-            <include layout="@layout/dog_post" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:orientation="vertical">
 
-            <include layout="@layout/dog_post" />
 
-            <include layout="@layout/dog_post" />
+                    <EditText
+                        android:id="@+id/Post_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/big_round"
+                        android:hint="Write your description here ..."
+                        android:inputType="textMultiLine"
+                        android:maxHeight="100dp"
+                        android:paddingLeft="10dp" />
 
-            <include layout="@layout/dog_post" />
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/post_nav_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/post_bg"
+                        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+                        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:menu="@menu/post_menu" />
+                </LinearLayout>
 
-            <include layout="@layout/dog_post" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:id="@+id/home_profile_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/big_round"
+                        android:src="@drawable/images__6_" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+
+                <include layout="@layout/dog_post" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
-    </ScrollView>
 
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
