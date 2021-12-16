@@ -53,6 +53,7 @@
     <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">14sp</item></style>
 
+
 >>>>>>> Stashed changes
 
 </resources>
