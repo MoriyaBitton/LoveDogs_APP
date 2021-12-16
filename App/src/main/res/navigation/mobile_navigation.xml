@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_events"
-        android:name="com.example.love_dogs.posts.ViewPostsActivity"
+        android:name="com.example.love_dogs.ui.events.EventFragment"
         android:label="Events"
-        tools:layout="@layout/activity_view_posts" />
+        tools:layout="@layout/fragment_events" />
 
     <fragment
         android:id="@+id/navigation_settings"
