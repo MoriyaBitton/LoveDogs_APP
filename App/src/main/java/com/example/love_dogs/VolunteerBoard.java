@@ -1,8 +1,8 @@
 package com.example.love_dogs;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.posts.LDPost;
-import com.example.love_dogs.posts.ViewPostActivity;
-import com.example.love_dogs.posts.ViewPostsActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -123,9 +121,14 @@ public class VolunteerBoard extends Fragment {
 
     public void OnClickPost(View view){
         TextView pid = view.findViewById(R.id.view_postID);
-        //Log.d("firebase", "pid : " + pid.getText().toString());
-        Intent intent = new Intent(getActivity(), ViewPostActivity.class);
-        LDPost.current = LDPost.all_posts.get(pid.getText());
-        startActivity(intent);
+         LDPost.current = LDPost.all_posts.get(pid.getText());
+
+         View v = getView().findViewById(R.id.vview_posts);
+         v.setVisibility(View.GONE);
+
+        AppCompatActivity activity = (AppCompatActivity) view.getContext();
+        Fragment myFragment = new VolunteerPostFragment(v);
+        int id = ((ViewGroup)getView().getParent()).getId();
+        activity.getSupportFragmentManager().beginTransaction().replace(id, myFragment).commit();
     }
 }

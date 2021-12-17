@@ -20,7 +20,7 @@ public class ViewPostActivity extends AppCompatActivity {
         if(user == null){
             return;
         }
-        setContentView(R.layout.view_event);
+        setContentView(R.layout.fragment_volunteer_post);
 
         LDPost post = LDPost.current;
 

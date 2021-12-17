@@ -6,6 +6,8 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15885416666666666" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/ic_launcher_background.xml" value="0.15885416666666666" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/postv.xml" value="0.1412037037037037" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_blank.xml" value="0.23596014492753623" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_events.xml" value="0.23596014492753623" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_home.xml" value="0.20677083333333332" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1753681392235609" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w936dp/content_scrolling.xml" value="0.2046875" />
@@ -24,21 +26,23 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/appnav_start.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/content_scrolling.xml" value="0.27291666666666664" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/create_event.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.16893115942028986" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.5" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_blank.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_dashboard.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_dog_book.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_events.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_home.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.13272543059777103" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_view_post_fragment.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.22" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.23596014492753623" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/hello_user.xml" value="0.2524752475247525" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/preview_post.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/sdasdasda.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/snippet_top_prolfilebar.xml" value="0.16893115942028986" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/test.xml" value="0.21" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/test_acc.xml" value="0.23125" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.5" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_post.xml" value="0.2524752475247525" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/volunteering/vpost.xml" value="0.13272543059777103" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/vpost.xml" value="0.33" />

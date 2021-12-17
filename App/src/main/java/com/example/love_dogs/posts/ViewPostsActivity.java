@@ -25,7 +25,7 @@ public class ViewPostsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_posts);
+        setContentView(R.layout.fragment_volunteer_board);
 
         if(!User.isLoggedIn(this)){
             return;

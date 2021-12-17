@@ -12,7 +12,7 @@
         android:layout_width="379dp"
         android:layout_height="0dp"
         android:layout_marginTop="14dp"
-        android:text="I love keke"
+        android:text="some title"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold|italic"
