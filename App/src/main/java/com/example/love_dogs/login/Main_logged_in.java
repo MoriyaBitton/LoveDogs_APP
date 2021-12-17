@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
 
+import com.example.love_dogs.FragmentManager;
+import com.example.love_dogs.IFragmentBackable;
 import com.example.love_dogs.R;
 import com.example.love_dogs.posts.CreatePostActivity;
 import com.example.love_dogs.posts.LDPost;
@@ -39,6 +41,17 @@ public class Main_logged_in extends AppCompatActivity {
 //        text.setText("Hello, " + user.user_name + "!");
 
         //User.AddUser(user, "mika", "0543210123");
+    }
+
+    @Override
+    public void onBackPressed() {
+        IFragmentBackable latest = FragmentManager.latest;
+
+        if (latest == null) { // and then you define a method allowBackPressed with the logic to allow back pressed or not
+            super.onBackPressed();
+            return;
+        }
+        latest.OnBackPressed();
     }
 
     public void OnClickPost(View view){
