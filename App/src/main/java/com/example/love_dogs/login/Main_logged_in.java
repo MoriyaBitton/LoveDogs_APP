@@ -1,10 +1,12 @@
 package com.example.love_dogs.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.view.View;
 
@@ -13,21 +15,26 @@ import com.example.love_dogs.posts.CreatePostActivity;
 import com.example.love_dogs.posts.LDPost;
 import com.example.love_dogs.posts.ViewPostActivity;
 import com.example.love_dogs.posts.ViewPostsActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Main_logged_in extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_logged_in);
+        //setContentView(R.layout.activity_main_logged_in);
+        setContentView(R.layout.appnav_start);
         User user = User.getCurrentUser(this);
         if(user == null){
             return;
         }
 
-        Log.w("firebase", "number of posts : ");
+        BottomNavigationView bottomNavigationView = findViewById(R.id.main_app_bottom_nav);
+        NavController navController = Navigation.findNavController(this,  R.id.fragment_main_app);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        //Log.w("firebase", "number of posts : ");
 
-        TextView text = findViewById(R.id.uhello);
+        //TextView text = findViewById(R.id.uhello);
         //Log.d("firebase", "user missing ? " + (user == null));
 //        text.setText("Hello, " + user.user_name + "!");
 

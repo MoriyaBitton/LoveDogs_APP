@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Volunteer"
+        android:icon="@drawable/ic_baseline_volunteer"
+        android:id="@+id/volunteerBoard"/>
+    <item android:title="Dog book"
+        android:icon="@drawable/ic_baseline_local_facebook"
+        android:id="@+id/dogBook"/>
+</menu>
