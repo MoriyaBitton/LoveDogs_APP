@@ -54,15 +54,6 @@ public class MainActivity extends AppCompatActivity {
         latest.OnBackPressed();
     }
 
-    public void OnClickPost(View view){
-        TextView pid = view.findViewById(R.id.view_postID);
-        //Log.d("firebase", "pid : " + pid.getText().toString());
-        Intent intent = new Intent(this, ViewPostActivity.class);
-        LDPost.current = LDPost.all_posts.get(pid.getText());
-        startActivity(intent);
-    }
-
-
     public void OnCreatePost(View view){
         Intent intent = new Intent(MainActivity.this, CreatePostActivity.class);
         startActivity(intent);

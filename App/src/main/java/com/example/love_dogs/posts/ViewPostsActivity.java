@@ -57,18 +57,18 @@ public class ViewPostsActivity extends AppCompatActivity {
 
                         LDPost.all_posts.put(post.pid, post);
 
-                        View child_view = inflater.inflate(R.layout.vpost,null);
-                        child_view.setOnClickListener(ViewPostsActivity.this::OnClickPost);
-                        TextView title = (TextView) child_view.findViewById(R.id.view_title);
-                        title.setText(post.title);
-                        TextView location = child_view.findViewById(R.id.view_location);
-                        location.setText(post.location);
-                        TextView date = child_view.findViewById(R.id.view_date);
-                        date.setText(post.date);
-
-                        TextView pid = child_view.findViewById(R.id.view_postID);
-                        pid.setText(post.pid);
-                        layout.addView(child_view);
+//                        View child_view = inflater.inflate(R.layout.vpost,null);
+//                        child_view.setOnClickListener(ViewPostsActivity.this::OnClickPost);
+//                        TextView title = (TextView) child_view.findViewById(R.id.view_title);
+//                        title.setText(post.title);
+//                        TextView location = child_view.findViewById(R.id.view_location);
+//                        location.setText(post.location);
+//                        TextView date = child_view.findViewById(R.id.view_date);
+//                        date.setText(post.date);
+//
+//                        TextView pid = child_view.findViewById(R.id.view_postID);
+//                        pid.setText(post.pid);
+//                        layout.addView(child_view);
                     }
                 }
             }
@@ -91,11 +91,11 @@ public class ViewPostsActivity extends AppCompatActivity {
     }
 
     public void OnClickPost(View view){
-        TextView pid = view.findViewById(R.id.view_postID);
-        //Log.d("firebase", "pid : " + pid.getText().toString());
-        Intent intent = new Intent(this, ViewPostActivity.class);
-        LDPost.current = LDPost.all_posts.get(pid.getText());
-        startActivity(intent);
+//        TextView pid = view.findViewById(R.id.view_postID);
+//        //Log.d("firebase", "pid : " + pid.getText().toString());
+//        Intent intent = new Intent(this, ViewPostActivity.class);
+//        LDPost.current = LDPost.all_posts.get(pid.getText());
+//        startActivity(intent);
     }
 
 }
