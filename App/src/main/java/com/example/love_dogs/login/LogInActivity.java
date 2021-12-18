@@ -11,16 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.love_dogs.R;
-import com.example.love_dogs.map_api.Map_Api_Init;
-import com.example.love_dogs.navBarActivity;
+import com.example.love_dogs.functionality.navBarActivity;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Map;
 
 
 public class LogInActivity extends AppCompatActivity {

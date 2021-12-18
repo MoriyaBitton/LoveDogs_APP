@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Love_Dogs" >
         <activity
-            android:name=".navBarActivity"
+            android:name=".functionality.navBarActivity"
             android:exported="false"
             android:label="@string/title_activity_nav_bar" />
         <activity
@@ -42,7 +42,7 @@
             android:name=".posts.ViewPostActivity"
             android:exported="true" />
         <activity
-            android:name=".login.Main_logged_in"
+            android:name=".functionality.MainActivity"
             android:exported="false" />
         <activity
             android:name=".login.RegisterActivity"

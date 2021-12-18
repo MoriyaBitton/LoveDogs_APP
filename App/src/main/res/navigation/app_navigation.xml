@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_dog_book" />
     <fragment
         android:id="@+id/volunteerBoard"
-        android:name="com.example.love_dogs.VolunteerBoard"
+        android:name="com.example.love_dogs.volunteers.VolunteerBoard"
         android:label="fragment_volunteer_board"
         tools:layout="@layout/fragment_volunteer_board" />
     <fragment

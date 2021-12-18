@@ -1,4 +1,4 @@
-package com.example.love_dogs;
+package com.example.love_dogs.volunteers;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.love_dogs.R;
 import com.example.love_dogs.posts.LDPost;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

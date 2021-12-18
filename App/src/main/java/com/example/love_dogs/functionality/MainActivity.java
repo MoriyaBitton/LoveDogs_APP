@@ -1,4 +1,4 @@
-package com.example.love_dogs.login;
+package com.example.love_dogs.functionality;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -10,16 +10,16 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.view.View;
 
-import com.example.love_dogs.FragmentManager;
-import com.example.love_dogs.IFragmentBackable;
 import com.example.love_dogs.R;
+import com.example.love_dogs.login.UpdateUserActivity;
+import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.CreatePostActivity;
 import com.example.love_dogs.posts.LDPost;
 import com.example.love_dogs.posts.ViewPostActivity;
 import com.example.love_dogs.posts.ViewPostsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Main_logged_in extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,17 +64,17 @@ public class Main_logged_in extends AppCompatActivity {
 
 
     public void OnCreatePost(View view){
-        Intent intent = new Intent(Main_logged_in.this, CreatePostActivity.class);
+        Intent intent = new Intent(MainActivity.this, CreatePostActivity.class);
         startActivity(intent);
     }
 
     public void ViewPosts(View view){
-        Intent intent = new Intent(Main_logged_in.this, ViewPostsActivity.class);
+        Intent intent = new Intent(MainActivity.this, ViewPostsActivity.class);
         startActivity(intent);
     }
 
     public void UpdateProfile(View view){
-        Intent intent = new Intent(Main_logged_in.this, UpdateUserActivity.class);
+        Intent intent = new Intent(MainActivity.this, UpdateUserActivity.class);
         startActivity(intent);
     }
 }

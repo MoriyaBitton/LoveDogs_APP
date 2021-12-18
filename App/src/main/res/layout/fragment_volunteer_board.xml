@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/images__6_"
-    tools:context=".VolunteerBoard">
+    tools:context=".volunteers.VolunteerBoard">
 
 
     <ScrollView
         android:id="@+id/vposts_vscrolll"
-        android:layout_width="387dp"
-        android:layout_height="708dp"
+        android:layout_width="400dp"
+        android:layout_height="623dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:scaleType="fitXY"
@@ -21,8 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidlineUp"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/guidlineUp">
 
         <LinearLayout
             android:id="@+id/vscroll"
@@ -44,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33"
+        app:layout_constraintGuide_percent="0.9"
         app:layout_constraintHeight_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline

@@ -1,6 +1,4 @@
-package com.example.love_dogs;
-
-import androidx.fragment.app.Fragment;
+package com.example.love_dogs.functionality;
 
 public class FragmentManager {
     public static IFragmentBackable latest;

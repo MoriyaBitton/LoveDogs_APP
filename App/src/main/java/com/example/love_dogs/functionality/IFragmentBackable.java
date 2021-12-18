@@ -1,4 +1,4 @@
-package com.example.love_dogs;
+package com.example.love_dogs.functionality;
 
 public interface IFragmentBackable {
     void OnBackPressed();

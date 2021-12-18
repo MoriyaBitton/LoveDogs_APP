@@ -1,6 +1,8 @@
-package com.example.love_dogs;
+package com.example.love_dogs.functionality;
 
 import android.os.Bundle;
+
+import com.example.love_dogs.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

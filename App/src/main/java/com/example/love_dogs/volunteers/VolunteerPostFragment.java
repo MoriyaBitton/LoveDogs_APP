@@ -1,16 +1,18 @@
-package com.example.love_dogs;
+package com.example.love_dogs.volunteers;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.FragmentManager;
+import com.example.love_dogs.functionality.IFragmentBackable;
 import com.example.love_dogs.posts.LDPost;
 
 /**

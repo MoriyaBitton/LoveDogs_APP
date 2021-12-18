@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.love_dogs.functionality.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -76,7 +77,7 @@ public class User {
                     }
                     User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"), td.get("phone_number"));
                     current = c_user;
-                    Intent intent = new Intent(context, Main_logged_in.class);
+                    Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);
                     //listener.onComplete(null);
 

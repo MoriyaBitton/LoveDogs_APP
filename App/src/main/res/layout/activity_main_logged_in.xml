@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/images__13_"
-    tools:context=".login.Main_logged_in">
+    tools:context=".functionality.MainActivity">
 
     <TextView
         android:id="@+id/uhello"

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.love_dogs.functionality.MainActivity;
 import com.example.love_dogs.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
@@ -65,7 +66,7 @@ public class UpdateUserActivity extends AppCompatActivity {
         user = User.AddUser(firebaseUser, name.getText().toString(), phone.getText().toString(), new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Intent intent = new Intent(UpdateUserActivity.this, Main_logged_in.class);
+                Intent intent = new Intent(UpdateUserActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -73,7 +74,7 @@ public class UpdateUserActivity extends AppCompatActivity {
     }
 
     public void OnBack(View button){
-        Intent intent = new Intent(UpdateUserActivity.this, Main_logged_in.class);
+        Intent intent = new Intent(UpdateUserActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }
