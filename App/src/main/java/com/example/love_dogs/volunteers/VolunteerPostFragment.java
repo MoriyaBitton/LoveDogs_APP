@@ -52,7 +52,7 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
         location.setText(post.location);
         TextView date = view.findViewById(R.id.pdate);
         date.setText(post.date);
-        TextView body = view.findViewById(R.id.pbody);
+        TextView body = view.findViewById(R.id.dp_body);
         body.setText(post.body);
         TextView author = view.findViewById(R.id.pauthor);
         author.setText(post.author);

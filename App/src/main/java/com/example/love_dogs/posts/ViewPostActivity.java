@@ -30,7 +30,7 @@ public class ViewPostActivity extends AppCompatActivity {
         location.setText(post.location);
         TextView date = findViewById(R.id.pdate);
         date.setText(post.date);
-        TextView body = findViewById(R.id.pbody);
+        TextView body = findViewById(R.id.dp_body);
         body.setText(post.body);
         TextView author = findViewById(R.id.pauthor);
         author.setText(post.author);

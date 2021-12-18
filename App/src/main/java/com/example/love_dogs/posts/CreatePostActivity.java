@@ -99,7 +99,7 @@ public class CreatePostActivity extends AppCompatActivity {
         TextView title = findViewById(R.id.ptitle);
         TextView date = findViewById(R.id.pdate);
         TextView location = findViewById(R.id.plocation);
-        TextView body = findViewById(R.id.pbody);
+        TextView body = findViewById(R.id.dp_body);
     
         
         LDPost post = new LDPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),

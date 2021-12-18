@@ -94,16 +94,29 @@ public class VolunteerBoard extends Fragment {
 
                         LDPost.all_posts.put(post.pid, post);
 
-                        View child_view = linear_layour_inflater.inflate(R.layout.vpost,null);
-                        child_view.setOnClickListener(VolunteerBoard.this::OnClickPost);
-                        TextView title = (TextView) child_view.findViewById(R.id.view_title);
+                        View child_view = linear_layour_inflater.inflate(R.layout.volunteer_post_snapshot,null);
+                        View main_layout =  child_view.findViewById(R.id.vp_main);
+
+
+                        main_layout.setOnClickListener(VolunteerBoard.this::OnClickPost);
+                        TextView title = (TextView) child_view.findViewById(R.id.vp_title);
                         title.setText(post.title);
-                        TextView location = child_view.findViewById(R.id.view_location);
+                        TextView location = child_view.findViewById(R.id.vp_location);
                         location.setText(post.location);
-                        TextView date = child_view.findViewById(R.id.view_date);
+                        TextView date = child_view.findViewById(R.id.vp_time);
                         date.setText(post.date);
 
-                        TextView pid = child_view.findViewById(R.id.view_postID);
+                        TextView author = child_view.findViewById(R.id.vp_username);
+                        author.setText(post.author);
+
+                        TextView body = child_view.findViewById(R.id.vp_body);
+                        String upToNCharacters = post.body.substring(0, Math.min(post.body.length(), 20));
+                        if(upToNCharacters.length() == 20){
+                            upToNCharacters += "...";
+                        }
+                        body.setText(upToNCharacters);
+
+                        TextView pid = child_view.findViewById(R.id.vp_id);
                         pid.setText(post.pid);
                         layout.addView(child_view);
                     }
@@ -121,7 +134,7 @@ public class VolunteerBoard extends Fragment {
     }
 
     public void OnClickPost(View view){
-        TextView pid = view.findViewById(R.id.view_postID);
+        TextView pid = view.findViewById(R.id.vp_id);
          LDPost.current = LDPost.all_posts.get(pid.getText());
 
          View v = getView().findViewById(R.id.vview_posts);

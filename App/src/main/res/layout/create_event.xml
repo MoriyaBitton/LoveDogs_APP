@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/pbody"
+        android:id="@+id/dp_body"
         android:layout_width="350dp"
         android:layout_height="93dp"
         android:layout_marginBottom="36dp"

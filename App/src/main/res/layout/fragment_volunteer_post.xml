@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbody" />
+        app:layout_constraintTop_toBottomOf="@+id/dp_body" />
 
     <Button
         android:id="@+id/Volunteer_as_driver"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbody" />
+        app:layout_constraintTop_toBottomOf="@+id/dp_body" />
 
     <TextView
         android:id="@+id/ptitle"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pbody"
+        android:id="@+id/dp_body"
         android:layout_width="338dp"
         android:layout_height="192dp"
         android:layout_marginTop="16dp"
@@ -88,7 +88,7 @@
         android:layout_height="58dp"
         android:text="TextView"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/pbody"
+        app:layout_constraintBottom_toTopOf="@+id/dp_body"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toEndOf="@+id/pdate"
