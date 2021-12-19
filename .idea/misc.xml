@@ -4,73 +4,86 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15885416666666666" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/big_round.xml" value="0.2569444444444444" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/big_round_unstroke.xml" value="0.24305555555555555" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/custom_border.xml" value="0.2569444444444444" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/ic_launcher_background.xml" value="0.15885416666666666" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/drawable/postv.xml" value="0.1412037037037037" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_blank.xml" value="0.23596014492753623" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_events.xml" value="0.23596014492753623" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_notifications.xml" value="0.22870370370370371" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_profile.xml" value="0.22870370370370371" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1753681392235609" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w936dp/content_scrolling.xml" value="0.2046875" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_login_screen.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_main_chat.xml" value="0.33" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_map_api_init.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_nav_bar.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_register_org.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_scrolling_events.xml" value="0.27291666666666664" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_user_profile.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/appnav_start.xml" value="0.25" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25512104283054005" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/content_scrolling.xml" value="0.27291666666666664" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/create_event.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.5" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dogbook_post_text.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_blank.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_dashboard.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_dog_book.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_events.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_home.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.13272543059777103" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_view_post_fragment.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/hello_user.xml" value="0.2524752475247525" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/preview_post.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/sdasdasda.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/snippet_top_prolfilebar.xml" value="0.16893115942028986" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/test.xml" value="0.21" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/test_acc.xml" value="0.23125" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.33" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.5" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/view_post.xml" value="0.2524752475247525" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/volunteer_post_snapshot.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/volunteering/vpost.xml" value="0.13272543059777103" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/vpost.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/appnav_bar.xml" value="0.20677083333333332" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/bottom_navigation.xml" value="0.23125" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/buttom_navigation.xml" value="0.2140625" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/vpost.xml" value="0.5" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/menu_scrolling_events.xml" value="0.12685185185185185" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15520833333333334" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15520833333333334" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.2346014492753623" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.2346014492753623" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.2346014492753623" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.2346014492753623" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/java/com/example/love_dogs/posts/activity_main.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/big_round.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/big_round_unstroke.xml" value="0.15394736842105264" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/custom_border.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/ic_launcher_background.xml" value="0.17796052631578949" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/ic_like_svgrepo_com.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/post_bg.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/post_bg_unbordered.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/drawable/transpernt_border.xml" value="0.20230263157894737" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_blank.xml" value="0.14375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_settings.xml" value="0.14375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_face_post.xml" value="0.1723684210526316" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_full_screen_map.xml" value="0.1713815789473684" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.144" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.2" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_map_api_init.xml" value="0.2" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_nav_bar.xml" value="0.15888157894736843" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_register_org.xml" value="0.2519736842105263" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/app_bar_home_screen.xml" value="0.1375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/content_home_screen.xml" value="0.1375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/create_event.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.4" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_blank.xml" value="0.16776315789473684" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_dashboard.xml" value="0.15888157894736843" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_events.xml" value="0.1" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_gallery.xml" value="0.1375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_notifications.xml" value="0.16776315789473684" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/layout_center_profile.xml" value="0.19210526315789472" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/main_nav_bar.xml" value="0.264" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/map_api.xml" value="0.1" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/snippet_top_prolfilebar.xml" value="0.19210526315789472" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/vpost.xml" value="0.265625" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/bottom_nav_menu.xml" value="0.16776315789473684" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/menu_scrolling_events.xml" value="0.16776315789473684" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_menu.xml" value="0.14375" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_options.xml" value="0.2519736842105263" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/xml/root_preferences.xml" value="0.19210526315789472" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_chat.xml" value="0.10277777777777777" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_test.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_user_profile.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/create_event.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.2346014492753623" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/view_event.xml" value="0.264" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/vpost.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
