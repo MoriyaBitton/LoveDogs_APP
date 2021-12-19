@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.IFragmentBackable;
+import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.LDPost;
 
 /**
@@ -46,18 +48,18 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
         LDPost post = LDPost.current;
         FragmentManager.latest = this;
 
-        TextView title = view.findViewById(R.id.ptitle);
+        TextView title = view.findViewById(R.id.vvp_title);
         title.setText(post.title);
-        TextView location = view.findViewById(R.id.plocation);
+        TextView location = view.findViewById(R.id.vvp_location);
         location.setText(post.location);
-        TextView date = view.findViewById(R.id.pdate);
+        TextView date = view.findViewById(R.id.vvp_time);
         date.setText(post.date);
-        TextView body = view.findViewById(R.id.dp_body);
+        TextView body = view.findViewById(R.id.vvp_body);
         body.setText(post.body);
-        TextView author = view.findViewById(R.id.pauthor);
+        TextView author = view.findViewById(R.id.vvp_username);
         author.setText(post.author);
 
-        Button back = view.findViewById(R.id.vpost_back);
+        Button back = view.findViewById(R.id.vvp_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +67,14 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
             }
         });
 
-        // Inflate the layout for this fragment
+        User user = User.getCurrentRaw();
+       Button edit = view.findViewById(R.id.vvp_edit);
+        if(user.uid.equals(post.authorId)){
+            edit.setVisibility(View.VISIBLE);
+            edit.setOnClickListener(this::OnEdit);
+        }else{
+            edit.setVisibility(View.GONE);
+        }
         return view;
     }
 
@@ -74,5 +83,9 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
         container.removeView(post_layout);
         parent.setVisibility(View.VISIBLE);
         FragmentManager.latest = null;
+    }
+
+    public void OnEdit(View view){
+        OnBackPressed();
     }
 }

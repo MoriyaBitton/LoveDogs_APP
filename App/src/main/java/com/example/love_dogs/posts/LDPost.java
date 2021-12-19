@@ -18,7 +18,7 @@ public class LDPost {
 
     public String title;
     public String author;
-    public String authorID;
+    public String authorId;
     public String date;
     public String location;
     public String body;
@@ -32,7 +32,7 @@ public class LDPost {
     public LDPost(String title, String author, String authorID, String date, String location, String body){
         this.title = title;
         this.author = author;
-        this.authorID = authorID;
+        this.authorId = authorID;
         this.date = date;
         try {
              Date r_date = simpleDateFormat.parse(date);
@@ -62,7 +62,7 @@ public class LDPost {
 
         Map<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("/posts/" + this.pid, postValues);
-        childUpdates.put("/user-posts/" + this.authorID + "/" + this.pid, postValues);
+        childUpdates.put("/user-posts/" + this.authorId + "/" + this.pid, postValues);
 
         mDatabase.updateChildren(childUpdates);
     }
@@ -70,7 +70,7 @@ public class LDPost {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("authorId", authorID);
+        result.put("authorId", authorId);
         result.put("author", author);
         result.put("title", title);
         result.put("location", location);

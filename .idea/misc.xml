@@ -12,6 +12,8 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_blank.xml" value="0.23596014492753623" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_events.xml" value="0.23596014492753623" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_notifications.xml" value="0.22870370370370371" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/fragments/layout/fragment_profile.xml" value="0.22870370370370371" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1753681392235609" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout-w936dp/content_scrolling.xml" value="0.2046875" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_login_screen.xml" value="0.16893115942028986" />
@@ -39,7 +41,7 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.13272543059777103" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_view_post_fragment.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.23596014492753623" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/hello_user.xml" value="0.2524752475247525" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/preview_post.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/sdasdasda.xml" value="0.16893115942028986" />
