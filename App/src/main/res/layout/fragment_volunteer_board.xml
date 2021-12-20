@@ -9,33 +9,53 @@
     tools:context=".volunteers.VolunteerBoard">
 
 
-    <ScrollView
-        android:id="@+id/vposts_vscrolll"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/guidelineDown"
         app:layout_constraintDimensionRatio=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidlineUp">
+        app:layout_constraintTop_toTopOf="@+id/guidlineUp"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/vscroll"
+        <Button
+            android:id="@+id/vb_add_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="250dp"
+            android:text="Add Post"
+            app:backgroundTint="#aaa"
+            app:icon="@drawable/ic_post"
+            app:iconGravity="start" />
+
+        <ScrollView
+            android:id="@+id/vposts_vscrolll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="fitXY">
+
+            <LinearLayout
+                android:id="@+id/vscroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidlineUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintGuide_percent="0.09"
         app:layout_constraintHeight_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline

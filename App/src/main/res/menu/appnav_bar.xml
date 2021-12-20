@@ -4,7 +4,7 @@
     <item android:title="Volunteer"
         android:icon="@drawable/ic_baseline_volunteer"
         android:id="@+id/volunteerBoard"/>
-    <item android:title="Dog book"
+    <item android:title="insta dog"
         android:icon="@drawable/ic_baseline_local_facebook"
-        android:id="@+id/dogBook"/>
+        android:id="@+id/instaDog"/>
 </menu>

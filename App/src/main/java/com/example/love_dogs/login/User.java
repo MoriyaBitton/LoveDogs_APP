@@ -26,6 +26,7 @@ public class User {
     public String email;
     public String user_name;
     public String phone_number;
+    public String organizationID;
 
     public User(){
 
@@ -76,6 +77,7 @@ public class User {
                         return;
                     }
                     User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"), td.get("phone_number"));
+                    c_user.organizationID = td.get("organizationID");
                     current = c_user;
                     Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);

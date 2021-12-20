@@ -23,7 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/big_round"
+            android:background="#f0f0f0"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -76,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:minHeight="48dp"
+                    android:background="#f0f0f0"
                     android:text="Post Description"
                     android:textAlignment="center"
                     android:textColorHighlight="@color/black"
@@ -94,7 +97,7 @@
                     android:orientation="horizontal">
 
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                         android:id="@+id/dp_like"
                         style="@style/Widget.MaterialComponents.Button.Icon"
                         android:layout_width="match_parent"
@@ -108,7 +111,7 @@
                         app:iconGravity="start" />
 
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                         android:id="@+id/dp_comment"
                         style="@style/Widget.MaterialComponents.Button.Icon"
                         android:layout_width="match_parent"

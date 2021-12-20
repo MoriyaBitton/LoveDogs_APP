@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.LDPost;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -68,6 +70,11 @@ public class VolunteerBoard extends Fragment {
         View view = inflater.inflate(R.layout.fragment_volunteer_board, container, false);
         // Inflate the layout for this fragment
 
+        Button add_post = view.findViewById(R.id.vb_add_post);
+        User me = User.getCurrentRaw();
+        if(me.organizationID == null) {
+            add_post.setVisibility(View.GONE);
+        }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
         LinearLayout layout = view.findViewById(R.id.vscroll);

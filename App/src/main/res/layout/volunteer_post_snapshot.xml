@@ -5,7 +5,7 @@
     android:layout_width="360dp"
     android:layout_height="wrap_content"
     android:layout_gravity="top|center"
-    android:layout_marginTop="35dp">
+    android:layout_marginTop="25dp">
 
     <LinearLayout
         android:id="@+id/vp_main"
@@ -13,13 +13,6 @@
         android:layout_height="match_parent"
         android:clickable="true"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/vp_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="some id"
-            android:textColor="#00FFFFFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,6 +119,14 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/vp_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="some id"
+            android:textColor="#00FFFFFF"
+            android:textSize="10sp" />
 
     </LinearLayout>
 
