@@ -16,9 +16,9 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
 
     private int layout_xml_id;
     private int root_id;
-    private View parent_view;
-    private ViewGroup container;
-    private View root_view;
+    protected View parent_view;
+    protected ViewGroup container;
+    protected View root_view;
     private boolean inQueue = false;
 
     public FragmentExtended(int layout_xml_id, int layout_root_id, View parent_view) {
@@ -49,7 +49,7 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
         this.root_view = view.findViewById(root_id);
         FragmentManager.AddToStack(this);
         this.inQueue = true;
-        //OnCreateView(view);
+        OnCreateView(view);
         return view;
     }
 
@@ -82,5 +82,6 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
         activity.getSupportFragmentManager().beginTransaction().replace(id, next).commit();
 
         this.container.removeView(this.root_view);
+        FragmentManager.RemoveSelf(this);
     }
 }

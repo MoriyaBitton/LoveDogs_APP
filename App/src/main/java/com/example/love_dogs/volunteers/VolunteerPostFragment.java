@@ -88,7 +88,7 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
     }
 
     public void OnEdit(View view){
-        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent);
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent,false);
         myFragment.ShowFragment(this);
 
         container.removeView(post_layout);

@@ -77,15 +77,7 @@ public class VolunteerBoard extends Fragment {
         if(me.organizationID == null) {
             add_post.setVisibility(View.GONE);
         }else{
-            add_post.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    View parent = getView().findViewById(R.id.vview_posts);
-                    parent.setVisibility(View.GONE);
-                    FragmentExtended myFragment = new VolunteerPostEditkFragment(parent);
-                    myFragment.ShowFragment(VolunteerBoard.this);
-                }
-            });
+            add_post.setOnClickListener(this::OnCreatePost);
         }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -152,6 +144,14 @@ public class VolunteerBoard extends Fragment {
 
         return view;
     }
+
+    public void OnCreatePost(View view){
+        View parent = getView().findViewById(R.id.vview_posts);
+        parent.setVisibility(View.GONE);
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent, true);
+        myFragment.ShowFragment(VolunteerBoard.this);
+    }
+
 
     public void OnClickPost(View view){
         TextView pid = view.findViewById(R.id.vp_id);
