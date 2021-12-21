@@ -1,6 +1,7 @@
 package com.example.love_dogs.posts;
 
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
@@ -23,6 +24,7 @@ public class LDPost {
     public String location;
     public String body;
     public String pid;
+    public String url;
     public long timestamp;
 
     public LDPost(){

@@ -2,6 +2,7 @@ package com.example.love_dogs.volunteers;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.IFragmentBackable;
 import com.example.love_dogs.login.User;
@@ -86,6 +88,9 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
     }
 
     public void OnEdit(View view){
-        OnBackPressed();
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent);
+        myFragment.ShowFragment(this);
+
+        container.removeView(post_layout);
     }
 }
