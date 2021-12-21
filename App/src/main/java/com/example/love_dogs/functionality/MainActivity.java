@@ -45,8 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        IFragmentBackable latest = FragmentManager.latest;
+        // new Way
+        if(FragmentManager.BackOnce()){
+            return;
+        }
 
+        // Old way
+        IFragmentBackable latest = FragmentManager.latest;
         if (latest == null) { // and then you define a method allowBackPressed with the logic to allow back pressed or not
             super.onBackPressed();
             return;

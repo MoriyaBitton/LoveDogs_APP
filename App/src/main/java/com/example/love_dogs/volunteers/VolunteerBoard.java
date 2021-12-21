@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.LDPost;
 import com.google.firebase.database.DataSnapshot;
@@ -75,6 +76,16 @@ public class VolunteerBoard extends Fragment {
         User me = User.getCurrentRaw();
         if(me.organizationID == null) {
             add_post.setVisibility(View.GONE);
+        }else{
+            add_post.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View parent = getView().findViewById(R.id.vview_posts);
+                    parent.setVisibility(View.GONE);
+                    FragmentExtended myFragment = new VolunteerPostEditkFragment(parent);
+                    myFragment.ShowFragment(VolunteerBoard.this);
+                }
+            });
         }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -138,6 +149,7 @@ public class VolunteerBoard extends Fragment {
                 // ...
             }
         });
+
         return view;
     }
 

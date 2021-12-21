@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
@@ -30,6 +31,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
 
     @Override
     public void OnCreateView(View view) {
-
+        TextView text = view.findViewById(R.id.vvep_text);
+        text.setText("something");
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
     private View parent_view;
     private ViewGroup container;
     private View root_view;
+    private boolean inQueue = false;
 
     public FragmentExtended(int layout_xml_id, int layout_root_id, View parent_view) {
         this.layout_xml_id = layout_xml_id;
@@ -28,6 +30,10 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
 
     public FragmentExtended(int layout_xml_id, int layout_root_id, FragmentExtended other){
         this(layout_xml_id, layout_root_id, other.parent_view);
+    }
+
+    public boolean IsInQueue(){
+        return inQueue;
     }
 
     @Override
@@ -41,7 +47,9 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
         View view = inflater.inflate(layout_xml_id, container, false);
         this.container = container;
         this.root_view = view.findViewById(root_id);
-        OnCreateView(view);
+        FragmentManager.AddToStack(this);
+        this.inQueue = true;
+        //OnCreateView(view);
         return view;
     }
 
