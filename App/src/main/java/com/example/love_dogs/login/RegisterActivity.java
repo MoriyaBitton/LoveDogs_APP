@@ -93,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                                             @Override
                                             public void onSuccess(Void unused) {
-                                                Log.w("RegisterActivity","Created user Successfully.");
                                                 Toast.makeText(RegisterActivity.this, "Registered Successfully,Moved to login page",
                                                         Toast.LENGTH_LONG).show();
                                                 Intent intent = new Intent(RegisterActivity.this, LogInActivity.class);
