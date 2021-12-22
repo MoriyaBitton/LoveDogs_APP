@@ -60,19 +60,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
 
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="150dp"
+            android:layout_gravity="bottom|center"
+            >
+
+            <RadioButton android:id="@+id/radio_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User" />
+
+            <RadioButton android:id="@+id/radio_comp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organiztion"
+                />
+        </RadioGroup>
 
         <Button
             android:id="@+id/Reg_Register"
             style="@style/reg"
             android:layout_width="206dp"
             android:layout_height="63dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="bottom|center"
             android:text="Register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"></Button>
+
+
+
 
     </LinearLayout>
 
@@ -90,14 +112,17 @@
             android:id="@+id/userBtn"
             android:text="User"
             style="@style/userOrgBtn"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:visibility="gone">
         </Button>
 
         <Button
             android:id="@+id/organizationBtn"
             style="@style/userOrgBtn"
             android:text="organization"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:visibility="gone">
+
 
         </Button>
 

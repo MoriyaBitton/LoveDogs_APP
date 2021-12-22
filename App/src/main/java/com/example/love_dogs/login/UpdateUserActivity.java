@@ -63,14 +63,14 @@ public class UpdateUserActivity extends AppCompatActivity {
             user.phone_number = phone.getText().toString();
         }
 
-        user = User.AddUser(firebaseUser, name.getText().toString(), phone.getText().toString(), new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Intent intent = new Intent(UpdateUserActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-//        User.current = user;
+//        user = User.AddUser(firebaseUser, name.getText().toString(), phone.getText().toString(), "null",, new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Intent intent = new Intent(UpdateUserActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+////        User.current = user;
     }
 
     public void OnBack(View button){
