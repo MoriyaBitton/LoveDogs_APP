@@ -112,6 +112,7 @@ public class InstaDogBoard extends Fragment {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             img.setImageBitmap(imageBitmap);
             img.setVisibility(View.VISIBLE);
+            img.setAdjustViewBounds(true);
 
         }
     }

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintGuide_percent="0.100115076"
         app:layout_constraintHeight_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -40,7 +40,7 @@
                 android:layout_weight="0.2"
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="25dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -49,38 +49,42 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/big_round"
                     android:orientation="vertical">
 
                     <EditText
                         android:id="@+id/Post_text"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
+                        android:layout_height="80dp"
                         android:hint="Write your description here ..."
                         android:inputType="textMultiLine"
                         android:maxHeight="100dp"
                         android:paddingLeft="10dp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        >
+
                     <ImageView
                         android:id="@+id/photo_post"
-                        android:layout_width="240dp"
-                        android:layout_height="240dp"
-                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:visibility="gone"/>
+                        </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
                         android:background="#aaa"
                         android:minHeight="50px">
 
                         <Button
                             android:id="@+id/dbpost"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_baseline_post_add_24"
@@ -88,9 +92,9 @@
 
                         <Button
                             android:id="@+id/dbpicture"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.2"
+                            android:layout_weight="1"
                             android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
                             android:text="photo" />
                     </LinearLayout>
