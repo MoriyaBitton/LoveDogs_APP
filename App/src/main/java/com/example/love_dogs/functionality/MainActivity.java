@@ -7,15 +7,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.view.View;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.login.UpdateUserActivity;
 import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.CreatePostActivity;
-import com.example.love_dogs.posts.LDPost;
-import com.example.love_dogs.posts.ViewPostActivity;
 import com.example.love_dogs.posts.ViewPostsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -56,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
             return;
         }
-        latest.OnBackPressed();
+        latest.onBackPressed();
     }
 
     public void OnCreatePost(View view){

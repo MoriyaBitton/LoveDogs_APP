@@ -3,8 +3,6 @@ package com.example.love_dogs.functionality;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.love_dogs.posts.ViewPostActivity;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -20,7 +18,7 @@ public class FragmentManager {
     public static boolean BackOnce(){
         if(list.size() > 0){
             FragmentExtended last = list.pop();
-            last.OnBackPressed();
+            last.onBackPressed();
             return true;
         }
         return false;
@@ -48,7 +46,7 @@ public class FragmentManager {
                 if(current == fragment){
                     break;
                 }
-                current.OnBackPressed();
+                current.onBackPressed();
             }
         }
     }

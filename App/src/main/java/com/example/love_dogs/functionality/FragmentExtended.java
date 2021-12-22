@@ -4,13 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import com.example.love_dogs.R;
-import com.example.love_dogs.volunteers.VolunteerPostFragment;
 
 public abstract class FragmentExtended extends Fragment implements IFragmentBackable {
 
@@ -49,26 +45,26 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
         this.root_view = view.findViewById(root_id);
         FragmentManager.AddToStack(this);
         this.inQueue = true;
-        OnCreateView(view);
+        onCreateView(view);
         return view;
     }
 
-    public abstract void OnCreateView(View view);
+    public abstract void onCreateView(View view);
 
     @Override
-    public void OnBackPressed() {
+    public void onBackPressed() {
         container.removeView(this.root_view);
         parent_view.setVisibility(View.VISIBLE);
         FragmentManager.latest = null;
     }
 
-    public void ShowFragment(Fragment parent){
+    public void showFragment(Fragment parent){
         AppCompatActivity activity = (AppCompatActivity) parent.getContext();
         int id = ((ViewGroup)parent.getView().getParent()).getId();
         activity.getSupportFragmentManager().beginTransaction().replace(id, this).commit();
     }
 
-    public void PutFragmentOnTop(FragmentExtended next){
+    public void putFragmentOnTop(FragmentExtended next){
         this.root_view.setVisibility(View.GONE);
 
         AppCompatActivity activity = (AppCompatActivity) this.root_view.getContext();
@@ -76,7 +72,7 @@ public abstract class FragmentExtended extends Fragment implements IFragmentBack
         activity.getSupportFragmentManager().beginTransaction().replace(id, next).commit();
     }
 
-    public void SwapFragments(FragmentExtended next){
+    public void swapFragments(FragmentExtended next){
         AppCompatActivity activity = (AppCompatActivity) this.root_view.getContext();
         int id = ((ViewGroup)this.root_view.getParent()).getId();
         activity.getSupportFragmentManager().beginTransaction().replace(id, next).commit();

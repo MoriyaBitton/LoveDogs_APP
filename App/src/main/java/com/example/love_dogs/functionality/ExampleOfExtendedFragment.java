@@ -7,8 +7,6 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.love_dogs.R;
-import com.example.love_dogs.functionality.FragmentExtended;
-import com.example.love_dogs.volunteers.VolunteerPostEditkFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +23,7 @@ public class ExampleOfExtendedFragment extends FragmentExtended {
     }
 
     @Override
-    public void OnCreateView(View view) {
+    public void onCreateView(View view) {
         TextView text = view.findViewById(R.id.vvp_title);
         text.setText("just a test title");
     }
@@ -35,7 +33,7 @@ public class ExampleOfExtendedFragment extends FragmentExtended {
         // you need to pass what is the "view" root, or something, and pass the current fragment.
         // you also need to know the container! ( with you get OnCreateView bla bla bla ).
         FragmentExtended myFragment = new ExampleOfExtendedFragment(parentView);
-        myFragment.ShowFragment(other);
+        myFragment.showFragment(other);
     }
 
     void CreateOtherFragemt(){
@@ -44,11 +42,11 @@ public class ExampleOfExtendedFragment extends FragmentExtended {
         FragmentExtended myFragment = new ExampleOfExtendedFragment(parent_view);
 
         // destroy this fragment and set myFragment as new
-        this.SwapFragments(myFragment);
+        this.swapFragments(myFragment);
         // or
         // hide this fragment, and set myFragment on top hence if we press back you get the old one.
-        this.PutFragmentOnTop(myFragment);
+        this.putFragmentOnTop(myFragment);
         // do nothing with this one, and puy myFragment on top, with means you would see text one on another.
-        myFragment.ShowFragment(this);
+        myFragment.showFragment(this);
     }
 }

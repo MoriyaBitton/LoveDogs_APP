@@ -1,21 +1,13 @@
 package com.example.love_dogs.volunteers;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
-import com.example.love_dogs.functionality.FragmentManager;
-import com.example.love_dogs.functionality.IFragmentBackable;
 import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.LDPost;
 
@@ -23,32 +15,18 @@ import com.example.love_dogs.posts.LDPost;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class VolunteerPostFragment extends Fragment implements IFragmentBackable {
+public class VolunteerPostFragment extends FragmentExtended {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private View parent;
-    private View post_layout;
-    private ViewGroup container;
-
-    public VolunteerPostFragment() {
-        // Required empty public constructor
+    public VolunteerPostFragment(View parent_view){
+        super(R.layout.fragment_volunteer_post, R.id.vpost_layout, parent_view);
     }
 
-    public VolunteerPostFragment(View parent){
-        this.parent = parent;
-    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_volunteer_post, container, false);
-
-        this.container = container;
-        this.post_layout = view.findViewById(R.id.vpost_layout);
-
+    public void onCreateView(View view) {
         LDPost post = LDPost.current;
-        FragmentManager.latest = this;
 
         TextView title = view.findViewById(R.id.vvp_title);
         title.setText(post.title);
@@ -65,7 +43,7 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OnBackPressed();
+                onBackPressed();
             }
         });
 
@@ -73,24 +51,14 @@ public class VolunteerPostFragment extends Fragment implements IFragmentBackable
        Button edit = view.findViewById(R.id.vvp_edit);
         if(user.uid.equals(post.authorId)){
             edit.setVisibility(View.VISIBLE);
-            edit.setOnClickListener(this::OnEdit);
+            edit.setOnClickListener(this::onEdit);
         }else{
             edit.setVisibility(View.GONE);
         }
-        return view;
     }
 
-    @Override
-    public void OnBackPressed() {
-        container.removeView(post_layout);
-        parent.setVisibility(View.VISIBLE);
-        FragmentManager.latest = null;
-    }
-
-    public void OnEdit(View view){
-        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent,false);
-        myFragment.ShowFragment(this);
-
-        container.removeView(post_layout);
+    public void onEdit(View view){
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent_view,false);
+        swapFragments(myFragment);
     }
 }

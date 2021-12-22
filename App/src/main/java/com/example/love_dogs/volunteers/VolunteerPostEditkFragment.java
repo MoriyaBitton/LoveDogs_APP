@@ -1,13 +1,9 @@
 package com.example.love_dogs.volunteers;
 
-import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 
 import android.text.InputType;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,7 +12,6 @@ import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.GetDateTime;
-import com.example.love_dogs.functionality.IFragmentBackable;
 import com.example.love_dogs.login.User;
 import com.example.love_dogs.posts.LDPost;
 
@@ -43,7 +38,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
     }
 
     @Override
-    public void OnCreateView(View view) {
+    public void onCreateView(View view) {
         title = view.findViewById(R.id.vvep_title);
         location = view.findViewById(R.id.vvep_location);
         date = view.findViewById(R.id.vvep_time);
@@ -76,14 +71,14 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OnBackPressed();
+                onBackPressed();
             }
         });
 
-        update_button.setOnClickListener(this::OnUpdateClicked);
+        update_button.setOnClickListener(this::onUpdateClicked);
     }
 
-    void OnUpdateClicked(View view){
+    void onUpdateClicked(View view){
         User user = User.getCurrentRaw();
         LDPost newPost = new LDPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());

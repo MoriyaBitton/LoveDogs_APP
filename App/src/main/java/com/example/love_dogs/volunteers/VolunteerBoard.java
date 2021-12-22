@@ -149,7 +149,7 @@ public class VolunteerBoard extends Fragment {
         View parent = getView().findViewById(R.id.vview_posts);
         parent.setVisibility(View.GONE);
         FragmentExtended myFragment = new VolunteerPostEditkFragment(parent, true);
-        myFragment.ShowFragment(VolunteerBoard.this);
+        myFragment.showFragment(VolunteerBoard.this);
     }
 
 
