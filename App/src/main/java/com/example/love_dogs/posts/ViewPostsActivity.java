@@ -2,16 +2,15 @@ package com.example.love_dogs.posts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.login.User;
+import com.example.love_dogs.volunteers.VolunteerPost;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -52,10 +51,10 @@ public class ViewPostsActivity extends AppCompatActivity {
                     Log.w("firebase", "number of posts : " + dataSnapshot.getChildrenCount());
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
                         // Extract a Message object from the DataSnapshot
-                        LDPost post = child.getValue(LDPost.class);
+                        VolunteerPost post = child.getValue(VolunteerPost.class);
                         Log.d("firebase", post.location);
 
-                        LDPost.all_posts.put(post.pid, post);
+                        VolunteerPost.all_posts.put(post.pid, post);
 
 //                        View child_view = inflater.inflate(R.layout.vpost,null);
 //                        child_view.setOnClickListener(ViewPostsActivity.this::OnClickPost);

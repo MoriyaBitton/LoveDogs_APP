@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.login.User;
-import com.example.love_dogs.posts.LDPost;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,7 +25,7 @@ public class VolunteerPostFragment extends FragmentExtended {
 
     @Override
     public void onCreateView(View view) {
-        LDPost post = LDPost.current;
+        VolunteerPost post = VolunteerPost.current;
 
         TextView title = view.findViewById(R.id.vvp_title);
         title.setText(post.title);

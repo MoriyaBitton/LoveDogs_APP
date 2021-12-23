@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.login.User;
-import com.example.love_dogs.posts.LDPost;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -100,10 +99,10 @@ public class VolunteerBoard extends Fragment {
                     Log.w("firebase", "number of posts : " + dataSnapshot.getChildrenCount());
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
                         // Extract a Message object from the DataSnapshot
-                        LDPost post = child.getValue(LDPost.class);
+                        VolunteerPost post = child.getValue(VolunteerPost.class);
                         Log.d("firebase", post.location);
 
-                        LDPost.all_posts.put(post.pid, post);
+                        VolunteerPost.all_posts.put(post.pid, post);
 
                         View child_view = linear_layour_inflater.inflate(R.layout.volunteer_post_snapshot,null);
                         View main_layout =  child_view.findViewById(R.id.vp_main);
@@ -155,7 +154,7 @@ public class VolunteerBoard extends Fragment {
 
     public void OnClickPost(View view){
         TextView pid = view.findViewById(R.id.vp_id);
-         LDPost.current = LDPost.all_posts.get(pid.getText());
+         VolunteerPost.current = VolunteerPost.all_posts.get(pid.getText());
 
          View v = getView().findViewById(R.id.vview_posts);
          v.setVisibility(View.GONE);

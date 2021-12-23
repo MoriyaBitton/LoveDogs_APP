@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/Type"
+            android:id="@+id/vvepf_type"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -26,7 +26,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/vvepf_num"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.5"

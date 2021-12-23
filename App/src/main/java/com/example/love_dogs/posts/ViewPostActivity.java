@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.login.User;
+import com.example.love_dogs.volunteers.VolunteerPost;
 
 public class ViewPostActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class ViewPostActivity extends AppCompatActivity {
         }
         setContentView(R.layout.fragment_volunteer_post);
 
-        LDPost post = LDPost.current;
+        VolunteerPost post = VolunteerPost.current;
 
         TextView title = findViewById(R.id.ptitle);
         title.setText(post.title);

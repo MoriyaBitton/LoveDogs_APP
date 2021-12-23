@@ -19,7 +19,6 @@ import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.GetDateTime;
 import com.example.love_dogs.login.User;
-import com.example.love_dogs.posts.LDPost;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,7 +29,7 @@ import java.util.Date;
  * create an instance of this fragment.
  */
 public class VolunteerPostEditkFragment extends FragmentExtended {
-    ArrayList<View> roles = new ArrayList<>();
+    ArrayList<View> roles_field_views = new ArrayList<>();
     boolean new_post = true;
 
     TextView title;
@@ -57,7 +56,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
 
         Button update_button = view.findViewById(R.id.vvep_update);
         if(!new_post){
-            LDPost post = LDPost.current;
+            VolunteerPost post = VolunteerPost.current;
             //author.setText(post.author);
             body.setText(post.body);
             date.setText(post.date);
@@ -68,7 +67,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
             Calendar cal = Calendar.getInstance();
             cal.setTime(initial_date);
             cal.add(Calendar.DATE, 7); //minus number would decrement the days
-            date.setText(LDPost.simpleDateFormat.format(cal.getTime()));
+            date.setText(VolunteerPost.simpleDateFormat.format(cal.getTime()));
             update_button.setText("Post");
         }
 
@@ -94,10 +93,10 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         add_role.setOnClickListener(this::onAddRoleClicked);
         update_button.setOnClickListener(this::onUpdateClicked);
 
-        roles.add(view.findViewById(R.id.vvep_role_1));
+        roles_field_views.add(view.findViewById(R.id.vvep_role_1));
 
 
-        for (View role_field_view: roles) {
+        for (View role_field_view: roles_field_views) {
             addRemoveButton(role_field_view);
         }
     }
@@ -108,15 +107,19 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
                 new String[]{"title", "date", "location", "body" })){
             return;
         }
+
+        if(!checkRoleFieldNotEmpty()){
+            return;
+        }
         Log.d("firebase", "all fields non empty generating new post...");
 
         User user = User.getCurrentRaw();
-        LDPost newPost = new LDPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
+        VolunteerPost newPost = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
         if(new_post){
             newPost.push();
         }else{
-            LDPost post = LDPost.current;
+            VolunteerPost post = VolunteerPost.current;
             newPost.pid = post.pid;
             newPost.updatePost();
         }
@@ -141,13 +144,13 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         View child_view = linear_layout_inflater.inflate(R.layout.volunteer_field,null);
         layout.addView(child_view);
 
-        roles.add(child_view);
+        roles_field_views.add(child_view);
         addRemoveButton(child_view);
     }
 
     void onDeleteField(View parent){
-        if(roles.size() > 1){
-            roles.remove(parent);
+        if(roles_field_views.size() > 1){
+            roles_field_views.remove(parent);
             ((ViewGroup) parent.getParent()).removeView(parent);
         }else{
             CharSequence text = "Post must have at least 1 role!";
@@ -156,5 +159,20 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
             Toast toast = Toast.makeText(getActivity(), text, duration);
             toast.show();
         }
+    }
+
+    boolean checkRoleFieldNotEmpty(){
+        for (View field_view: roles_field_views) {
+            TextView type = field_view.findViewById(R.id.vvepf_type);
+            if(FieldCheck.checkIsEmpty(type, "type cannot be empty!")){
+                return false;
+            }
+
+            TextView num = field_view.findViewById(R.id.vvepf_num);
+            if(FieldCheck.checkIsEmpty(num, "num cannot be empty!")){
+                return false;
+            }
+        }
+        return true;
     }
 }

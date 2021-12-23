@@ -1,4 +1,4 @@
-package com.example.love_dogs.posts;
+package com.example.love_dogs.volunteers;
 
 import android.util.Log;
 
@@ -12,16 +12,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LDPost {
+public class VolunteerPost {
     public static class RoleField{
         public String type;
         public int required;
         public int filled;
+        public int field_index;
     }
 
     public final static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-    public static HashMap<String, LDPost> all_posts = new HashMap<>();
-    public static LDPost current = null;
+    public static HashMap<String, VolunteerPost> all_posts = new HashMap<>();
+    public static VolunteerPost current = null;
 
     public String title;
     public String author;
@@ -35,11 +36,11 @@ public class LDPost {
     public long timestamp;
     public transient ArrayList<RoleField> roles;
 
-    public LDPost(){
+    public VolunteerPost(){
 
     }
 
-    public LDPost(String title, String author, String authorID, String date, String location, String body){
+    public VolunteerPost(String title, String author, String authorID, String date, String location, String body){
         this.title = title;
         this.author = author;
         this.authorId = authorID;

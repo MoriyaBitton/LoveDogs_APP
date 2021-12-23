@@ -3,13 +3,11 @@ package com.example.love_dogs.functionality;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.util.Log;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
-import com.example.love_dogs.posts.CreatePostActivity;
-import com.example.love_dogs.posts.LDPost;
+import com.example.love_dogs.volunteers.VolunteerPost;
 
 import java.util.Calendar;
 
@@ -29,7 +27,7 @@ public class GetDateTime {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        date_time_in.setText(LDPost.simpleDateFormat.format(calendar.getTime()));
+                        date_time_in.setText(VolunteerPost.simpleDateFormat.format(calendar.getTime()));
                     }
                 };
 

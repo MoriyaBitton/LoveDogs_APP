@@ -16,6 +16,7 @@ import android.widget.TimePicker;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.login.User;
+import com.example.love_dogs.volunteers.VolunteerPost;
 
 import java.util.Calendar;
 
@@ -77,7 +78,7 @@ public class CreatePostActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        date_time_in.setText(LDPost.simpleDateFormat.format(calendar.getTime()));
+                        date_time_in.setText(VolunteerPost.simpleDateFormat.format(calendar.getTime()));
                     }
                 };
 
@@ -102,7 +103,7 @@ public class CreatePostActivity extends AppCompatActivity {
         TextView body = findViewById(R.id.dp_body);
     
         
-        LDPost post = new LDPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
+        VolunteerPost post = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
 
 //        bundle.putString("title", title.getText().toString());
@@ -114,7 +115,7 @@ public class CreatePostActivity extends AppCompatActivity {
 //        intent.putExtras(bundle);
         post.push();
 
-        LDPost.current = post;
+        VolunteerPost.current = post;
         startActivity(intent);
     }
 }
