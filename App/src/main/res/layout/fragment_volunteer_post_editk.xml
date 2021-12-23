@@ -87,11 +87,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:layout_weight="1"
                             android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:hint="fancy title" />
+                            android:hint="fancy title"
+                            android:inputType="textPersonName" />
 
                     </LinearLayout>
 
@@ -108,7 +108,6 @@
                             android:text="Location : "
                             android:textSize="20sp"
                             android:textStyle="bold" />
-
                         <EditText
                             android:id="@+id/vvep_location"
                             android:layout_width="wrap_content"
@@ -117,8 +116,8 @@
                             android:layout_marginEnd="10dp"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:hint="Location" />
+                            android:hint="Location"
+                            android:inputType="textPersonName" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -140,10 +139,10 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:hint="username"
-                        android:visibility="invisible"
                         android:inputType="text"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
 
                     <EditText
                         android:id="@+id/vvep_time"
@@ -170,6 +169,11 @@
                         android:layout_height="200dp"
                         android:background="#00FFFFFF"
                         android:src="@drawable/images__6_" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:barrierDirection="top" />
 
                     <Button
                         android:id="@+id/button2"
@@ -199,11 +203,34 @@
                         android:textAlignment="center"
                         android:textSize="20sp" />
 
-                    <androidx.constraintlayout.widget.Barrier
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:barrierDirection="top" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/vvep_roles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/vvep_role_1"
+                        layout="@layout/volunteer_field" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/vvep_add_role"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="200dp"
+                        android:backgroundTint="#933333"
+                        android:text="Add Role" />
                 </LinearLayout>
 
                 <LinearLayout

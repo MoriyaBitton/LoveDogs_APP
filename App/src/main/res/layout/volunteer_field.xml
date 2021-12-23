@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/Type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="stewards"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="5"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/vvep_field_remove"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.01"
+            android:backgroundTint="#9A0000"
+            android:insetLeft="15dp"
+            android:insetTop="15dp"
+            android:insetRight="15dp"
+            android:insetBottom="15dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            app:icon="@drawable/ic_baseline_clear_24"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="#2C2C2C"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,18 +1,24 @@
 package com.example.love_dogs.posts;
 
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LDPost {
+    public static class RoleField{
+        public String type;
+        public int required;
+        public int filled;
+    }
+
     public final static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
     public static HashMap<String, LDPost> all_posts = new HashMap<>();
     public static LDPost current = null;
@@ -24,8 +30,10 @@ public class LDPost {
     public String location;
     public String body;
     public String pid;
-    public String url;
+    public String imgUrl;
+    public String rolesList;
     public long timestamp;
+    public transient ArrayList<RoleField> roles;
 
     public LDPost(){
 
@@ -52,6 +60,8 @@ public class LDPost {
         }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         String key = mDatabase.child("posts").push().getKey();
+        String roles = mDatabase.child("posts_roles").push().getKey();
+        this.rolesList = roles;
         this.pid = key;
 
         all_posts.put(pid, this);
@@ -80,6 +90,7 @@ public class LDPost {
         result.put("date", date);
         result.put("pid", pid);
         result.put("timestamp", timestamp);
+        result.put("roles", rolesList);
 
         return result;
     }
