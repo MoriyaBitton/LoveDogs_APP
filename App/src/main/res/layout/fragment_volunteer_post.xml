@@ -161,6 +161,17 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/vvp_volunteers_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/big_round"
+                    android:backgroundTint="@color/Dark_grey"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
@@ -178,7 +189,7 @@
                         android:textColor="@color/white" />
 
                     <Button
-                        android:id="@+id/vvp_volunteer"
+                        android:id="@+id/vvp_volunteer_button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="8dp"

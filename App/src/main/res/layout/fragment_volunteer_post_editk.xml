@@ -223,7 +223,7 @@
 
                     <include
                         android:id="@+id/vvep_role_1"
-                        layout="@layout/volunteer_field" />
+                        layout="@layout/volunteer_field_edit" />
                 </LinearLayout>
 
                 <LinearLayout

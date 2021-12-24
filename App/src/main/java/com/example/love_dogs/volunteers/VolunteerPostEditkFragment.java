@@ -24,8 +24,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Dictionary;
-import java.util.Hashtable;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -170,7 +168,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         LinearLayout layout = this.root_view.findViewById(R.id.vvep_roles);
         LayoutInflater linear_layout_inflater =  getLayoutInflater();
 
-        View child_view = linear_layout_inflater.inflate(R.layout.volunteer_field,null);
+        View child_view = linear_layout_inflater.inflate(R.layout.volunteer_field_edit,null);
         layout.addView(child_view);
 
         roles_field_views.add(child_view);
