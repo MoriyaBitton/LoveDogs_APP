@@ -23,6 +23,8 @@ import com.example.love_dogs.login.User;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,16 +32,17 @@ import java.util.Date;
  */
 public class VolunteerPostEditkFragment extends FragmentExtended {
     ArrayList<View> roles_field_views = new ArrayList<>();
-    boolean new_post = true;
 
     TextView title;
     TextView location;
     EditText date;
     TextView body;
 
-    public VolunteerPostEditkFragment(View parent_view, boolean new_post){
+    VolunteerPost post = null;
+
+    public VolunteerPostEditkFragment(View parent_view, VolunteerPost post){
         super(R.layout.fragment_volunteer_post_editk, R.id.vve_post_layout, parent_view);
-        this.new_post = new_post;
+        this.post = post;
     }
 
     public VolunteerPostEditkFragment(int layout_xml_id, int layout_root_id, FragmentExtended other) {
@@ -55,13 +58,14 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         //TextView author = view.findViewById(R.id.vvep_username);
 
         Button update_button = view.findViewById(R.id.vvep_update);
-        if(!new_post){
-            VolunteerPost post = VolunteerPost.current;
+        if(post != null){
             //author.setText(post.author);
             body.setText(post.body);
             date.setText(post.date);
             location.setText(post.location);
             title.setText(post.title);
+
+
         }else{
             Date initial_date = new Date(System.currentTimeMillis());
             Calendar cal = Calendar.getInstance();
@@ -116,10 +120,10 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         User user = User.getCurrentRaw();
         VolunteerPost newPost = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
-        if(new_post){
+
+        if(post == null){
             newPost.push();
         }else{
-            VolunteerPost post = VolunteerPost.current;
             newPost.pid = post.pid;
             newPost.updatePost();
         }

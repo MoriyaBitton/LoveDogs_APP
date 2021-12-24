@@ -84,53 +84,44 @@ public class VolunteerBoard extends Fragment {
         LayoutInflater linear_layour_inflater =  getLayoutInflater();
 
         Query myTopPostsQuery = mDatabase.child("posts").orderByChild("timestamp");
-        boolean loaded = false;
         myTopPostsQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    // TODO: handle the post
+                Log.w("firebase", "number of posts : " + dataSnapshot.getChildrenCount());
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    // Extract a Message object from the DataSnapshot
+                    VolunteerPost post = child.getValue(VolunteerPost.class);
+                    Log.d("firebase", post.location);
 
-//                    String post = dataSnapshot.getValue(String.class);
-                    if(loading == false){
-                        return;
+                    VolunteerPost.all_posts.put(post.pid, post);
+
+                    View child_view = linear_layour_inflater.inflate(R.layout.volunteer_post_snapshot,null);
+                    View main_layout =  child_view.findViewById(R.id.vp_main);
+
+
+                    main_layout.setOnClickListener(VolunteerBoard.this::OnClickPost);
+                    TextView title = (TextView) child_view.findViewById(R.id.vp_title);
+                    title.setText(post.title);
+                    TextView location = child_view.findViewById(R.id.vp_location);
+                    location.setText(post.location);
+                    TextView date = child_view.findViewById(R.id.vp_time);
+                    date.setText(post.date);
+
+                    TextView author = child_view.findViewById(R.id.vp_username);
+                    author.setText(post.author);
+
+                    TextView body = child_view.findViewById(R.id.vp_body);
+                    String upToNCharacters = post.body.substring(0, Math.min(post.body.length(), 20));
+                    if(upToNCharacters.length() == 20){
+                        upToNCharacters += "...";
                     }
-                    loading = false;
-                    Log.w("firebase", "number of posts : " + dataSnapshot.getChildrenCount());
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        // Extract a Message object from the DataSnapshot
-                        VolunteerPost post = child.getValue(VolunteerPost.class);
-                        Log.d("firebase", post.location);
+                    body.setText(upToNCharacters);
 
-                        VolunteerPost.all_posts.put(post.pid, post);
-
-                        View child_view = linear_layour_inflater.inflate(R.layout.volunteer_post_snapshot,null);
-                        View main_layout =  child_view.findViewById(R.id.vp_main);
-
-
-                        main_layout.setOnClickListener(VolunteerBoard.this::OnClickPost);
-                        TextView title = (TextView) child_view.findViewById(R.id.vp_title);
-                        title.setText(post.title);
-                        TextView location = child_view.findViewById(R.id.vp_location);
-                        location.setText(post.location);
-                        TextView date = child_view.findViewById(R.id.vp_time);
-                        date.setText(post.date);
-
-                        TextView author = child_view.findViewById(R.id.vp_username);
-                        author.setText(post.author);
-
-                        TextView body = child_view.findViewById(R.id.vp_body);
-                        String upToNCharacters = post.body.substring(0, Math.min(post.body.length(), 20));
-                        if(upToNCharacters.length() == 20){
-                            upToNCharacters += "...";
-                        }
-                        body.setText(upToNCharacters);
-
-                        TextView pid = child_view.findViewById(R.id.vp_id);
-                        pid.setText(post.pid);
-                        layout.addView(child_view);
-                    }
+                    TextView pid = child_view.findViewById(R.id.vp_id);
+                    pid.setText(post.pid);
+                    layout.addView(child_view);
                 }
+
             }
 
             @Override
@@ -147,20 +138,21 @@ public class VolunteerBoard extends Fragment {
     public void OnCreatePost(View view){
         View parent = getView().findViewById(R.id.vview_posts);
         parent.setVisibility(View.GONE);
-        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent, true);
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent, null);
         myFragment.showFragment(VolunteerBoard.this);
     }
 
 
     public void OnClickPost(View view){
         TextView pid = view.findViewById(R.id.vp_id);
-         VolunteerPost.current = VolunteerPost.all_posts.get(pid.getText());
+        VolunteerPost target = VolunteerPost.all_posts.get(pid.getText());
+         VolunteerPost.current = target;
 
          View v = getView().findViewById(R.id.vview_posts);
          v.setVisibility(View.GONE);
 
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
-        Fragment myFragment = new VolunteerPostFragment(v);
+        Fragment myFragment = new VolunteerPostFragment(v, target);
         int id = ((ViewGroup)getView().getParent()).getId();
         activity.getSupportFragmentManager().beginTransaction().replace(id, myFragment).commit();
     }

@@ -16,17 +16,17 @@ import com.example.love_dogs.login.User;
  */
 public class VolunteerPostFragment extends FragmentExtended {
 
+    private VolunteerPost post;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    public VolunteerPostFragment(View parent_view){
+    public VolunteerPostFragment(View parent_view, VolunteerPost post){
         super(R.layout.fragment_volunteer_post, R.id.vpost_layout, parent_view);
+        this.post = post;
     }
 
 
     @Override
     public void onCreateView(View view) {
-        VolunteerPost post = VolunteerPost.current;
-
         TextView title = view.findViewById(R.id.vvp_title);
         title.setText(post.title);
         TextView location = view.findViewById(R.id.vvp_location);
@@ -57,7 +57,7 @@ public class VolunteerPostFragment extends FragmentExtended {
     }
 
     public void onEdit(View view){
-        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent_view,false);
+        FragmentExtended myFragment = new VolunteerPostEditkFragment(parent_view,post);
         swapFragments(myFragment);
     }
 }

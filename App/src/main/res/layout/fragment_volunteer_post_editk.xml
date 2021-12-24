@@ -119,6 +119,7 @@
                             android:ems="10"
                             android:hint="Location"
                             android:inputType="textPersonName" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -171,11 +172,6 @@
                         android:background="#00FFFFFF"
                         android:src="@drawable/images__6_" />
 
-                    <androidx.constraintlayout.widget.Barrier
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:barrierDirection="top" />
-
                     <Button
                         android:id="@+id/button2"
                         android:layout_width="match_parent"
@@ -198,12 +194,19 @@
                         android:background="@drawable/big_round"
                         android:backgroundTint="@color/Dark_grey"
                         android:ems="10"
-                        android:text="some test"
-                        android:textColor="@color/white"
+                        android:hint="some text"
                         android:inputType="textMultiLine"
                         android:minHeight="48dp"
                         android:textAlignment="center"
-                        android:textSize="20sp" />
+                        android:textColor="@color/white"
+                        android:textColorHint="#BEC6C6C6"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:barrierDirection="top" />
 
                 </LinearLayout>
 
@@ -211,7 +214,11 @@
                     android:id="@+id/vvep_roles"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/big_round"
+                    android:backgroundTint="@color/Dark_grey"
                     android:orientation="vertical">
 
                     <include

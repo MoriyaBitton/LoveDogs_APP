@@ -23,7 +23,10 @@
             android:ems="10"
             android:gravity="center"
             android:hint="stewards"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#BEC6C6"
+            android:textColorHint="#BEC6C6C6"
+            android:textStyle="bold|italic" />
 
         <EditText
             android:id="@+id/vvepf_num"
@@ -33,7 +36,10 @@
             android:ems="10"
             android:gravity="center"
             android:hint="5"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="#BEC6C6"
+            android:textStyle="bold|italic"
+            android:textColorHint="#BEC6C6C6" />
 
         <Button
             android:id="@+id/vvep_field_remove"
