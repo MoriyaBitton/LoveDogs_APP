@@ -5,7 +5,7 @@
     android:id="@+id/user_name_reg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kawaii_dog_wallpapers_top_free_kawaii_dog_backgrounds_"
+    android:background="@drawable/_122446"
     tools:context=".login.RegisterActivity">
 
     <LinearLayout
@@ -69,18 +69,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio_user"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="User" />
 
             <RadioButton
                 android:id="@+id/radio_comp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1.7"
                 android:layout_height="wrap_content"
                 android:text="Organiztion" />
         </RadioGroup>
@@ -92,6 +94,7 @@
             android:layout_height="63dp"
             android:layout_gravity="bottom|center"
             android:layout_marginTop="0dp"
+            android:backgroundTint="@color/Dark_grey"
             android:text="Register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

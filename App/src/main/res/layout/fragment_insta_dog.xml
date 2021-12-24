@@ -87,6 +87,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Dark_grey"
                             android:drawableLeft="@drawable/ic_baseline_post_add_24"
                             android:text="post" />
 
@@ -95,6 +96,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Dark_grey"
                             android:drawableLeft="@drawable/ic_baseline_photo_camera_24"
                             android:text="photo" />
                     </LinearLayout>

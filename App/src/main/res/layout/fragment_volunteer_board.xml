@@ -5,7 +5,7 @@
     android:id="@+id/vview_posts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images__6_"
+    android:background="@drawable/_122446"
     tools:context=".volunteers.VolunteerBoard">
 
 

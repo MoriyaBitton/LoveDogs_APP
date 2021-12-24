@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images__13_"
+    android:background="@drawable/_122446"
     tools:context=".functionality.MainActivity">
 
     <TextView
@@ -25,6 +25,7 @@
         style="@style/reg"
         android:onClick="UpdateProfile"
         android:text="Update user"
+        android:backgroundTint="@color/Dark_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_marginTop="44dp"
         android:onClick="ViewPosts"
         android:text="View posts"
+        android:backgroundTint="@color/Dark_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +49,7 @@
         style="@style/reg"
         android:onClick="OnCreatePost"
         android:text="Create post"
+        android:backgroundTint="@color/Dark_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

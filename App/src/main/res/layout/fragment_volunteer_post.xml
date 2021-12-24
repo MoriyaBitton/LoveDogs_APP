@@ -5,7 +5,7 @@
     android:id="@+id/vpost_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images__14_"
+    android:background="@drawable/_122446"
     tools:context=".volunteers.VolunteerPostFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -202,9 +202,9 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:backgroundTint="#A9FF9800"
+                android:backgroundTint="@color/Dark_grey"
                 android:text="Edit"
-                android:textColor="#870900"
+                android:textColor="@color/white"
                 android:textSize="24sp" />
 
         </LinearLayout>

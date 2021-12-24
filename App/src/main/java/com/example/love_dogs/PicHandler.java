@@ -60,14 +60,14 @@ public class PicHandler extends AppCompatActivity {
 
     private void checkFilePermissions(){
 
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP){
-                int permissionCheck = PicHandler.this.checkSelfPermission("Manifest.permission.READ_EXTERNAL_STORAGE");
-                permissionCheck += PicHandler.this.checkSelfPermission("Manifest.permission.WRITE_EXTERNAL_STORAGE");
-                if(permissionCheck != 0){
-                    this.requestPermissions(new String[]{Manifest.permission.
-                            READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},);
-                }
-        }
+//        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP){
+//                int permissionCheck = PicHandler.this.checkSelfPermission("Manifest.permission.READ_EXTERNAL_STORAGE");
+//                permissionCheck += PicHandler.this.checkSelfPermission("Manifest.permission.WRITE_EXTERNAL_STORAGE");
+//                if(permissionCheck != 0){
+//                    this.requestPermissions(new String[]{Manifest.permission.
+//                            READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE},);
+//                }
+//        }
         }
     /* Function to upload images to Firebase storage */
     public void uploadToStorage(){
