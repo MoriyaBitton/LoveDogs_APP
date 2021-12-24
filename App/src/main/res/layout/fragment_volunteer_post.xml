@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/big_round"
-                android:backgroundTint="#7EFFC107"
+                android:backgroundTint="@android:color/transparent"
                 android:orientation="vertical"
                 tools:ignore="MissingConstraints">
 
@@ -65,7 +65,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
-                    android:background="#A8EADD85"
+                    android:background="@android:color/transparent"
                     android:orientation="vertical">
 
                     <TextView
@@ -74,6 +74,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Title"
+                        android:background="@android:color/transparent"
                         android:textSize="24sp"
                         android:textStyle="bold|italic" />
 
@@ -83,6 +84,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="location"
+                        android:background="@android:color/transparent"
                         android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -131,7 +133,7 @@
                         android:id="@+id/vvp_image"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
+                        android:background="@android:color/transparent"
                         android:src="@drawable/images__6_" />
 
                     <TextView
@@ -142,10 +144,11 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/big_round"
-                        android:backgroundTint="#ADFFEB3B"
+                        android:backgroundTint="@color/Dark_grey"
                         android:ems="10"
                         android:minHeight="48dp"
                         android:text="Post Description"
+                        android:textColor="@color/white"
                         android:textAlignment="center"
                         android:textSize="20sp"
                         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
@@ -170,9 +173,9 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#83FFEB3B"
+                        android:backgroundTint="@color/Dark_grey"
                         android:text="Back"
-                        android:textColor="#000000" />
+                        android:textColor="@color/white" />
 
                     <Button
                         android:id="@+id/vvp_volunteer"
@@ -181,9 +184,9 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="16dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#83FFEB3B"
+                        android:backgroundTint="@color/Dark_grey"
                         android:text="Volunteer"
-                        android:textColor="#000000" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>
