@@ -14,23 +14,44 @@ import com.google.firebase.database.Query;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class VolunteerPost {
-    public static class RoleField{
+    public final String volunteers_types_db = "/volunteers/posts/";
+
+    public static class RoleFieldData{
         public String type;
         public int required;
-        public int filled;
+
+        public RoleFieldData(){
+
+        }
+    }
+
+    public class RoleField{
+        public String type;
+        public int required;
+
+        public transient Set<String> subscribed = new HashSet<>();
 
         public RoleField(){
+        }
+
+        public RoleField(RoleFieldData data){
+            this.type = data.type;
+            this.required = data.required;
+        }
+
+        public int getNumSubscribed(){
+            return subscribed.size();
         }
 
         public RoleField(View view, int type_id, int required_id){
             TextView typet = view.findViewById(type_id);
             TextView reuqiredt = view.findViewById(required_id);
-            this.filled = 0;
             this.type = typet.getText().toString();
             this.required = Integer.parseInt(reuqiredt.getText().toString());
         }
@@ -40,9 +61,40 @@ public class VolunteerPost {
             HashMap<String, Object> result = new HashMap<>();
             result.put("type", type);
             result.put("required", required);
-            result.put("filled", filled);
 
             return result;
+        }
+
+        public void addVolunteer(String userID){
+            if(subscribed.contains(userID)){
+                return;
+            }
+            Log.d("firebase","added volunteer, " + type);
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+            mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed").child(userID).setValue(true);
+            subscribed.add(userID);
+        }
+
+        public void removeVolunteer(String userID){
+            if(!subscribed.contains(userID)){
+                return;
+            }
+            Log.d("firebase","removed volunteer, " + type);
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+            mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed").child(userID).removeValue();
+            subscribed.remove(userID);
+        }
+
+        public void loadSubscribed(OnSuccessListener<Void> listener){
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+            Query getRolesQuery = mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed");
+            FirebaseGetList.getKeySetOnce(getRolesQuery, new FirebaseGetList.SetCallback<String>() {
+                @Override
+                public void getSet(Set<String> items) {
+                    subscribed = items;
+                    listener.onSuccess(null);
+                }
+            });
         }
     }
 
@@ -74,14 +126,14 @@ public class VolunteerPost {
         this.roles = old.roles;
     }
 
-    public VolunteerPost(String title, String author, String authorID, String date, String location, String body){
+    public void UpdatePost(String title, String author, String authorID, String date, String location, String body){
         this.title = title;
         this.author = author;
         this.authorId = authorID;
         this.date = date;
         try {
-             Date r_date = simpleDateFormat.parse(date);
-             timestamp = r_date.getTime();
+            Date r_date = simpleDateFormat.parse(date);
+            timestamp = r_date.getTime();
         }catch (Exception ex){
             Log.e("firebase", "LDEvent: Failed to parse date");
         }
@@ -97,12 +149,12 @@ public class VolunteerPost {
         }
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        Query getRolesQuery = mDatabase.child("post_volunteer_list").child(pid);
-        FirebaseGetList.getAll(getRolesQuery, RoleField.class, new FirebaseGetList.Callback<RoleField>() {
+        Query getRolesQuery = mDatabase.child(volunteers_types_db).child(pid);
+        FirebaseGetList.getAll(getRolesQuery, RoleFieldData.class, new FirebaseGetList.Callback<RoleFieldData>() {
             @Override
-            public void getList(ArrayList<RoleField> items) {
-                for (RoleField field: items) {
-                    roles.put(field.type, field);
+            public void getList(ArrayList<RoleFieldData> items) {
+                for (RoleFieldData field: items) {
+                    roles.put(field.type, new RoleField(field));
                 }
                 listener.onSuccess(null);
             }
@@ -112,11 +164,6 @@ public class VolunteerPost {
     public void uploadRoles(ArrayList<RoleField> items){
         HashMap<String,RoleField> new_roles = new HashMap();
         for (RoleField field: items) {
-            if(roles.containsKey(field.type)){
-                field.filled = roles.get(field.type).filled;
-            }else{
-                field.filled = 0;
-            }
             new_roles.put(field.type, field);
         }
         roles = new_roles;
@@ -141,12 +188,12 @@ public class VolunteerPost {
 
         Map<String, Object> childUpdates = new HashMap<>();
 
-        mDatabase.child("/post_volunteer_list/" + this.pid).removeValue();
+        mDatabase.child(volunteers_types_db + this.pid).removeValue();
         childUpdates.put("/posts/" + this.pid, postValues);
         childUpdates.put("/user-posts/" + this.authorId + "/" + this.pid, postValues);
 
         for (RoleField field: roles.values()) {
-            childUpdates.put("/post_volunteer_list/" + this.pid + "/" + field.type, field.toMap());
+            childUpdates.put(volunteers_types_db + this.pid + "/" + field.type, field.toMap());
         }
 
         mDatabase.updateChildren(childUpdates);

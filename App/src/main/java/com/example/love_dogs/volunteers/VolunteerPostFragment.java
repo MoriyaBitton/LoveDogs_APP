@@ -2,6 +2,7 @@ package com.example.love_dogs.volunteers;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -44,24 +45,25 @@ public class VolunteerPostFragment extends FragmentExtended {
         }
 
         public void update(){
+            Log.d("firebase", "updating... " + field.getNumSubscribed());
             type.setText(field.type);
-            num.setText(field.filled + "/" + field.required);
+            num.setText(field.getNumSubscribed() + "/" + field.required);
 
-            if(field.filled == 0){
+            if(field.getNumSubscribed() == 0){
                 remove.setVisibility(View.INVISIBLE);
-            }else if(field.required <= field.filled){
+            }else if(field.required <= field.getNumSubscribed()){
                 volunteer.setVisibility(View.INVISIBLE);
             }
         }
 
         void onCancelVolunteer(View view){
-            field.filled--;
+            field.removeVolunteer(user.uid);
             volunteer.setVisibility(View.VISIBLE);
             update();
         }
 
         void onVolunteer(View view){
-            field.filled++;
+            field.addVolunteer(user.uid);
             remove.setVisibility(View.VISIBLE);
             update();
         }
@@ -69,6 +71,7 @@ public class VolunteerPostFragment extends FragmentExtended {
 
     private ArrayList<FieldData> fieldMap = new ArrayList<>();
     private VolunteerPost post;
+    private User user;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     public VolunteerPostFragment(View parent_view, VolunteerPost post){
@@ -97,9 +100,8 @@ public class VolunteerPostFragment extends FragmentExtended {
                 onBackPressed();
             }
         });
-
-        User user = User.getCurrentRaw();
-       Button edit = view.findViewById(R.id.vvp_edit);
+        user = User.getCurrentRaw();
+        Button edit = view.findViewById(R.id.vvp_edit);
         if(user.uid.equals(post.authorId)){
             edit.setVisibility(View.VISIBLE);
             edit.setOnClickListener(this::onEdit);
@@ -117,11 +119,13 @@ public class VolunteerPostFragment extends FragmentExtended {
     }
 
     public void onVolunteerClicked(View view){
+        Log.d("firebase", "clicked volunteer button");
         view.setVisibility(View.INVISIBLE);
 
         post.loadRoles(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
+                Log.d("firebase", "add roles...");
                 for (VolunteerPost.RoleField field: post.roles.values()) {
                     addRoleField(field);
                 }

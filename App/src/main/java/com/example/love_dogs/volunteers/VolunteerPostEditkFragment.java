@@ -120,7 +120,10 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
                     }
                 }
             });
+        }else{
+            post = new VolunteerPost();
         }
+
     }
 
     void onUpdateClicked(View view){
@@ -136,20 +139,21 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         Log.d("firebase", "all fields non empty generating new post...");
 
         User user = User.getCurrentRaw();
-        VolunteerPost newPost = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
+
+        // update post
+        post.UpdatePost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
 
-        newPost.syncWithOld(post);
 
         // Add/Update fields
         ArrayList<VolunteerPost.RoleField> fields = new ArrayList<>();
         for (View role_view: roles_field_views) {
-            fields.add(new VolunteerPost.RoleField(role_view, R.id.vvepf_type, R.id.vvepf_num));
+            fields.add(post.new RoleField(role_view, R.id.vvepf_type, R.id.vvepf_num));
         }
-        newPost.uploadRoles(fields);
+        post.uploadRoles(fields);
 
         // add new post or update post.
-        newPost.push();
+        post.push();
 
         FragmentManager.GoToRoot(getActivity());
     }

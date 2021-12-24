@@ -102,8 +102,8 @@ public class CreatePostActivity extends AppCompatActivity {
         TextView location = findViewById(R.id.plocation);
         TextView body = findViewById(R.id.dp_body);
     
-        
-        VolunteerPost post = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
+        VolunteerPost post = new VolunteerPost();
+        post.UpdatePost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
 
 //        bundle.putString("title", title.getText().toString());
