@@ -30,12 +30,14 @@ public class FirebaseGetList {
         void getSet(Set<T> items);
     }
 
-    public static <T> void getAll(Query getListQuery, @NonNull Class<T> targetClass, Callback<T> onLoaded) {
+    public static <T> void getListOnce(Query getListQuery, @NonNull Class<T> targetClass, Callback<T> onLoaded) {
         // get data snapshot once!
         getListQuery.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 ArrayList<T> target = new ArrayList<>();
+
+                Log.d("firebase", task.getResult().toString());
                 for (DataSnapshot child : task.getResult().getChildren()) {
                     // Extract a Message object from the DataSnapshot
                     T item = child.getValue(targetClass);

@@ -49,22 +49,26 @@ public class VolunteerPostFragment extends FragmentExtended {
             type.setText(field.type);
             num.setText(field.getNumSubscribed() + "/" + field.required);
 
-            if(field.getNumSubscribed() == 0){
+            if(field.subscribed.contains(user.uid)){
+                volunteer.setVisibility(View.INVISIBLE);
+                remove.setVisibility(View.VISIBLE);
+            }else {
                 remove.setVisibility(View.INVISIBLE);
-            }else if(field.required <= field.getNumSubscribed()){
+                volunteer.setVisibility(View.VISIBLE);
+            }
+
+            if(field.required <= field.getNumSubscribed()){
                 volunteer.setVisibility(View.INVISIBLE);
             }
         }
 
         void onCancelVolunteer(View view){
             field.removeVolunteer(user.uid);
-            volunteer.setVisibility(View.VISIBLE);
             update();
         }
 
         void onVolunteer(View view){
             field.addVolunteer(user.uid);
-            remove.setVisibility(View.VISIBLE);
             update();
         }
     }
@@ -138,8 +142,14 @@ public class VolunteerPostFragment extends FragmentExtended {
         LayoutInflater linear_layout_inflater =  getLayoutInflater();
 
         View child_view = linear_layout_inflater.inflate(R.layout.volunteer_field_view,null);
-        layout.addView(child_view);
 
         FieldData fieldData = new FieldData(child_view, field);
+        field.loadSubscribed(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                fieldData.update();
+                layout.addView(child_view);
+            }
+        });
     }
 }

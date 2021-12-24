@@ -20,7 +20,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class VolunteerPost {
-    public final String volunteers_types_db = "/volunteers/posts/";
+    public final String volunteers_post_types_db = "/volunteers/posts/";
+    public final String volunteers_users_types_db = "/volunteers/users/";
 
     public static class RoleFieldData{
         public String type;
@@ -71,7 +72,8 @@ public class VolunteerPost {
             }
             Log.d("firebase","added volunteer, " + type);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-            mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed").child(userID).setValue(true);
+            mDatabase.child(volunteers_post_types_db + pid + "/" + type + "/subscribed").child(userID).setValue(true);
+            mDatabase.child(volunteers_users_types_db + userID + "/" + pid + "/subscribed").child(type).setValue(true);
             subscribed.add(userID);
         }
 
@@ -81,13 +83,14 @@ public class VolunteerPost {
             }
             Log.d("firebase","removed volunteer, " + type);
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-            mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed").child(userID).removeValue();
+            mDatabase.child(volunteers_post_types_db + pid + "/" + type + "/subscribed").child(userID).removeValue();
+            mDatabase.child(volunteers_users_types_db + userID + "/" + pid + "/subscribed").child(type).removeValue();
             subscribed.remove(userID);
         }
 
         public void loadSubscribed(OnSuccessListener<Void> listener){
             DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-            Query getRolesQuery = mDatabase.child(volunteers_types_db + pid + "/" + type + "/subscribed");
+            Query getRolesQuery = mDatabase.child(volunteers_post_types_db + pid + "/" + type + "/subscribed");
             FirebaseGetList.getKeySetOnce(getRolesQuery, new FirebaseGetList.SetCallback<String>() {
                 @Override
                 public void getSet(Set<String> items) {
@@ -149,8 +152,8 @@ public class VolunteerPost {
         }
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        Query getRolesQuery = mDatabase.child(volunteers_types_db).child(pid);
-        FirebaseGetList.getAll(getRolesQuery, RoleFieldData.class, new FirebaseGetList.Callback<RoleFieldData>() {
+        Query getRolesQuery = mDatabase.child(volunteers_post_types_db).child(pid);
+        FirebaseGetList.getListOnce(getRolesQuery, RoleFieldData.class, new FirebaseGetList.Callback<RoleFieldData>() {
             @Override
             public void getList(ArrayList<RoleFieldData> items) {
                 for (RoleFieldData field: items) {
@@ -188,12 +191,12 @@ public class VolunteerPost {
 
         Map<String, Object> childUpdates = new HashMap<>();
 
-        mDatabase.child(volunteers_types_db + this.pid).removeValue();
+        mDatabase.child(volunteers_post_types_db + this.pid).removeValue();
         childUpdates.put("/posts/" + this.pid, postValues);
         childUpdates.put("/user-posts/" + this.authorId + "/" + this.pid, postValues);
 
         for (RoleField field: roles.values()) {
-            childUpdates.put(volunteers_types_db + this.pid + "/" + field.type, field.toMap());
+            childUpdates.put(volunteers_post_types_db + this.pid + "/" + field.type, field.toMap());
         }
 
         mDatabase.updateChildren(childUpdates);

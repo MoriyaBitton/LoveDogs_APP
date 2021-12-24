@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.FirebaseGetList;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.login.User;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +23,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,15 +90,18 @@ public class VolunteerBoard extends Fragment {
         LinearLayout layout = view.findViewById(R.id.vscroll);
         LayoutInflater linear_layour_inflater =  getLayoutInflater();
 
-        Query myTopPostsQuery = mDatabase.child("posts").orderByChild("timestamp");
-        myTopPostsQuery.addValueEventListener(new ValueEventListener() {
+        //Query myTopPostsQuery = mDatabase.child("posts").orderByChild("timestamp");
+        Query myTopPostsQuery = mDatabase.child("posts");
+        FirebaseGetList.getListOnce(myTopPostsQuery, VolunteerPost.class, new FirebaseGetList.Callback<VolunteerPost>() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.w("firebase", "number of posts : " + dataSnapshot.getChildrenCount());
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    // Extract a Message object from the DataSnapshot
-                    VolunteerPost post = child.getValue(VolunteerPost.class);
-                    Log.d("firebase", post.location);
+            public void getList(ArrayList<VolunteerPost> items) {
+                Collections.sort(items,
+                        (o1, o2) -> o1.timestamp > o2.timestamp ? 1 : -1);
+                Date current_date = new Date(System.currentTimeMillis());
+                for (VolunteerPost post: items) {
+                    if(post.timestamp < current_date.getTime()){
+                        continue;
+                    }
 
                     VolunteerPost.all_posts.put(post.pid, post);
 
@@ -121,14 +131,6 @@ public class VolunteerBoard extends Fragment {
                     pid.setText(post.pid);
                     layout.addView(child_view);
                 }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("firebase", "loadPost:onCancelled", databaseError.toException());
-                // ...
             }
         });
 
