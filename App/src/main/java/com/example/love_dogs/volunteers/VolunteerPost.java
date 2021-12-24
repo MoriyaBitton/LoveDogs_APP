@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.love_dogs.functionality.FirebaseGetList;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
@@ -65,6 +66,14 @@ public class VolunteerPost {
 
     }
 
+    public void syncWithOld(VolunteerPost old){
+        if(old == null || this.pid != null && !this.pid.equals(old.pid)){
+            return;
+        }
+        this.pid = old.pid;
+        this.roles = old.roles;
+    }
+
     public VolunteerPost(String title, String author, String authorID, String date, String location, String body){
         this.title = title;
         this.author = author;
@@ -80,7 +89,13 @@ public class VolunteerPost {
         this.body = body;
     }
 
-    public void loadRoles(){
+    public void loadRoles(OnSuccessListener<Void> listener){
+        if(roles.size() > 0){
+            // already loaded.
+            listener.onSuccess(null);
+            return;
+        }
+
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         Query getRolesQuery = mDatabase.child("post_volunteer_list").child(pid);
         FirebaseGetList.getAll(getRolesQuery, RoleField.class, new FirebaseGetList.Callback<RoleField>() {
@@ -89,6 +104,7 @@ public class VolunteerPost {
                 for (RoleField field: items) {
                     roles.put(field.type, field);
                 }
+                listener.onSuccess(null);
             }
         });
     }
@@ -108,6 +124,7 @@ public class VolunteerPost {
 
     public void push(){
         if(pid != null){
+            updatePost();
             return;
         }
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -118,11 +135,13 @@ public class VolunteerPost {
         this.updatePost();
     }
 
-    public void updatePost(){
+    private void updatePost(){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> postValues = this.toMap();
 
         Map<String, Object> childUpdates = new HashMap<>();
+
+        mDatabase.child("/post_volunteer_list/" + this.pid).removeValue();
         childUpdates.put("/posts/" + this.pid, postValues);
         childUpdates.put("/user-posts/" + this.authorId + "/" + this.pid, postValues);
 

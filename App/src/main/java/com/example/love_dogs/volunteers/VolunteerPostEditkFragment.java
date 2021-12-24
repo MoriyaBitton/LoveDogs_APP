@@ -19,6 +19,7 @@ import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.GetDateTime;
 import com.example.love_dogs.login.User;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -99,9 +100,28 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
 
         roles_field_views.add(view.findViewById(R.id.vvep_role_1));
 
-
         for (View role_field_view: roles_field_views) {
             addRemoveButton(role_field_view);
+        }
+
+        if(post != null){
+            post.loadRoles(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    int i = 0;
+                    for (VolunteerPost.RoleField field: post.roles.values()) {
+                        if(i >= roles_field_views.size()){
+                            onAddRoleClicked(view);
+                        }
+                        View current = roles_field_views.get(i);
+                        TextView type = current.findViewById(R.id.vvepf_type);
+                        TextView num = current.findViewById(R.id.vvepf_num);
+                        type.setText(field.type);
+                        num.setText(String.valueOf(field.required));
+                        i++;
+                    }
+                }
+            });
         }
     }
 
@@ -121,12 +141,17 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         VolunteerPost newPost = new VolunteerPost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
 
-        if(post == null){
-            newPost.push();
-        }else{
-            newPost.pid = post.pid;
-            newPost.updatePost();
+        newPost.syncWithOld(post);
+
+        // Add/Update fields
+        ArrayList<VolunteerPost.RoleField> fields = new ArrayList<>();
+        for (View role_view: roles_field_views) {
+            fields.add(new VolunteerPost.RoleField(role_view, R.id.vvepf_type, R.id.vvepf_num));
         }
+        newPost.uploadRoles(fields);
+
+        // add new post or update post.
+        newPost.push();
 
         FragmentManager.GoToRoot(getActivity());
     }
