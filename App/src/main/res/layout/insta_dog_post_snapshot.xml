@@ -104,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="Like"
-                        app:backgroundTint="#aaa"
+                        app:backgroundTint="@color/Dark_grey"
                         app:cornerRadius="8dp"
                         app:icon="@drawable/ic_like_svgrepo_com"
 
@@ -117,6 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
+                        android:backgroundTint="@color/Dark_grey"
                         android:text="Comment"
                         app:backgroundTint="#aaa"
                         app:cornerRadius="8dp"
