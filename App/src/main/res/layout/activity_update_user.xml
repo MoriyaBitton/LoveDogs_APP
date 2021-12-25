@@ -60,7 +60,7 @@
         android:layout_width="387dp"
         android:layout_height="81dp"
         android:layout_marginTop="60dp"
-        android:text="update user"
+        android:text="Update user"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,30 +68,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/auu_back"
-        style="@style/reg"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="144dp"
-        android:onClick="OnBack"
-        android:text="back"
-        android:backgroundTint="@color/Dark_grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auu_phone"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
         android:id="@+id/auu_confirm"
         style="@style/reg"
         android:layout_marginBottom="144dp"
+        android:backgroundTint="@color/Dark_grey"
         android:onClick="OnConfirm"
         android:text="confirm"
-        android:backgroundTint="@color/Dark_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toEndOf="@+id/auu_back"
         app:layout_constraintTop_toBottomOf="@+id/auu_sphone"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.184" />
+
+    <Button
+        android:id="@+id/auu_back"
+        style="@style/reg"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="@color/Dark_grey"
+        android:onClick="OnBack"
+        android:text="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auu_phone"
+        app:layout_constraintVertical_bias="0.184" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
