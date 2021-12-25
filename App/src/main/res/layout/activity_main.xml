@@ -26,12 +26,24 @@
     <Button
         android:id="@+id/Login"
         style="@style/reg"
-        android:text="Login"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/Dark_grey"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Pass" />
+        app:layout_constraintTop_toBottomOf="@+id/vvl_rememberMe" />
+
+    <Button
+        android:id="@+id/Reg"
+        style="@style/reg"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/Dark_grey"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login" />
 
     <EditText
         android:id="@+id/Pass"
@@ -46,17 +58,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mail" />
-
-    <Button
-        android:id="@+id/Reg"
-        style="@style/reg"
-        android:layout_marginTop="2dp"
-        android:text="Register"
-        android:backgroundTint="@color/Dark_grey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Login" />
 
     <TextView
         android:id="@+id/login_title"
@@ -81,5 +82,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/vvl_rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Remember Me"
+        app:layout_constraintStart_toStartOf="@+id/Pass"
+        app:layout_constraintTop_toBottomOf="@+id/Pass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

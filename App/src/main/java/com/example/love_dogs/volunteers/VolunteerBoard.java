@@ -14,19 +14,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.AutoLogin;
 import com.example.love_dogs.functionality.FirebaseGetList;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.login.User;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
@@ -89,6 +85,14 @@ public class VolunteerBoard extends Fragment {
 
         LinearLayout layout = view.findViewById(R.id.vscroll);
         LayoutInflater linear_layour_inflater =  getLayoutInflater();
+
+        Button logout = view.findViewById(R.id.vb_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AutoLogin.logout(getActivity());
+            }
+        });
 
         //Query myTopPostsQuery = mDatabase.child("posts").orderByChild("timestamp");
         Query myTopPostsQuery = mDatabase.child("posts");

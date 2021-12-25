@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.AutoLogin;
 import com.example.love_dogs.functionality.navBarActivity;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +35,21 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Boolean[] loggedIn = {false};
+        AutoLogin.tryAutoLogIn(this, new AutoLogin.CallbackInfo() {
+            @Override
+            public void callback(boolean success) {
+                loggedIn[0] = success;
+                synchronized(loggedIn[0]){
+                    loggedIn[0].notifyAll();
+                }
+            }
+        });
+        try {
+            loggedIn[0].wait();
+        }catch (Exception exception){
+
+        }
         // register & login Buttons
         reg = findViewById(R.id.Reg);
         log = findViewById(R.id.Login);
@@ -68,6 +85,11 @@ public class LogInActivity extends AppCompatActivity {
 //                                Toast.makeText(LogInActivity.this,user.getUid()+" , "+user.getEmail() ,Toast.LENGTH_LONG).show();
                                 //Intent home_page = new Intent(getApplicationContext(), Main_logged_in.class);
                                 //startActivity(home_page);
+                                CheckBox rememberMe = findViewById(R.id.vvl_rememberMe);
+                                if(rememberMe.isChecked()){
+                                    AutoLogin.rememberMe(LogInActivity.this);
+                                }
+
                                 User.LoadCurrentUser(LogInActivity.this);
                             }
                             else{
