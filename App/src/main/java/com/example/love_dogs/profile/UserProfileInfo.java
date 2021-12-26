@@ -19,11 +19,11 @@ public class UserProfileInfo {
     public interface OnLoadUserInfo{
         void callback(UserProfileInfo info);
     }
-    int likes;
-    int num_insta_posts;
-    int num_volunteer_posts;
-    int volunteer_score;
-    String uid;
+    public int insta_likes;
+    public int insta_posts;
+    public int volunteer_posts;
+    public int volunteer_score;
+    public String uid;
 
     public UserProfileInfo() {
 
@@ -56,6 +56,9 @@ public class UserProfileInfo {
                 }
             }
         };
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(userinfo_node).child(userId).child("uid").setValue(userId);
+
         UpdateUserInfoLikes(userId, call);
         UpdateUserInfoInstaPosts(userId, call);
         UpdateUserInfoScore(userId, call);
@@ -101,10 +104,10 @@ public class UserProfileInfo {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if(task.getResult().exists()){
-                    mDatabase.child(userinfo_node).child(userId).child("num_volunteer_posts")
+                    mDatabase.child(userinfo_node).child(userId).child("volunteer_posts")
                             .setValue(task.getResult().getChildrenCount());
                 }else{
-                    mDatabase.child(userinfo_node).child(userId).child("num_volunteer_posts").setValue(0);
+                    mDatabase.child(userinfo_node).child(userId).child("volunteer_posts").setValue(0);
                 }
             }
         });
