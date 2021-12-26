@@ -30,10 +30,10 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/appnav_start.xml" value="0.25" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/appnav_start.xml" value="0.18" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/content_scrolling.xml" value="0.27291666666666664" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/create_event.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.5" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/dogbook_post_text.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/empty.xml" value="0.18" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_blank.xml" value="0.16893115942028986" />
@@ -46,7 +46,7 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.13272543059777103" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_user_profile.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_view_post_fragment.xml" value="0.33" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.25" />
+        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.16" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post_editk.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/hello_user.xml" value="0.2524752475247525" />
@@ -73,29 +73,8 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/photo_src_menu.xml" value="0.19270833333333334" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15520833333333334" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15520833333333334" />
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.10314207650273224" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_insta_dog.xml" value="0.10314207650273224" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.11270491803278689" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.16776315789473684" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post_editk.xml" value="0.12269736842105264" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/insta_dog_post_snapshot.xml" value="0.10314207650273224" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/layout_center_profile.xml" value="0.1" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/photo_src_menu.xml" value="0.1" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_menu.xml" value="0.1" />
-        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_options.xml" value="0.1" />
->>>>>>> ec5e26bc0b2b9bf8d48ccc23b094eb357bc59671
->>>>>>> 33583d18faf8ec56940a4c0aaef83cdb00e34f43
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.2346014492753623" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_map_api_init.xml" value="0.165625" />
-        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_nav_bar.xml" value="0.165625" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25416666666666665" />
@@ -104,19 +83,7 @@
       </map>
     </option>
   </component>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
->>>>>>> 33583d18faf8ec56940a4c0aaef83cdb00e34f43
-=======
-<<<<<<< Updated upstream
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
->>>>>>> Stashed changes
->>>>>>> 55c162e68f36cdc583fa41ffb53790b1d55d72d8
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -50,13 +50,12 @@
                     android:text="User Name"
                     android:textSize="20sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:gravity="left"
-                    android:inputType="time"
                     android:text="current time" />
 
 
@@ -81,12 +80,11 @@
                 android:layout_marginTop="10dp">
 
 
-                <EditText
+                <TextView
                     android:id="@+id/pbody"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textMultiLine"
                     android:minHeight="48dp"
                     android:text="Post Description"
                     android:textAlignment="center"
