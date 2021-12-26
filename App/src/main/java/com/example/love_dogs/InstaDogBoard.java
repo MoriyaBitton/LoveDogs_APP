@@ -3,6 +3,7 @@ package com.example.love_dogs;
 import static android.app.Activity.RESULT_OK;
 
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -10,11 +11,16 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,7 +92,7 @@ public class InstaDogBoard extends Fragment {
         photoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            dispatchTakePictureIntent();
+                showPopup(v);
             img = inflator.findViewById(R.id.photo_post);
 
 
@@ -123,6 +129,35 @@ public class InstaDogBoard extends Fragment {
         if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
             startActivityForResult(cameraIntent, 1000);
         }
+    }
+
+    private void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this.getContext(), v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.photo_src_menu, popup.getMenu());
+        MenuItem cam = popup.getMenu().findItem(R.id.photo_take_button);
+        MenuItem gall = popup.getMenu().findItem(R.id.photo_choose_button);
+
+
+        cam.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                dispatchTakePictureIntent();
+                return true;
+            }
+        });
+
+
+        gall.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(getContext(),"Tryout",Toast.LENGTH_SHORT);
+                return false;
+            }
+        });
+
+        popup.show();
+
     }
 
 

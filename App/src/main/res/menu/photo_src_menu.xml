@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".InstaDogBoard">
+
+
+    <item
+        android:id="@+id/photo_take_button"
+        android:icon="@drawable/ic_cam"
+        android:title="Capture (Camera)"/>
+
+    <item
+        android:id="@+id/photo_choose_button"
+        android:icon="@drawable/ic_gallery"
+        android:title="Choose From Gallery"
+        />
+
+
+
+</menu>
