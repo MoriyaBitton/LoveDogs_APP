@@ -124,6 +124,8 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
             post = new VolunteerPost();
         }
 
+        Button img_button = view.findViewById(R.id.vvep_image_button);
+
     }
 
     void onUpdateClicked(View view){

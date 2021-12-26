@@ -69,11 +69,11 @@
                         android:layout_margin="0dp"
                         >
 
-                    <ImageView
-                        android:id="@+id/photo_post"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:visibility="gone"/>
+                        <ImageView
+                            android:id="@+id/photo_post"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone" />
                         </LinearLayout>
 
                     <LinearLayout
