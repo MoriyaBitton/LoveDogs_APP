@@ -2,6 +2,8 @@ package com.example.love_dogs;
 
 import static android.app.Activity.RESULT_OK;
 
+import static com.example.love_dogs.login.User.getFirebaseUser;
+
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.Intent;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.provider.MediaStore;
 import android.util.Log;
@@ -27,14 +30,22 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.example.love_dogs.functionality.FragmentManager;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,7 +73,7 @@ public class InstaDogBoard extends Fragment {
     private Button postBtn;
     private EditText text;
     private FirebaseStorage storage;
-
+    private FirebaseUser user;
     public InstaDogBoard() {
         // Required empty public constructor
     }
@@ -141,14 +152,54 @@ public class InstaDogBoard extends Fragment {
     }
 
 
+    private void uploadPost(){
+        String img_name = null;
+        if(img!=null) {
+            img_name=img.getDrawable().toString();
+        }
+        NetPost current = new NetPost(text.getText().toString(),img_name);
+        current.push();
 
-    private void uploadPost() {
-        String img_name = img.getDrawable().toString();
-        String data = text.getText().toString();
+        Toast.makeText(getContext(),"Post Uploaded Successfully.\n",Toast.LENGTH_LONG).show();
+        if(img!=null){
+            img.invalidate();
+            img.setImageBitmap(null);
+            img.setVisibility(View.GONE);}
+        text.setText("");
 
-
-        return;
     }
+
+
+//    private void uploadPost() {
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        FirebaseDatabase fData = FirebaseDatabase.getInstance();
+//        DatabaseReference user_posts = fData.getReference("net_posts").child(user.getUid());
+//
+//
+//        HashMap<String,Object> data = new HashMap<>();
+//
+//    if (img!=null){
+//        data.put("image",img.getDrawable().toString());}
+//        data.put("user_text",text.getText().toString());
+//
+//        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+//        Date date = new Date(System.currentTimeMillis());
+//
+//        DatabaseReference post_ref = user_posts.child(formatter.format(date));
+//        post_ref.updateChildren(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                Toast.makeText(getContext(),"Post Uploaded Successfully.\n",Toast.LENGTH_LONG).show();
+//                if(img!=null){
+//                img.invalidate();
+//                img.setImageBitmap(null);
+//                img.setVisibility(View.GONE);}
+//                text.setText("");
+//            }
+//        });
+//
+//        return;
+//    }
 
     private void uploadImg() {
         storage = FirebaseStorage.getInstance();
@@ -166,7 +217,7 @@ public class InstaDogBoard extends Fragment {
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                    Toast.makeText(getContext(),"Could not upload image.",Toast.LENGTH_LONG);
+                Toast.makeText(getContext(),"Could not upload image.",Toast.LENGTH_LONG);
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -186,9 +237,7 @@ public class InstaDogBoard extends Fragment {
         }
     }
 
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d("firebase","test");
         if ((requestCode == REQUEST_IMAGE_CAPTURE || requestCode == PICK_IMAGE_GALLERY) && resultCode == RESULT_OK) {
             final Bundle extras = data.getExtras();
             Bitmap imageBitmap;

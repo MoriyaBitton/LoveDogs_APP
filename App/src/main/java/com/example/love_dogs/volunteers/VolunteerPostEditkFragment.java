@@ -1,27 +1,17 @@
 package com.example.love_dogs.volunteers;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,18 +22,11 @@ import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.GetDateTime;
 import com.example.love_dogs.login.User;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,6 +39,8 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
     TextView location;
     EditText date;
     TextView body;
+
+    ImageView img;
 
     VolunteerPost post = null;
 
@@ -170,7 +155,11 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         // update post
         post.UpdatePost(title.getText().toString(), user.user_name, user.uid, date.getText().toString(),
                 location.getText().toString(), body.getText().toString());
-
+        if(img!=null) {
+            Log.d("firebase", "onUpdateClicked: ");
+            post.img_url = img.getDrawable().toString();
+            FirebaseIMG.uploadImg(getContext() ,img);
+        }
 
         // Add/Update fields
         ArrayList<VolunteerPost.RoleField> fields = new ArrayList<>();
@@ -237,7 +226,7 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d("firebase", "took image!");
-        ImageView img = root_view.findViewById(R.id.vvep_image);
+        img = root_view.findViewById(R.id.vvep_image);
         FirebaseIMG.onActivityResult(requestCode, resultCode, data, img);
     }
 }

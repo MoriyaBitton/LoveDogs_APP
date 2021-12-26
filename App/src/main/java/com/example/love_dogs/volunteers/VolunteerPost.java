@@ -113,7 +113,7 @@ public class VolunteerPost {
     public String location;
     public String body;
     public String pid;
-    public String imgUrl;
+    public String img_url;
     public int volunteers_needed;
     public long timestamp;
     public transient HashMap<String, RoleField> roles = new HashMap<>();
@@ -226,6 +226,7 @@ public class VolunteerPost {
         result.put("body", body);
         result.put("date", date);
         result.put("pid", pid);
+        result.put("img_url", img_url);
         result.put("timestamp", timestamp);
 
         return result;

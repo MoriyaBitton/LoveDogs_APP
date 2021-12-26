@@ -82,6 +82,8 @@
 >>>>>>> Stashed changes
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.10314207650273224" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_insta_dog.xml" value="0.10314207650273224" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.11270491803278689" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.16776315789473684" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post_editk.xml" value="0.12269736842105264" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/insta_dog_post_snapshot.xml" value="0.10314207650273224" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/layout_center_profile.xml" value="0.1" />
@@ -103,10 +105,18 @@
     </option>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
 >>>>>>> 33583d18faf8ec56940a4c0aaef83cdb00e34f43
+=======
+<<<<<<< Updated upstream
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+>>>>>>> Stashed changes
+>>>>>>> 55c162e68f36cdc583fa41ffb53790b1d55d72d8
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
