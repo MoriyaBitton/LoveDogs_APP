@@ -70,7 +70,11 @@ public class AutoLogin {
 
         FirebaseAuth.getInstance().signOut();
 
+        FragmentManager.ResetAll();
+
         Intent intent = new Intent(context, LogInActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+        //context.this.finish();
     }
 }

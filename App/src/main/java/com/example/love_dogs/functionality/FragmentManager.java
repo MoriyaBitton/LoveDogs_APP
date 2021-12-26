@@ -24,6 +24,11 @@ public class FragmentManager {
         return false;
     }
 
+    public static void ResetAll(){
+        list = new LinkedList<>();
+        latest = null;
+    }
+
     public static void GoToRoot(Context context){
         list = new LinkedList<>();
         latest = null;

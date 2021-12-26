@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,15 +72,17 @@ public class User {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
-                    Log.e("firebase", "User doesn't exist!", task.getException());
-                    Intent intent = new Intent(context, UpdateUserActivity.class);
+                    Toast.makeText(context, "ops something went wrong...", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(context, LogInActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
                 else {
                     //Map<String, Object> td=(HashMap<String, Object>)task.getResult().getValue();
                     if(!task.getResult().exists()){
-                        Log.e("firebase", "User doesn't exist!", task.getException());
-                        Intent intent = new Intent(context, UpdateUserActivity.class);
+                        Toast.makeText(context, "ops something went wrong...", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(context, LogInActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
                         return;
                     }
@@ -89,6 +92,7 @@ public class User {
                     //c_user.organizationID = td.get("organizationID");
                     current = c_user;
                     Intent intent = new Intent(context, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                     //listener.onComplete(null);
 
