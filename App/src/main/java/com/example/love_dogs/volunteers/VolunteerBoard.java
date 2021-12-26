@@ -17,6 +17,7 @@ import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.AutoLogin;
 import com.example.love_dogs.functionality.FirebaseGetList;
 import com.example.love_dogs.functionality.FragmentExtended;
+import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.login.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -70,6 +71,11 @@ public class VolunteerBoard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        FragmentManager.ResetAll();
+        if (container != null) {
+            container.removeAllViews();
+        }
+
         Log.d("firebase", "onCreateView: refresh");
         View view = inflater.inflate(R.layout.fragment_volunteer_board, container, false);
         // Inflate the layout for this fragment
@@ -87,12 +93,13 @@ public class VolunteerBoard extends Fragment {
         LayoutInflater linear_layour_inflater =  getLayoutInflater();
 
         Button logout = view.findViewById(R.id.vb_logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AutoLogin.logout(getActivity());
-            }
-        });
+        logout.setVisibility(View.INVISIBLE);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AutoLogin.logout(getActivity());
+//            }
+//        });
 
         //Query myTopPostsQuery = mDatabase.child("posts").orderByChild("timestamp");
         Query myTopPostsQuery = mDatabase.child("posts");

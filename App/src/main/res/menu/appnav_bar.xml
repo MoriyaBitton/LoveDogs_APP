@@ -7,4 +7,12 @@
     <item android:title="insta dog"
         android:icon="@drawable/ic_baseline_local_facebook"
         android:id="@+id/instaDog"/>
+    <item
+        android:id="@+id/userProfile"
+        android:icon="@drawable/ic_profile"
+        android:title="profile" />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:title="logout" />
 </menu>

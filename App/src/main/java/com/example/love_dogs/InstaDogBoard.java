@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.love_dogs.functionality.FragmentManager;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InstaDogBoard#newInstance} factory method to
@@ -75,6 +77,7 @@ public class InstaDogBoard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        FragmentManager.ResetAll();
         if (container != null) {
             container.removeAllViews();
         }

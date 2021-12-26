@@ -31,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.main_app_bottom_nav);
         NavController navController = Navigation.findNavController(this,  R.id.fragment_main_app);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+        View logout_item = findViewById(R.id.menu_logout);
+        logout_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AutoLogin.logout(MainActivity.this);
+            }
+        });
         //Log.w("firebase", "number of posts : ");
 
         //TextView text = findViewById(R.id.uhello);
