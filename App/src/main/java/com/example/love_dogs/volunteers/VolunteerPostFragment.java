@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FragmentExtended;
+import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.login.User;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -114,12 +114,16 @@ public class VolunteerPostFragment extends FragmentExtended {
             }
         });
         user = User.getCurrentRaw();
-        Button edit = view.findViewById(R.id.vvp_edit);
-        if(user.uid.equals(post.authorId)){
-            edit.setVisibility(View.VISIBLE);
+
+        View change_view = view.findViewById(R.id.vvp_change);
+        if(user.uid.equals(post.authorId) || user.type == User.ADMIN){
+            Button edit = view.findViewById(R.id.vvp_edit);
+            Button delete = view.findViewById(R.id.vvp_delete);
+            change_view.setVisibility(View.VISIBLE);
             edit.setOnClickListener(this::onEdit);
+            delete.setOnClickListener(this::onDelete);
         }else{
-            edit.setVisibility(View.GONE);
+            change_view.setVisibility(View.GONE);
         }
 
         Button volunteer = view.findViewById(R.id.vvp_volunteer_button);
@@ -131,9 +135,18 @@ public class VolunteerPostFragment extends FragmentExtended {
         swapFragments(myFragment);
     }
 
+    public void onDelete(View view){
+        if(post.delete(user)) {
+            FragmentManager.GoToRoot(getActivity());
+        }
+    }
+
     public void onVolunteerClicked(View view){
         Log.d("firebase", "clicked volunteer button");
-        view.setVisibility(View.INVISIBLE);
+        //view.setVisibility(View.GONE);
+
+        View pview = root_view.findViewById(R.id.vvp_volunteer_blayout);
+        pview.setVisibility(View.GONE);
 
         post.loadRoles(new OnSuccessListener<Void>() {
             @Override

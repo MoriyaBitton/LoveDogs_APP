@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.love_dogs.functionality.FirebaseGetList;
+import com.example.love_dogs.login.User;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
@@ -183,6 +184,19 @@ public class VolunteerPost {
 
         all_posts.put(pid, this);
         this.updatePost();
+    }
+
+    public boolean delete(User user){
+        // check that user has the permission to delete the post.
+        if(user == null || user.type != User.ADMIN && !user.uid.equals(authorId)){
+            return false;
+        }
+        current = null;
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child(volunteers_post_types_db + this.pid).removeValue();
+        mDatabase.child("posts").child(this.pid).removeValue();
+        mDatabase.child("user-posts").child(this.authorId).child(this.pid).removeValue();
+        return true;
     }
 
     private void updatePost(){

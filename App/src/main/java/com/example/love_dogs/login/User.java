@@ -76,15 +76,16 @@ public class User {
                     context.startActivity(intent);
                 }
                 else {
-                    Map<String,String> td=(HashMap<String, String>)task.getResult().getValue();
-                    if(td == null){
+                    //Map<String, Object> td=(HashMap<String, Object>)task.getResult().getValue();
+                    if(!task.getResult().exists()){
                         Log.e("firebase", "User doesn't exist!", task.getException());
                         Intent intent = new Intent(context, UpdateUserActivity.class);
                         context.startActivity(intent);
                         return;
                     }
-                    User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"),
-                            td.get("phone_number"),td.get("address"),Integer.parseInt(td.get("type")));
+                    User c_user = task.getResult().getValue(User.class);
+//                    User c_user = new User((String) td.get("uid"), td.get("email"), td.get("user_name"),
+//                            td.get("phone_number"),td.get("address"), td.get("type"));
                     //c_user.organizationID = td.get("organizationID");
                     current = c_user;
                     Intent intent = new Intent(context, MainActivity.class);
