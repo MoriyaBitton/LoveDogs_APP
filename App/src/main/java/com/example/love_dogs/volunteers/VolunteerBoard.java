@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.AutoLogin;
 import com.example.love_dogs.functionality.FirebaseGetList;
+import com.example.love_dogs.functionality.FirebaseIMG;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.login.User;
@@ -140,6 +142,10 @@ public class VolunteerBoard extends Fragment {
 
                     TextView pid = child_view.findViewById(R.id.vp_id);
                     pid.setText(post.pid);
+
+                    ImageView postImg = child_view.findViewById(R.id.vp_image);
+                    FirebaseIMG.loadImg(getContext(), post.img_url, postImg);
+
                     layout.addView(child_view);
                 }
             }
