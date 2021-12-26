@@ -71,6 +71,11 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/menu_scrolling_events.xml" value="0.12685185185185185" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15520833333333334" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15520833333333334" />
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.10314207650273224" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_insta_dog.xml" value="0.10314207650273224" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post_editk.xml" value="0.12269736842105264" />
@@ -79,8 +84,11 @@
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/photo_src_menu.xml" value="0.1" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_menu.xml" value="0.1" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_options.xml" value="0.1" />
+>>>>>>> ec5e26bc0b2b9bf8d48ccc23b094eb357bc59671
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_main_logged_in.xml" value="0.2346014492753623" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_map_api_init.xml" value="0.165625" />
+        <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_nav_bar.xml" value="0.165625" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_register.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_update_user.xml" value="0.2346014492753623" />
         <entry key="..\:/Users/moria/Desktop/LoveDogs_APP/App/src/main/res/layout/activity_view_posts.xml" value="0.25416666666666665" />
@@ -89,15 +97,7 @@
       </map>
     </option>
   </component>
-<<<<<<< Updated upstream
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-=======
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
-=======
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
->>>>>>> af3c84eccc9334f577c5c5b1e83dc51e7a50554c
->>>>>>> Stashed changes
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

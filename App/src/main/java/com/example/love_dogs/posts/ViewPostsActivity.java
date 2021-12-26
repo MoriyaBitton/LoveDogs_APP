@@ -19,7 +19,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class ViewPostsActivity extends AppCompatActivity {
-
     boolean loading = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +87,6 @@ public class ViewPostsActivity extends AppCompatActivity {
 //            layout.addView(child);
 //        }
     }
-
     public void OnClickPost(View view){
 //        TextView pid = view.findViewById(R.id.view_postID);
 //        //Log.d("firebase", "pid : " + pid.getText().toString());
@@ -96,5 +94,4 @@ public class ViewPostsActivity extends AppCompatActivity {
 //        LDPost.current = LDPost.all_posts.get(pid.getText());
 //        startActivity(intent);
     }
-
 }

@@ -46,8 +46,6 @@ public class RegisterActivity extends AppCompatActivity {
         userType = findViewById(R.id.user_type_group);
         address = findViewById(R.id.address_reg);
 
-
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

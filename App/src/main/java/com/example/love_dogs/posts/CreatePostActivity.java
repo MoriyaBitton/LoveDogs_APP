@@ -24,7 +24,6 @@ public class CreatePostActivity extends AppCompatActivity {
 
     EditText date_time_in;
     EditText location;
-
     User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +58,8 @@ public class CreatePostActivity extends AppCompatActivity {
 //            }
 //        });
     }
-
     private void showSetLocationDialog(EditText location){
     }
-
     private void showDateTimeDialog(EditText date_time_in){
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -91,8 +88,6 @@ public class CreatePostActivity extends AppCompatActivity {
                 calendar.get(Calendar.DAY_OF_MONTH)).show();
         Log.d("mylog", "done");
     }
-
-
     public void onPostButton(View button){
         Intent intent = new Intent(this, ViewPostActivity.class);
         //Bundle bundle = new Bundle();

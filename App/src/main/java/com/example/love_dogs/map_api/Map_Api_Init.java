@@ -23,7 +23,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 
 public class Map_Api_Init extends AppCompatActivity implements OnMapReadyCallback {
-
     private MapView gMapView;
     private static final String gMapViewKey = "MapViewBundleKey";
 
@@ -42,8 +41,6 @@ public class Map_Api_Init extends AppCompatActivity implements OnMapReadyCallbac
 
         gMapView.getMapAsync(this);
     }
-
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -56,7 +53,6 @@ public class Map_Api_Init extends AppCompatActivity implements OnMapReadyCallbac
 
         gMapView.onSaveInstanceState(mapViewBundle);
     }
-
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         googleMap.addMarker(new MarkerOptions().position(new LatLng(32.109333, 34.855499)).title("Marker"));
@@ -78,7 +74,6 @@ public class Map_Api_Init extends AppCompatActivity implements OnMapReadyCallbac
         FusedLocationProviderClient userLocation = LocationServices.getFusedLocationProviderClient(this);
 
     }
-
     public void getLocation() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -97,41 +92,34 @@ public class Map_Api_Init extends AppCompatActivity implements OnMapReadyCallbac
 
         }
     }
-
     @Override
     public void onResume(){
         super.onResume();
         gMapView.onResume();
     }
-
     @Override
     public void onStart(){
         super.onStart();
         gMapView.onStart();
     }
-
     @Override
     public void onStop(){
         super.onStop();
         gMapView.onStop();
     }
-
     @Override
     public void onPause(){
         gMapView.onPause();
         super.onPause();
     }
-
     @Override
     protected void onDestroy() {
         gMapView.onDestroy();
         super.onDestroy();
     }
-
     @Override
     public void onLowMemory() {
         super.onLowMemory();
         gMapView.onLowMemory();
     }
-
 }

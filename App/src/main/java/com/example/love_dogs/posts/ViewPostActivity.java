@@ -12,7 +12,6 @@ import com.example.love_dogs.login.User;
 import com.example.love_dogs.volunteers.VolunteerPost;
 
 public class ViewPostActivity extends AppCompatActivity {
-
     User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,6 @@ public class ViewPostActivity extends AppCompatActivity {
         TextView author = findViewById(R.id.vvp_username);
         author.setText(post.author);
     }
-
     public void backButton(View view){
         Intent intent = new Intent(this, ViewPostsActivity.class);
         startActivity(intent);
