@@ -43,6 +43,13 @@ public class NetPost {
         this.imgUrl = imgUrl;
     }
 
+    public NetPost(String body, String pid, String imgUrl, long timestamp) {
+        this.body = body;
+        this.pid = pid;
+        this.imgUrl = imgUrl;
+        this.timestamp = timestamp;
+    }
+
     public void syncWithOld(com.example.love_dogs.NetPost old){
         if(old == null || this.pid != null && !this.pid.equals(old.pid)){
             return;
@@ -176,7 +183,6 @@ public class NetPost {
         result.put("pid", pid);
         result.put("timestamp", timestamp);
         result.put("imgUrl", imgUrl);
-        result.put("authorId",authorId);
         return result;
     }
 

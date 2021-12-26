@@ -219,7 +219,8 @@ public class InstaDogBoard extends Fragment {
         if(img!=null) {
             img_name=img.getDrawable().toString();
         }
-        NetPost current = new NetPost(text.getText().toString(),img_name);
+        NetPost current = new NetPost();
+        current.UpdatePost(img_name,text.getText().toString());
         current.push();
 
         Toast.makeText(getContext(),"Post Uploaded Successfully.\n",Toast.LENGTH_LONG).show();
