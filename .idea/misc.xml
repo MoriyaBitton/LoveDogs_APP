@@ -44,7 +44,6 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_instaDog.xml" value="0.13842592592592592" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_insta_dog.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_settings.xml" value="0.13272543059777103" />
-        <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_user_profile.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_view_post_fragment.xml" value="0.33" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_board.xml" value="0.25" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post.xml" value="0.33" />
@@ -72,6 +71,10 @@
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/menu/menu_scrolling_events.xml" value="0.12685185185185185" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15520833333333334" />
         <entry key="..\:/Madmah/Tohna/LoveDogs_APP/App/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15520833333333334" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/dog_post.xml" value="0.10314207650273224" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_insta_dog.xml" value="0.10314207650273224" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/fragment_volunteer_post_editk.xml" value="0.12269736842105264" />
+        <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/insta_dog_post_snapshot.xml" value="0.10314207650273224" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/layout/layout_center_profile.xml" value="0.1" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/photo_src_menu.xml" value="0.1" />
         <entry key="..\:/Share/AndroidStudio/LoveDogs_APP/App/src/main/res/menu/post_menu.xml" value="0.1" />
