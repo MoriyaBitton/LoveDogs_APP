@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -15,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -29,6 +32,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.util.NoSuchElementException;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -143,8 +147,23 @@ public class FirebaseIMG {
             public void onSuccess(byte[] bytes) {
                 // Data for "images/island.jpg" is returns, use this as needed
                 Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                img.setImageBitmap(Bitmap.createScaledBitmap(bmp, img.getWidth(), img.getHeight(), false));
+
+                int currentBitmapWidth = bmp.getWidth();
+                int currentBitmapHeight = bmp.getHeight();
+
+                int ivWidth = img.getWidth();
+                int ivHeight = img.getHeight();
+                int newWidth = ivWidth;
+
+                int newHeight = (int) Math.floor((double) currentBitmapHeight *( (double) newWidth / (double) currentBitmapWidth));
+
+                Bitmap newbitMap = Bitmap.createScaledBitmap(bmp, newWidth, newHeight, true);
+
+                img.setImageBitmap(newbitMap);
+
+                //img.setImageBitmap(Bitmap.createScaledBitmap(bmp, img.getWidth(), img.getHeight(), false));
                 img.setVisibility(View.VISIBLE);
+                //scaleImage(context, img);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -153,5 +172,73 @@ public class FirebaseIMG {
                 // Handle any errors
             }
         });
+    }
+
+    private static void scaleImage(Context context, ImageView view) throws NoSuchElementException {
+        // Get bitmap from the the ImageView.
+        Bitmap bitmap = null;
+
+        try {
+            Drawable drawing = view.getDrawable();
+            bitmap = ((BitmapDrawable) drawing).getBitmap();
+        } catch (NullPointerException e) {
+            throw new NoSuchElementException("No drawable on given view");
+        } catch (ClassCastException e) {
+            // Check bitmap is Ion drawable
+            return;
+        }
+
+        // Get current dimensions AND the desired bounding box
+        int width = 0;
+
+        try {
+            width = bitmap.getWidth();
+        } catch (NullPointerException e) {
+            throw new NoSuchElementException("Can't find bitmap on given view/drawable");
+        }
+
+        int height = bitmap.getHeight();
+        int bounding = dpToPx(context,500);
+        Log.i("Test", "original width = " + Integer.toString(width));
+        Log.i("Test", "original height = " + Integer.toString(height));
+        Log.i("Test", "bounding = " + Integer.toString(bounding));
+
+        // Determine how much to scale: the dimension requiring less scaling is
+        // closer to the its side. This way the image always stays inside your
+        // bounding box AND either x/y axis touches it.
+        float xScale = ((float) bounding) / width;
+        float yScale = ((float) bounding) / height;
+        float scale = (xScale <= yScale) ? xScale : yScale;
+        Log.i("Test", "xScale = " + Float.toString(xScale));
+        Log.i("Test", "yScale = " + Float.toString(yScale));
+        Log.i("Test", "scale = " + Float.toString(scale));
+
+        // Create a matrix for the scaling and add the scaling data
+        Matrix matrix = new Matrix();
+        matrix.postScale(scale, scale);
+
+        // Create a new bitmap and convert it to a format understood by the ImageView
+        Bitmap scaledBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
+        width = scaledBitmap.getWidth(); // re-use
+        height = scaledBitmap.getHeight(); // re-use
+        BitmapDrawable result = new BitmapDrawable(scaledBitmap);
+        Log.i("Test", "scaled width = " + Integer.toString(width));
+        Log.i("Test", "scaled height = " + Integer.toString(height));
+
+        // Apply the scaled bitmap
+        view.setImageDrawable(result);
+
+        // Now change ImageView's dimensions to match the scaled image
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) view.getLayoutParams();
+        params.width = width;
+        params.height = height;
+        view.setLayoutParams(params);
+
+        Log.i("Test", "done");
+    }
+
+    private static int dpToPx(Context context,int dp) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return Math.round((float)dp * density);
     }
 }
