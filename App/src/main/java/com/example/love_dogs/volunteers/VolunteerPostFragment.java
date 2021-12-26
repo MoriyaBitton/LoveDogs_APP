@@ -6,10 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.love_dogs.R;
+import com.example.love_dogs.functionality.FirebaseIMG;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.login.User;
@@ -128,6 +130,9 @@ public class VolunteerPostFragment extends FragmentExtended {
 
         Button volunteer = view.findViewById(R.id.vvp_volunteer_button);
         volunteer.setOnClickListener(this::onVolunteerClicked);
+
+        ImageView img = view.findViewById(R.id.vvp_image);
+        FirebaseIMG.loadImg(getContext(), post.img_url, img);
     }
 
     public void onEdit(View view){

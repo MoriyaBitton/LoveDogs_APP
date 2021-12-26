@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -123,6 +124,33 @@ public class FirebaseIMG {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
+            }
+        });
+    }
+
+    public static void loadImg(Context context, String img_url,ImageView img) {
+        if(img_url == null){
+            img.setVisibility(View.GONE);
+            return;
+        }
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference ref_storage = storage.getReference("images");
+        //String img_name_ref = img.getDrawable().toString();
+        StorageReference ref_img = ref_storage.child(img_url);
+        final long ONE_MEGABYTE = 1024 * 1024;
+        ref_img.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                // Data for "images/island.jpg" is returns, use this as needed
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                img.setImageBitmap(Bitmap.createScaledBitmap(bmp, img.getWidth(), img.getHeight(), false));
+                img.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                img.setVisibility(View.GONE);
+                // Handle any errors
             }
         });
     }
