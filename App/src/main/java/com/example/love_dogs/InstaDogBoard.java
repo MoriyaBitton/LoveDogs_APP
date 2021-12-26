@@ -168,9 +168,9 @@ public class InstaDogBoard extends Fragment {
                         (o1, o2) -> o1.timestamp > o2.timestamp ? 1 : -1);
                 Date current_date = new Date(System.currentTimeMillis());
                 for (NetPost post : items) {
-                    if (post.timestamp < current_date.getTime()) {
-                        continue;
-                    }
+//                    if (post.timestamp < current_date.getTime()) {
+//                        continue;
+//                    }
 
                     NetPost.all_posts.put(post.pid, post);
 
