@@ -55,6 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String pass_str = pass.getText().toString();
                 String pass_str2 = pass2.getText().toString();
                 String email_str = email.getText().toString();
+                String user_str = username.getText().toString();
+
                 if(userType.getCheckedRadioButtonId()==R.id.radio_comp){
                     user_type = User.ORGANIZATION;
                 }
@@ -77,6 +79,10 @@ public class RegisterActivity extends AppCompatActivity {
                     checked=false;
                 }
 
+                if(user_str.length() <= 1){
+                    username.setError("Username must be at least 2 characters");
+                }
+
                 if(checked){
                     int finalUser_type = user_type;
                     mAuth.createUserWithEmailAndPassword(email_str, pass_str)
@@ -88,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d("RegisterActivity", "createUserWithEmail:success");
                                         Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_LONG);
                                         FirebaseUser fire_user = mAuth.getCurrentUser();
-                                        User user = User.AddUser(fire_user, fire_user.getEmail(), phone.getText().toString(),
+                                        User user = User.AddUser(fire_user, user_str, phone.getText().toString(),
                                                 address.getText().toString(), finalUser_type, new OnSuccessListener<Void>() {
 
                                             @Override
