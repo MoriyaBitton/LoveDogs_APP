@@ -10,61 +10,69 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="800dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_type">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/user_comp_name_reg"
-            style="@style/Register_EditText"
-            android:layout_marginTop="10dp"
-            android:hint="User/Company name" />
+        <LinearLayout
+            android:id="@+id/fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/Email_Reg"
-            style="@style/Register_EditText"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/Email_Reg"
+                style="@style/Register_EditText"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/address_reg"
-            style="@style/Register_EditText"
-            android:hint="Address" />
+            <EditText
+                android:id="@+id/user_comp_name_reg"
+                style="@style/Register_EditText"
+                android:layout_marginTop="10dp"
+                android:hint="User/Company name" />
 
-        <EditText
-            android:id="@+id/phone_reg"
-            style="@style/Register_EditText"
-            android:hint="Phone" />
+            <EditText
+                android:id="@+id/address_reg"
+                style="@style/Register_EditText"
+                android:hint="Address" />
 
-        <EditText
-            android:id="@+id/Password2"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="52dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Password" />
+            <EditText
+                android:id="@+id/phone_reg"
+                style="@style/Register_EditText"
+                android:inputType="phone"
+                android:hint="Phone" />
 
+            <EditText
+                android:id="@+id/Password"
+                style="@style/Register_EditText"
+                android:hint="Password"
+                android:inputType="textPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
 
-        <EditText
-            android:id="@+id/Password"
-            style="@style/Register_EditText"
-            android:hint="Password"
-            android:inputType="textPassword"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Email_Reg" />
+            <EditText
+                android:id="@+id/Password2"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="52dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Password" />
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        </LinearLayout>
+
+        <RadioGroup
             android:id="@+id/user_type_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,15 +83,16 @@
             <RadioButton
                 android:id="@+id/radio_user"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
                 android:text="User" />
 
             <RadioButton
                 android:id="@+id/radio_comp"
                 android:layout_width="0dp"
-                android:layout_weight="1.7"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.7"
                 android:text="Organiztion" />
         </RadioGroup>
 

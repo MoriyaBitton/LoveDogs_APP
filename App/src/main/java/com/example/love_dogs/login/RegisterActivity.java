@@ -51,12 +51,12 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user_type = "0";
+                int user_type = User.USER;
                 String pass_str = pass.getText().toString();
                 String pass_str2 = pass2.getText().toString();
                 String email_str = email.getText().toString();
                 if(userType.getCheckedRadioButtonId()==R.id.radio_comp){
-                    user_type = "1";
+                    user_type = User.ORGANIZATION;
                 }
                 boolean checked = true;
 
@@ -78,8 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 if(checked){
-
-                    String finalUser_type = user_type;
+                    int finalUser_type = user_type;
                     mAuth.createUserWithEmailAndPassword(email_str, pass_str)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -89,13 +88,14 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d("RegisterActivity", "createUserWithEmail:success");
                                         Toast.makeText(RegisterActivity.this,"Registered Successfully.", Toast.LENGTH_LONG);
                                         FirebaseUser fire_user = mAuth.getCurrentUser();
-                                        User user = User.AddUser(fire_user, fire_user.getEmail(), phone.getText().toString(), address.getText().toString(), finalUser_type, new OnSuccessListener<Void>() {
+                                        User user = User.AddUser(fire_user, fire_user.getEmail(), phone.getText().toString(),
+                                                address.getText().toString(), finalUser_type, new OnSuccessListener<Void>() {
 
                                             @Override
                                             public void onSuccess(Void unused) {
                                                 Toast.makeText(RegisterActivity.this, "Registered Successfully,Moved to login page",
                                                         Toast.LENGTH_LONG).show();
-                                                Intent intent = new Intent(RegisterActivity.this, LogInActivity.class);
+                                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                                 startActivity(intent);
                                             }
                                         });

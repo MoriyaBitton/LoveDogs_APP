@@ -36,6 +36,11 @@ public class VolunteerPostFragment extends FragmentExtended {
 
             remove = child_view.findViewById(R.id.vvpf_field_remove);
             volunteer = child_view.findViewById(R.id.vvpf_field_volunteer);
+            if(user.type == User.ORGANIZATION){
+                volunteer.setVisibility(View.INVISIBLE);
+                remove.setVisibility(View.INVISIBLE);
+            }
+
             update();
 
             remove.setOnClickListener(this::onCancelVolunteer);
@@ -48,6 +53,10 @@ public class VolunteerPostFragment extends FragmentExtended {
             Log.d("firebase", "updating... " + field.getNumSubscribed());
             type.setText(field.type);
             num.setText(field.getNumSubscribed() + "/" + field.required);
+
+            if(user.type == User.ORGANIZATION){
+                return;
+            }
 
             if(field.subscribed.contains(user.uid)){
                 volunteer.setVisibility(View.INVISIBLE);

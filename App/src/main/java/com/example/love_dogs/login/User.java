@@ -26,15 +26,18 @@ public class User {
     public String email;
     public String user_name;
     public String phone_number;
-    public String type;
-    public String organizationID;
+    public int type;
     public String address;
+
+    public static final int USER = 0;
+    public static final int ORGANIZATION = 1;
+    public static final int ADMIN = 2;
 
     public User(){
 
     }
 
-    public User(String uid, String email, String user_name, String phone_number,String address,String type)
+    public User(String uid, String email, String user_name, String phone_number,String address,int type)
     {
         this.uid = uid;
         this.email = email;
@@ -80,8 +83,9 @@ public class User {
                         context.startActivity(intent);
                         return;
                     }
-                    User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"), td.get("phone_number"),td.get("address"),td.get("type"));
-                    c_user.organizationID = td.get("organizationID");
+                    User c_user = new User(td.get("uid"), td.get("email"), td.get("user_name"),
+                            td.get("phone_number"),td.get("address"),Integer.parseInt(td.get("type")));
+                    //c_user.organizationID = td.get("organizationID");
                     current = c_user;
                     Intent intent = new Intent(context, MainActivity.class);
                     context.startActivity(intent);
@@ -94,7 +98,7 @@ public class User {
         return true;
     }
 
-    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number,String address,String type, OnSuccessListener<Void> listener){
+    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number,String address,int type, OnSuccessListener<Void> listener){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), user_name, phone_number,address,type);
         mDatabase.child("users").child(firebaseUser.getUid()).setValue(user);

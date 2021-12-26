@@ -76,7 +76,7 @@ public class VolunteerBoard extends Fragment {
 
         Button add_post = view.findViewById(R.id.vb_add_post);
         User me = User.getCurrentRaw();
-        if(me.organizationID == null) {
+        if(me.type == User.USER) {
             add_post.setVisibility(View.GONE);
         }else{
             add_post.setOnClickListener(this::OnCreatePost);

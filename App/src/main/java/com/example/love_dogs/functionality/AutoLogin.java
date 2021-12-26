@@ -29,7 +29,7 @@ public class AutoLogin {
             info.callback(false);
             return;
         }
-        
+
         String android_id = Settings.Secure.getString(context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
 
