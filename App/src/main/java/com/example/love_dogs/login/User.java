@@ -38,7 +38,9 @@ public class User {
 
     }
 
-    public User(String uid, String email, String user_name, String phone_number,String address,int type)
+    public User(String uid,
+                String email, String user_name,
+                String phone_number,String address,int type)
     {
         this.uid = uid;
         this.email = email;
@@ -47,7 +49,6 @@ public class User {
         this.address = address;
         this.type=type;
     }
-
     public void UpdateInDatabase(){
         if(uid == null){
             return;
@@ -60,7 +61,6 @@ public class User {
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.updateChildren(result);
     }
-
     public static boolean LoadCurrentUser(AppCompatActivity context){
         FirebaseUser user = getFirebaseUser(context);
         if(user == null) {
@@ -102,8 +102,9 @@ public class User {
 
         return true;
     }
-
-    public static User AddUser(FirebaseUser firebaseUser, String user_name, String phone_number,String address,int type, OnSuccessListener<Void> listener){
+    public static User AddUser(FirebaseUser firebaseUser,
+                               String user_name, String phone_number,
+                               String address, int type, OnSuccessListener<Void> listener){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         User user = new User(firebaseUser.getUid(), firebaseUser.getEmail(), user_name, phone_number,address,type);
         mDatabase.child("users").child(firebaseUser.getUid()).setValue(user);
@@ -117,7 +118,6 @@ public class User {
         }
         return user;
     }
-
     public static User getCurrentUser(AppCompatActivity context){
         FirebaseUser user = getFirebaseUser(context);
         if(user == null){
@@ -130,16 +130,13 @@ public class User {
         }
         return current;
     }
-
     public static User getCurrentRaw(){
         return current;
     }
-
     public static boolean isLoggedIn(AppCompatActivity context){
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         return firebaseUser != null;
     }
-
     public static FirebaseUser getFirebaseUser(AppCompatActivity context){
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -151,6 +148,4 @@ public class User {
         }
         return firebaseUser;
     }
-
-
 }

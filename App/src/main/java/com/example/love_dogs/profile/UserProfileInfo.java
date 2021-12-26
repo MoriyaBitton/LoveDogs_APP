@@ -28,7 +28,6 @@ public class UserProfileInfo {
     public UserProfileInfo() {
 
     }
-
     public static void loadUserInfo(String userId, OnLoadUserInfo callback){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child(userinfo_node).child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -44,7 +43,6 @@ public class UserProfileInfo {
             }
         });
     }
-
     public static void UpdateUserInfo(String userId, OnLoadUserInfo callback){
         int[] done = {4};
         OnLoadUserInfo call = new OnLoadUserInfo() {
@@ -64,17 +62,14 @@ public class UserProfileInfo {
         UpdateUserInfoScore(userId, call);
         UpdateUserInfoVolunteerPosts(userId, call);
     }
-
     private static void UpdateUserInfoLikes(String userId, OnLoadUserInfo callback){
         // update likes
         callback.callback(null);
     }
-
     private static void UpdateUserInfoInstaPosts(String userId, OnLoadUserInfo callback){
         // update insta posts count
         callback.callback(null);
     }
-
     private static void UpdateUserInfoScore(String userId, OnLoadUserInfo callback){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         Query myTopPostsQuery = mDatabase.child("volunteers").child("users").child(userId);
@@ -96,7 +91,6 @@ public class UserProfileInfo {
             }
         });
     }
-
     private static void UpdateUserInfoVolunteerPosts(String userId, OnLoadUserInfo callback){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         Query myTopPostsQuery = mDatabase.child("user-posts").child(userId);
@@ -112,21 +106,18 @@ public class UserProfileInfo {
             }
         });
     }
-
     public void increase_likes(int value) {
         Map<String, Object> updates = new HashMap<>();
         updates.put(userinfo_node + "/" + uid + "/likes", ServerValue.increment(value));
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.updateChildren(updates);
     }
-
     public void increase_num_posts(int value) {
         Map<String, Object> updates = new HashMap<>();
         updates.put(userinfo_node + "/" + uid + "/num_posts", ServerValue.increment(value));
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.updateChildren(updates);
     }
-
     public void increase_volunteer_score(int value) {
         Map<String, Object> updates = new HashMap<>();
         updates.put(userinfo_node + "/" + uid + "/volunteer_score", ServerValue.increment(value));

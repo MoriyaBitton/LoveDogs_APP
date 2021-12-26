@@ -140,6 +140,8 @@ public class InstaDogBoard extends Fragment {
 
     }
 
+
+
     private void uploadPost() {
         String img_name = img.getDrawable().toString();
         String data = text.getText().toString();
@@ -184,7 +186,9 @@ public class InstaDogBoard extends Fragment {
         }
     }
 
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("firebase","test");
         if ((requestCode == REQUEST_IMAGE_CAPTURE || requestCode == PICK_IMAGE_GALLERY) && resultCode == RESULT_OK) {
             final Bundle extras = data.getExtras();
             Bitmap imageBitmap;

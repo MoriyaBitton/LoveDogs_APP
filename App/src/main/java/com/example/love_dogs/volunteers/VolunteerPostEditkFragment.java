@@ -1,29 +1,49 @@
 package com.example.love_dogs.volunteers;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.love_dogs.R;
 import com.example.love_dogs.functionality.FieldCheck;
+import com.example.love_dogs.functionality.FirebaseIMG;
 import com.example.love_dogs.functionality.FragmentExtended;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.functionality.GetDateTime;
 import com.example.love_dogs.login.User;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -125,7 +145,12 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
         }
 
         Button img_button = view.findViewById(R.id.vvep_image_button);
-
+        img_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseIMG.showPopup(VolunteerPostEditkFragment.this, v);
+            }
+        });
     }
 
     void onUpdateClicked(View view){
@@ -207,5 +232,12 @@ public class VolunteerPostEditkFragment extends FragmentExtended {
             }
         }
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("firebase", "took image!");
+        ImageView img = root_view.findViewById(R.id.vvep_image);
+        FirebaseIMG.onActivityResult(requestCode, resultCode, data, img);
     }
 }

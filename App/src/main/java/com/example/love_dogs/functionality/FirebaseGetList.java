@@ -37,7 +37,7 @@ public class FirebaseGetList {
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 ArrayList<T> target = new ArrayList<>();
 
-                Log.d("firebase", task.getResult().toString());
+                //Log.d("firebase", task.getResult().toString());
                 for (DataSnapshot child : task.getResult().getChildren()) {
                     // Extract a Message object from the DataSnapshot
                     T item = child.getValue(targetClass);

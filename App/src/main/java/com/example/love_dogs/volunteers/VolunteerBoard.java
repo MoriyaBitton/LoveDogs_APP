@@ -76,7 +76,7 @@ public class VolunteerBoard extends Fragment {
             container.removeAllViews();
         }
 
-        Log.d("firebase", "onCreateView: refresh");
+        //Log.d("firebase", "onCreateView: refresh");
         View view = inflater.inflate(R.layout.fragment_volunteer_board, container, false);
         // Inflate the layout for this fragment
 
