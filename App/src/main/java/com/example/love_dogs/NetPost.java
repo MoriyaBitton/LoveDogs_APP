@@ -87,6 +87,74 @@ public class NetPost {
         return true;
     }
 
+    public String getVolunteers_post_types_db() {
+        return volunteers_post_types_db;
+    }
+
+    public String getVolunteers_users_types_db() {
+        return volunteers_users_types_db;
+    }
+
+    public static SimpleDateFormat getSimpleDateFormat() {
+        return simpleDateFormat;
+    }
+
+    public static HashMap<String, NetPost> getAll_posts() {
+        return all_posts;
+    }
+
+    public static void setAll_posts(HashMap<String, NetPost> all_posts) {
+        NetPost.all_posts = all_posts;
+    }
+
+    public static NetPost getCurrent() {
+        return current;
+    }
+
+    public static void setCurrent(NetPost current) {
+        NetPost.current = current;
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
     private void updatePost(){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         Map<String, Object> postValues = this.toMap();
@@ -107,7 +175,7 @@ public class NetPost {
         result.put("body", body);
         result.put("pid", pid);
         result.put("timestamp", timestamp);
-        result.put("url", imgUrl);
+        result.put("imgUrl", imgUrl);
         result.put("authorId",authorId);
         return result;
     }

@@ -26,10 +26,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.love_dogs.functionality.FirebaseGetList;
 import com.example.love_dogs.functionality.FragmentManager;
+import com.example.love_dogs.volunteers.VolunteerBoard;
+import com.example.love_dogs.volunteers.VolunteerPost;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,12 +43,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -106,6 +114,7 @@ public class InstaDogBoard extends Fragment {
 
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -117,6 +126,9 @@ public class InstaDogBoard extends Fragment {
 
         View inflator = inflater.inflate(R.layout.fragment_insta_dog, container, false);
 
+        LinearLayout layout = inflator.findViewById(R.id.net_scroll);
+        LayoutInflater linear_layour_inflater =  getLayoutInflater();
+
         photoBtn = (Button) inflator.findViewById(R.id.dbpicture);
         postBtn = (Button) inflator.findViewById(R.id.dbpost);
         text = (EditText) inflator.findViewById(R.id.Post_text);
@@ -125,11 +137,8 @@ public class InstaDogBoard extends Fragment {
             public void onClick(View v) {
                 showPopup(v);
                 img = inflator.findViewById(R.id.photo_post);
-
-
             }
         });
-
 
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,6 +155,59 @@ public class InstaDogBoard extends Fragment {
             }
         });
         // Inflate the layout for this fragment
+
+        storage = FirebaseStorage.getInstance();
+        StorageReference dataRef = storage.getReference();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        Query myTopPostsQuery = mDatabase.child("net-posts");
+        FirebaseGetList.getListOnce(myTopPostsQuery, NetPost.class, new FirebaseGetList.Callback<NetPost>() {
+            @Override
+            public void getList(ArrayList<NetPost> items) {
+                Collections.sort(items,
+                        (o1, o2) -> o1.timestamp > o2.timestamp ? 1 : -1);
+                Date current_date = new Date(System.currentTimeMillis());
+                for (NetPost post : items) {
+                    if (post.timestamp < current_date.getTime()) {
+                        continue;
+                    }
+
+                    NetPost.all_posts.put(post.pid, post);
+
+                    View child_view = linear_layour_inflater.inflate(R.layout.dog_post, null);
+
+
+                    TextView title = (TextView) child_view.findViewById(R.id.pbody);
+                    title.setText(post.body);
+
+                    TextView date = child_view.findViewById(R.id.editTextTime);
+                    Date time = new Date(System.currentTimeMillis());
+                    time.setTime(post.timestamp);
+                    date.setText(time.toString());
+
+                    TextView author = child_view.findViewById(R.id.dp_user);
+                    author.setText(post.authorId);
+
+
+                    ImageView img = child_view.findViewById(R.id.dp_image);
+
+                    dataRef.child("images/android.graphics.drawable.BitmapDrawable@fa16205").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            img.setImageURI(uri);
+                            img.setVisibility(View.VISIBLE);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+
+                        }
+                    });
+
+                    layout.addView(child_view);
+
+                }
+            }});
 
         return inflator;
 
