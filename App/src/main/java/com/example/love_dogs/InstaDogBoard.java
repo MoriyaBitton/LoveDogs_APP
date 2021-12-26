@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.love_dogs.functionality.FirebaseGetList;
+import com.example.love_dogs.functionality.FirebaseIMG;
 import com.example.love_dogs.functionality.FragmentManager;
 import com.example.love_dogs.volunteers.VolunteerBoard;
 import com.example.love_dogs.volunteers.VolunteerPost;
@@ -190,19 +191,20 @@ public class InstaDogBoard extends Fragment {
 
 
                     ImageView img = child_view.findViewById(R.id.dp_image);
+                    FirebaseIMG.loadImg(getActivity(),"doge_3.jpg", img);
 
-                    dataRef.child("images/android.graphics.drawable.BitmapDrawable@fa16205").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            img.setImageURI(uri);
-                            img.setVisibility(View.VISIBLE);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-
-                        }
-                    });
+//                    dataRef.child("images/android.graphics.drawable.BitmapDrawable@fa16205").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                        @Override
+//                        public void onSuccess(Uri uri) {
+//                            img.setImageURI(uri);
+//                            img.setVisibility(View.VISIBLE);
+//                        }
+//                    }).addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception exception) {
+//
+//                        }
+//                    });
 
                     layout.addView(child_view);
 

@@ -100,6 +100,7 @@
                     android:id="@+id/dp_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/images__6_"
                     android:background="@drawable/big_round"
                     />
 
