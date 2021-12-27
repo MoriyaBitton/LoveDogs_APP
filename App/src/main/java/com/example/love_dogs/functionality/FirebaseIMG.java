@@ -174,7 +174,7 @@ public class FirebaseIMG {
         });
     }
 
-    private static void scaleImage(Context context, ImageView view) throws NoSuchElementException {
+    public static void scaleImage(Context context, ImageView view) throws NoSuchElementException {
         // Get bitmap from the the ImageView.
         Bitmap bitmap = null;
 

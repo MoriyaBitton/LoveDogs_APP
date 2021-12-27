@@ -83,6 +83,7 @@ public class InstaDogBoard extends Fragment {
     private EditText text;
     private FirebaseStorage storage;
     private FirebaseUser user;
+    private LinearLayout layout;
     public InstaDogBoard() {
         // Required empty public constructor
     }
@@ -127,7 +128,7 @@ public class InstaDogBoard extends Fragment {
 
         View inflator = inflater.inflate(R.layout.fragment_insta_dog, container, false);
 
-        LinearLayout layout = inflator.findViewById(R.id.net_scroll);
+        layout = inflator.findViewById(R.id.net_scroll);
         LayoutInflater linear_layour_inflater =  getLayoutInflater();
 
         photoBtn = (Button) inflator.findViewById(R.id.dbpicture);
@@ -166,7 +167,7 @@ public class InstaDogBoard extends Fragment {
             @Override
             public void getList(ArrayList<NetPost> items) {
                 Collections.sort(items,
-                        (o1, o2) -> o1.timestamp > o2.timestamp ? 1 : -1);
+                        (o1, o2) -> o1.timestamp > o2.timestamp ? -1 : 1);
                 Date current_date = new Date(System.currentTimeMillis());
                 for (NetPost post : items) {
 //                    if (post.timestamp < current_date.getTime()) {
@@ -225,6 +226,7 @@ public class InstaDogBoard extends Fragment {
         current.UpdatePost(img_name,text.getText().toString());
         current.push();
 
+        showPost(current, img);
         Toast.makeText(getContext(),"Post Uploaded Successfully.\n",Toast.LENGTH_LONG).show();
         if(img!=null){
             img.invalidate();
@@ -232,6 +234,34 @@ public class InstaDogBoard extends Fragment {
             img.setVisibility(View.GONE);}
         text.setText("");
 
+    }
+
+    public void showPost(NetPost post, ImageView other_img){
+        LayoutInflater linear_layout_inflater =  getLayoutInflater();
+        View child_view = linear_layout_inflater.inflate(R.layout.dog_post, null);
+
+
+        TextView title = (TextView) child_view.findViewById(R.id.pbody);
+        title.setText(post.body);
+
+        TextView date = child_view.findViewById(R.id.editTextTime);
+        Date time = new Date(System.currentTimeMillis());
+        time.setTime(post.timestamp);
+        date.setText(time.toString());
+
+        TextView author = child_view.findViewById(R.id.dp_user);
+        author.setText(post.authorId);
+
+        ImageView img = child_view.findViewById(R.id.dp_image);
+        if(other_img != null) {
+            img.setImageDrawable(other_img.getDrawable());
+            FirebaseIMG.scaleImage(getContext(), img);
+        }else{
+            img.setVisibility(View.GONE);
+        }
+
+
+        layout.addView(child_view,0);
     }
 
 
