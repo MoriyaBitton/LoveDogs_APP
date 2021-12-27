@@ -1,5 +1,7 @@
 package com.example.love_dogs.profile;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.example.love_dogs.login.User;
@@ -85,8 +87,10 @@ public class UserProfileInfo {
                     }
                     mDatabase.child(userinfo_node).child(userId).child("volunteer_score")
                             .setValue(score);
+                    callback.callback(null);
                 }else{
                     mDatabase.child(userinfo_node).child(userId).child("volunteer_score").setValue(0);
+                    callback.callback(null);
                 }
             }
         });
@@ -100,8 +104,10 @@ public class UserProfileInfo {
                 if(task.getResult().exists()){
                     mDatabase.child(userinfo_node).child(userId).child("volunteer_posts")
                             .setValue(task.getResult().getChildrenCount());
+                    callback.callback(null);
                 }else{
                     mDatabase.child(userinfo_node).child(userId).child("volunteer_posts").setValue(0);
+                    callback.callback(null);
                 }
             }
         });

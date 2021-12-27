@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,7 @@ public class UserProfile extends Fragment {
         phone.setText(user.phone_number);
         email.setText(user.email);
 
-        UserProfileInfo.loadUserInfo(user.uid, new UserProfileInfo.OnLoadUserInfo() {
+        UserProfileInfo.OnLoadUserInfo update = new UserProfileInfo.OnLoadUserInfo() {
             @Override
             public void callback(UserProfileInfo info) {
                 TextView volunteer_score = view.findViewById(R.id.ap_score);
@@ -60,7 +61,10 @@ public class UserProfile extends Fragment {
                 volunteer_score.setText(String.valueOf(info.volunteer_posts * 50 + info.volunteer_score * 5));
                 posts.setText(String.valueOf(info.volunteer_posts + info.insta_posts));
             }
-        });
+        };
+
+        UserProfileInfo.UpdateUserInfo(user.uid, update);
+        //UserProfileInfo.loadUserInfo(user.uid, update);
         // Inflate the layout for this fragment
         return view;
     }
