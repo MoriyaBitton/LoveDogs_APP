@@ -60,10 +60,9 @@
                     android:id="@+id/vvp_edit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="64dp"
+                    style="@style/buttom"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/teal_700"
+                    android:backgroundTint="@color/Dark_grey"
                     android:text="Edit"
                     android:textColor="@color/white" />
 
@@ -71,10 +70,9 @@
                     android:id="@+id/vvp_delete"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="64dp"
-                    android:layout_marginEnd="0dp"
+                    style="@style/buttom"
                     android:layout_weight="1"
-                    android:backgroundTint="#7A4444"
+                    android:backgroundTint="@color/Dark_grey"
                     android:text="Delete"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -210,13 +208,8 @@
 
                     <Button
                         android:id="@+id/vvp_volunteer_button"
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:backgroundTint="@color/Dark_grey"
                         android:text="Volunteer"
-                        android:textColor="@color/white" />
+                        style="@style/buttom" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -236,12 +229,9 @@
 
                 <Button
                     android:id="@+id/vvp_back"
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="64dp"
-                    android:backgroundTint="#6573C3"
+                    android:backgroundTint="@color/Dark_grey"
                     android:text="Back"
+                    style="@style/buttom"
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>

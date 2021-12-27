@@ -236,8 +236,9 @@
                         android:id="@+id/vvep_add_role"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="200dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+
                         android:backgroundTint="@color/Dark_grey"
                         android:text="Add Role" />
                 </LinearLayout>
@@ -252,7 +253,7 @@
                         android:id="@+id/vvep_back"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/Dark_grey"
@@ -264,7 +265,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="8dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="20dp"
                         android:layout_weight="0.6"
                         android:backgroundTint="@color/Dark_grey"
                         android:text="update"
