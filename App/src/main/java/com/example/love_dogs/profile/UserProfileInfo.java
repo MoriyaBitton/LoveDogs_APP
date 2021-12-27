@@ -70,7 +70,21 @@ public class UserProfileInfo {
     }
     private static void UpdateUserInfoInstaPosts(String userId, OnLoadUserInfo callback){
         // update insta posts count
-        callback.callback(null);
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        Query myTopPostsQuery = mDatabase.child("user-net-posts").child(userId);
+        myTopPostsQuery.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(task.getResult().exists()){
+                    mDatabase.child(userinfo_node).child(userId).child("insta_posts")
+                            .setValue(task.getResult().getChildrenCount());
+                    callback.callback(null);
+                }else{
+                    mDatabase.child(userinfo_node).child(userId).child("insta_posts").setValue(0);
+                    callback.callback(null);
+                }
+            }
+        });
     }
     private static void UpdateUserInfoScore(String userId, OnLoadUserInfo callback){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();

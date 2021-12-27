@@ -2,6 +2,7 @@ package com.example.love_dogs;
 
 import static android.app.Activity.RESULT_OK;
 
+import static com.example.love_dogs.login.User.getCurrentRaw;
 import static com.example.love_dogs.login.User.getFirebaseUser;
 
 import android.content.ActivityNotFoundException;
@@ -35,6 +36,7 @@ import android.widget.Toast;
 import com.example.love_dogs.functionality.FirebaseGetList;
 import com.example.love_dogs.functionality.FirebaseIMG;
 import com.example.love_dogs.functionality.FragmentManager;
+import com.example.love_dogs.login.User;
 import com.example.love_dogs.volunteers.VolunteerBoard;
 import com.example.love_dogs.volunteers.VolunteerPost;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -190,35 +192,16 @@ public class InstaDogBoard extends Fragment {
                     date.setText(time.toString());
 
                     TextView author = child_view.findViewById(R.id.dp_user);
-                    author.setText(post.authorId);
+                    author.setText(post.authorName);
 
                     MaterialButton likeBtn =  child_view.findViewById(R.id.like_btn);
                     MaterialButton commentBtn = child_view.findViewById(R.id.comment_btn);
 
-                    likeBtn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            int tag;
-                            if(likeBtn.getTag()!=null){
-                            tag = (int) likeBtn.getTag();
-                            }
-                            else{tag=0;}
-                            tag=(tag+1)%2;
-                            if(tag==1) {
-                                likeBtn.setTag(1);
-                                likeBtn.setBackgroundColor(getResources().getColor(R.color.red));
-                            }
-
-                            else{
-                                likeBtn.setTag(0);
-                                likeBtn.setBackgroundColor(getResources().getColor(R.color.light_grey));
-                            }
-                        }
-                    });
+                    new LikeManager(getActivity(),child_view);
 
 
                     ImageView img = child_view.findViewById(R.id.dp_image);
-                    FirebaseIMG.loadImg(getActivity(),"doge_3.jpg", img);
+                    FirebaseIMG.loadImg(getActivity(),post.imgUrl, img);
 
 //                    dataRef.child("images/android.graphics.drawable.BitmapDrawable@fa16205").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
 //                        @Override
@@ -249,7 +232,10 @@ public class InstaDogBoard extends Fragment {
             img_name=img.getDrawable().toString();
         }
         NetPost current = new NetPost();
+        User user = getCurrentRaw();
         current.UpdatePost(img_name,text.getText().toString());
+        current.authorId = user.uid;
+        current.authorName = user.user_name;
         current.push();
 
         showPost(current, img);
@@ -276,7 +262,7 @@ public class InstaDogBoard extends Fragment {
         date.setText(time.toString());
 
         TextView author = child_view.findViewById(R.id.dp_user);
-        author.setText(post.authorId);
+        author.setText(post.authorName);
 
         ImageView img = child_view.findViewById(R.id.dp_image);
         if(other_img != null) {
@@ -286,6 +272,7 @@ public class InstaDogBoard extends Fragment {
             img.setVisibility(View.GONE);
         }
 
+        new LikeManager(getActivity(),child_view);
 
         layout.addView(child_view,0);
     }

@@ -33,6 +33,7 @@ public class NetPost {
     public String body;
     public String pid;
     public String imgUrl;
+    public String authorName;
     public long timestamp;
 
     public NetPost(){
@@ -183,6 +184,8 @@ public class NetPost {
         result.put("pid", pid);
         result.put("timestamp", timestamp);
         result.put("imgUrl", imgUrl);
+        result.put("authorId", authorId);
+        result.put("authorName",authorName);
         return result;
     }
 
