@@ -28,7 +28,6 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/big_round"
                 android:orientation="horizontal">
 
 
@@ -86,6 +85,20 @@
                     android:orientation="vertical">
 
 
+                    <TextView
+                        android:id="@+id/pbody"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/big_round"
+                        android:ems="10"
+                        android:minHeight="48dp"
+                        android:text="Post Description"
+                        android:textAlignment="center"
+                        android:textColorHighlight="@color/black"
+                        android:textColorLink="@color/black"
+                        android:textSize="20sp"
+                        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
                     <ImageView
                         android:id="@+id/dp_image"
                         android:layout_width="match_parent"
@@ -126,20 +139,6 @@
                             app:iconGravity="start" />
 
                     </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/pbody"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/big_round"
-                        android:ems="10"
-                        android:minHeight="48dp"
-                        android:text="Post Description"
-                        android:textAlignment="center"
-                        android:textColorHighlight="@color/black"
-                        android:textColorLink="@color/black"
-                        android:textSize="20sp"
-                        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
                     <androidx.constraintlayout.widget.Barrier
                         android:layout_width="match_parent"
