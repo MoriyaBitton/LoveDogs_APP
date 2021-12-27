@@ -18,36 +18,34 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidlineUp"
-        android:orientation="vertical">
+        android:orientation="vertical">><RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/vb_add_post"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text="Add Post"
+            app:backgroundTint="#aaa"
+            app:icon="@drawable/ic_post"
+            app:iconGravity="start" />
 
-            <Button
-                android:id="@+id/vb_add_post"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="10dp"
-                android:text="Add Post"
-                app:backgroundTint="#aaa"
-                app:icon="@drawable/ic_post"
-                app:iconGravity="start" />
+        <Button
+            android:id="@+id/vb_logout"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#712D28"
+            android:text="logout"
+            app:icon="@drawable/ic_baseline_exit_to_app_24"
+            app:iconGravity="start" />
 
-            <Button
-                android:id="@+id/vb_logout"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="#712D28"
-                android:text="logout"
-                app:icon="@drawable/ic_baseline_exit_to_app_24"
-                app:iconGravity="start" />
-
-        </RelativeLayout>
+    </RelativeLayout>
 
         <ScrollView
             android:id="@+id/vposts_vscrolll"
@@ -58,13 +56,27 @@
             android:scaleType="fitXY">
 
             <LinearLayout
-                android:id="@+id/vscroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:id="@+id/vscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="60dp" />
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidlineUp"
@@ -79,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.92"
+        app:layout_constraintGuide_percent="1"
         app:layout_constraintHeight_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline

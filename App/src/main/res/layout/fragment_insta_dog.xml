@@ -105,10 +105,21 @@
             android:scaleType="fitXY">
 
             <LinearLayout
-                android:id="@+id/net_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/net_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
@@ -126,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.91"
+        app:layout_constraintGuide_percent="1"
         app:layout_constraintHeight_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
