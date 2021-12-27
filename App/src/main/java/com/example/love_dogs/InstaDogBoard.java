@@ -12,6 +12,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -40,6 +41,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -189,6 +191,30 @@ public class InstaDogBoard extends Fragment {
 
                     TextView author = child_view.findViewById(R.id.dp_user);
                     author.setText(post.authorId);
+
+                    MaterialButton likeBtn =  child_view.findViewById(R.id.like_btn);
+                    MaterialButton commentBtn = child_view.findViewById(R.id.comment_btn);
+
+                    likeBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int tag;
+                            if(likeBtn.getTag()!=null){
+                            tag = (int) likeBtn.getTag();
+                            }
+                            else{tag=0;}
+                            tag=(tag+1)%2;
+                            if(tag==1) {
+                                likeBtn.setTag(1);
+                                likeBtn.setBackgroundColor(getResources().getColor(R.color.red));
+                            }
+
+                            else{
+                                likeBtn.setTag(0);
+                                likeBtn.setBackgroundColor(getResources().getColor(R.color.light_grey));
+                            }
+                        }
+                    });
 
 
                     ImageView img = child_view.findViewById(R.id.dp_image);
