@@ -1,4 +1,4 @@
 # LoveDogs_APP
 
-### Winter - 2021 || Ariel University, Israel
+## Ariel University, Israel || Semester A 2021-2022
  
